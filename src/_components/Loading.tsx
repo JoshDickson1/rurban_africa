@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Loading = () => {
   return (
-    <div className="fixed inset-0 bg-black flex items-center justify-center z-[9999]">
+    <div className="fixed bg-white dark:bg-black inset-0 flex items-center justify-center z-[9999]">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -21,9 +21,9 @@ const Loading = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-white text-xl tracking-widest uppercase"
+          className="text-black text-xl dark:text-white tracking-widest uppercase"
         >
-          Rurban Africa
+          Rurban <span className="text-amber-400">Africa</span>
         </motion.h1>
 
         {/* Loader bar */}
