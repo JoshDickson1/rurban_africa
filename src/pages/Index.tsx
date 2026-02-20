@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import AfricaOutline from "@/components/AfricaOutline";
+import Hero from "@/_components/Hero";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -49,73 +50,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section
-        id="home"
-        className="relative flex min-h-screen items-center justify-center overflow-hidden"
-      >
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        />
-        <div className="absolute inset-0 bg-background/75 dark:bg-background/85" />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/10" />
-
-        {/* Africa outline hero decoration */}
-        <div className="absolute left-8 top-1/2 -translate-y-1/2 opacity-[0.07] pointer-events-none hidden lg:block">
-          <AfricaOutline
-            className="h-[70vh] w-auto"
-            strokeColor="hsl(var(--primary))"
-            strokeWidth={1.5}
-            duration={3}
-            showFill
-            fillColor="hsl(var(--primary))"
-          />
-        </div>
-
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
-          className="container relative z-10 mx-auto px-4 text-center"
-        >
-          <motion.p
-            variants={fadeInUp}
-            className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary"
-          >
-            Rurban Africa
-          </motion.p>
-          <motion.h1
-            variants={fadeInUp}
-            className="mb-6 text-4xl font-extrabold leading-tight text-foreground md:text-6xl lg:text-7xl"
-          >
-            One Africa.{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Two Worlds.
-            </span>{" "}
-            <br />
-            One Future.
-          </motion.h1>
-          <motion.p
-            variants={fadeInUp}
-            className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground"
-          >
-            Bridging the gap between rural and urban communities across Africa through education,
-            sustainability, and empowerment.
-          </motion.p>
-          <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 gap-2" asChild>
-              <a href="#donate">
-                <Heart className="h-5 w-5" /> Donate Now
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="gap-2" asChild>
-              <a href="#about">
-                Learn More <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
-          </motion.div>
-        </motion.div>
-      </section>
+      <Hero title={"Give Africa Children and Youth in Rural and Peri-urban Communities a Chance"} />
 
       {/* Impact Stats */}
       <section className="relative border-y border-border bg-gradient-to-r from-primary/5 via-background to-primary/5 py-16">

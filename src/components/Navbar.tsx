@@ -1,131 +1,219 @@
-import { useState, useEffect } from "react";
-import { Menu, Heart } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react"
+import {
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Twitter,
+  Linkedin,
+  Search,
+  PanelRight,
+  X,
+  Mail
+} from "lucide-react"
+import { Link, useNavigate } from "react-router-dom"
 
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
-  { label: "Programs", href: "/#programs" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Events", href: "/events" },
-  { label: "Team", href: "/team" },
-];
+export function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const navigate = useNavigate()
 
-const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-  const location = useLocation();
+  // 🔥 Adjustable scroll threshold (40% of viewport height)
+  const SCROLL_THRESHOLD = window.innerHeight * 0.4
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const handleNavClick = (href: string) => {
-    setOpen(false);
-    // If it's a hash link on the home page
-    if (href.startsWith("/#") && location.pathname === "/") {
-      const el = document.querySelector(href.replace("/", ""));
-      el?.scrollIntoView({ behavior: "smooth" });
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > SCROLL_THRESHOLD)
     }
-  };
 
-  const renderLink = (link: { label: string; href: string }, className: string) => {
-    if (link.href.startsWith("/#")) {
-      if (location.pathname === "/") {
-        return (
-          <a
-            href={link.href.replace("/", "")}
-            onClick={() => handleNavClick(link.href)}
-            className={className}
-          >
-            {link.label}
-          </a>
-        );
-      }
-      return (
-        <Link to={link.href.replace("/#", "/?section=")} className={className}>
-          {link.label}
-        </Link>
-      );
-    }
-    return (
-      <Link to={link.href} onClick={() => setOpen(false)} className={className}>
-        {link.label}
-      </Link>
-    );
-  };
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [SCROLL_THRESHOLD])
+
+  const marqueeStyle = {
+    display: "flex",
+    whiteSpace: "nowrap",
+    animation: "marquee 25s linear infinite",
+  }
 
   return (
-    <motion.header
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/70 backdrop-blur-xl shadow-lg border-b border-border/50"
-          : "bg-background/30 backdrop-blur-md"
-      }`}
-    >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">R</span>
-          </div>
-          <span className="text-lg font-bold text-foreground">
-            Rurban <span className="text-primary">Africa</span>
-          </span>
-        </Link>
+    <>
+      <style>
+        {`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}
+      </style>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) =>
-            renderLink(
-              link,
-              `text-sm font-medium text-muted-foreground hover:text-primary transition-colors ${
-                location.pathname === link.href ? "text-primary" : ""
-              }`
-            )
-          )}
-          <Button asChild className="bg-primary hover:bg-primary/90 gap-2">
-            <Link to="/#donate">
-              <Heart className="h-4 w-4" /> Donate
-            </Link>
-          </Button>
-        </nav>
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
 
-        {/* Mobile Nav */}
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-72 bg-background/95 backdrop-blur-xl">
-            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-            <div className="mt-8 flex flex-col gap-6">
-              {navLinks.map((link) =>
-                renderLink(
-                  link,
-                  "text-lg font-medium text-foreground hover:text-primary transition-colors"
-                )
-              )}
-              <Button asChild className="bg-primary hover:bg-primary/90 gap-2 mt-4">
-                <Link to="/#donate" onClick={() => setOpen(false)}>
-                  <Heart className="h-4 w-4" /> Donate
-                </Link>
-              </Button>
+        {/* TOP BAR */}
+        <div className={`bg-[#00521A] text-white transition-all duration-500 overflow-hidden hidden lg:block ${
+          isScrolled ? "h-0 opacity-0" : "h-14 opacity-100"
+        }`}>
+          <div className="flex justify-between items-center h-14 px-6 xl:px-16 text-sm">
+
+            {/* Marquee */}
+            <div className="relative flex-1 overflow-hidden">
+              <div style={marqueeStyle} className="flex items-center gap-24">
+
+                {/* Set */}
+                <div className="flex items-center gap-14">
+
+                  <span className="font-semibold tracking-wide uppercase text-white/90">
+                    Rurban Africa (@RurbanAfrica)
+                  </span>
+
+                  <div className="flex items-center gap-3">
+                    <Phone size={18} className="bg-[#F6CE40] text-black rounded-full p-2" />
+                    <span>+234 (70) 6360 9080</span>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <Mail size={18} className="bg-[#F6CE40] text-black rounded-full p-2" />
+                    <span>info@rurbanafrica.org</span>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <MapPin size={18} className="bg-[#F6CE40] text-black rounded-full p-2" />
+                    <span>Lagos (21 Salvation Road, Opebi, Ikeja)</span>
+                  </div>
+
+                </div>
+
+                {/* Duplicate for seamless loop */}
+                <div className="flex items-center gap-14">
+                  <span className="font-semibold tracking-wide uppercase text-white/90">
+                    Rurban Africa (@RurbanAfrica)
+                  </span>
+                </div>
+
+              </div>
             </div>
-          </SheetContent>
-        </Sheet>
-      </div>
-    </motion.header>
-  );
-};
 
-export default Navbar;
+            {/* Social */}
+            <div className="flex gap-4 ml-6 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md">
+              <a href="https://www.facebook.com/profile.php?id=61584015542265&mibextid=rS40aB7S9Ucbxw6v" target="_blank" rel="noreferrer"
+                 className="bg-white text-green-700 p-2 rounded-full hover:scale-110 transition">
+                <Facebook size={18} />
+              </a>
+              <a href="https://www.instagram.com/rurban_africa" target="_blank" rel="noreferrer"
+                 className="bg-white text-green-700 p-2 rounded-full hover:scale-110 transition">
+                <Instagram size={18} />
+              </a>
+              <a href="https://x.com/RurbanAfrica" target="_blank" rel="noreferrer"
+                 className="bg-white text-green-700 p-2 rounded-full hover:scale-110 transition">
+                <Twitter size={18} />
+              </a>
+              <a href="https://www.linkedin.com/company/rurban-africa/" target="_blank" rel="noreferrer"
+                 className="bg-white text-green-700 p-2 rounded-full hover:scale-110 transition">
+                <Linkedin size={18} />
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        {/* MAIN NAV */}
+        <nav className={`transition-all duration-500 ${
+          isScrolled 
+            ? "bg-white/60 backdrop-blur-xl shadow-sm" 
+            : "bg-transparent"
+        }`}>
+
+          <div className="flex items-center justify-between px-5 sm:px-8 lg:px-16 py-4">
+
+            {/* LOGO */}
+            <Link to="/" className="flex items-center gap-2 group">
+              <img
+                src="/rurban_logo.svg"
+                alt="Rurban Africa Logo"
+                className="h-12 sm:h-14 lg:h-16 w-auto object-contain"
+              />
+
+              <div className="flex flex-col leading-tight gap-0">
+                <span className={`text-xl lg:text-2xl font-bold -mb-1 tracking-tight transition-colors duration-500 ${
+                  isScrolled ? "text-black" : "text-white"
+                }`}>
+                  Rurban
+                </span>
+
+                <span className={`text-sm lg:text-base font-semibold tracking-widest uppercase transition-colors duration-500 ${
+                  isScrolled ? "text-gray-700" : "text-white/80"
+                }`}>
+                  Africa
+                </span>
+              </div>
+            </Link>
+
+            {/* DESKTOP LINKS */}
+            <ul className={`hidden lg:flex gap-10 font-medium transition-colors duration-500 ${
+              isScrolled ? "text-slate-700" : "text-white"
+            }`}>
+              <Link to="/">Home</Link>
+              <Link to="/about">About</Link>
+              <Link to="/partnership">Partnership</Link>
+              <Link to="/blogs">Blogs</Link>
+              <Link to="/contact">Contact</Link>
+            </ul>
+
+            {/* DESKTOP ACTIONS */}
+            <div className="hidden lg:flex items-center gap-10">
+
+              <Link to="/blogs">
+                <Search size={20} className={`${isScrolled ? "text-slate-600" : "text-white"} transition`} />
+              </Link>
+
+              <button
+                onClick={() => navigate("/donate")}
+                className="h-12 px-8 rounded-lg bg-[#00521A] text-white font-semibold shadow-lg hover:scale-105 active:scale-95 transition"
+              >
+                Donate Now
+              </button>
+
+            </div>
+
+            {/* MOBILE BUTTON */}
+            <button
+              className={`lg:hidden ${isScrolled ? "text-black" : "text-white"}`}
+              onClick={() => setMenuOpen(true)}
+            >
+              <PanelRight size={28} />
+            </button>
+
+          </div>
+        </nav>
+      </header>
+
+      {/* MOBILE MENU */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-[100] bg-black/95 flex flex-col items-center justify-center text-white text-xl font-medium">
+
+          <button
+            className="absolute top-6 right-6 hover:rotate-90 transition"
+            onClick={() => setMenuOpen(false)}
+          >
+            <X size={32} />
+          </button>
+
+          <div className="flex flex-col gap-8 items-center">
+            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+            <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+            <Link to="/blogs" onClick={() => setMenuOpen(false)}>Blogs</Link>
+            <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+
+            <button
+              onClick={() => navigate("/donate")}
+              className="mt-6 h-12 px-8 bg-[#00521A] rounded-lg"
+            >
+              Donate Now
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
