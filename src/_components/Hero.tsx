@@ -42,11 +42,41 @@ const Hero = ({
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const playVideo = async () => {
+      try {
+        video.muted = true;
+        await video.play();
+      } catch (err) {
+        const unlock = () => {
+          video.play().catch(() => {});
+          document.removeEventListener("touchstart", unlock);
+          document.removeEventListener("click", unlock);
+        };
+        document.addEventListener("touchstart", unlock, { once: true });
+        document.addEventListener("click", unlock, { once: true });
+      }
+    };
+
+    if (video.readyState >= 3) {
+      playVideo();
+    } else {
+      video.addEventListener("canplay", playVideo, { once: true });
+    }
+
+    return () => {
+      video.removeEventListener("canplay", playVideo);
+    };
+  }, []);
+
   const toggleMute = () => {
-    setMuted((m) => {
-      if (videoRef.current) videoRef.current.muted = !m;
-      return !m;
-    });
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setMuted(video.muted);
   };
 
   /* ── Split title into first line and last word for accent ── */
@@ -72,8 +102,11 @@ const Hero = ({
             muted
             loop
             playsInline
+            preload="auto"
+            disablePictureInPicture
             className="h-full w-full object-cover"
           >
+            <source src={videoSrc.replace(".mp4", ".webm")} type="video/webm" />
             <source src={videoSrc} type="video/mp4" />
           </video>
 
@@ -89,7 +122,6 @@ const Hero = ({
             }}
           />
         </motion.div>
-
 
         {/* ── Decorative vertical line ── */}
         <div className="absolute left-6 top-0 z-10 hidden h-full w-px bg-white/5 md:left-10 md:block" />
