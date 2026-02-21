@@ -53,16 +53,16 @@ const FOOTER_LINKS = {
 };
 
 const INSTAGRAM_POSTS = [
-  "/foot-1.jpeg", "/foot-2.jpeg", "/foot-3.jpeg",
-  "/foot-4.jpeg", "/foot-5.jpeg", "/foot-6.jpeg"
+  "/foot1.jpeg", "/rurban_logo.svg", "/foot3.jpeg",
+  "/foot4.jpeg", "/foot5.jpeg", "/foot6.jpeg"
 ];
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[img(url:public/footer.png)] dark:bg-slate-950 pt-20 pb-10 overflow-hidden transition-colors duration-300">
+    <footer className="relative bg-[url('/footer.png')] dark:bg-green-950 pt-20 pb-10 overflow-hidden transition-colors duration-300">
 
       {/* Background Glow - Matches Hero Ball */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 dark:bg-blue-400/5 blur-[120px] rounded-full -z-10" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 dark:bg-green-400/5 blur-[120px] rounded-full -z-10" />
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
@@ -103,7 +103,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-[#00521A] hover:text-white transition-all shadow-sm"
+                  className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-[#00521A] hover:text-white dark:hover:bg-green-700 dark:hover:text-white transition-all shadow-sm"
                 >
                   <Icon size={18} />
                 </motion.a>
@@ -122,7 +122,7 @@ const Footer = () => {
                 <ul className="space-y-4">
                   {links.map((link) => (
                     <li key={link.name}>
-                      <Link to={link.to} className="group flex items-center text-slate-500 dark:text-slate-400 hover:text-[#1e3a5f] dark:hover:text-blue-400 transition-colors font-semibold text-sm">
+                      <Link to={link.to} className="group flex items-center text-slate-500 dark:text-slate-400 hover:text-[#1e3a5f] dark:hover:text-green-400 transition-colors font-semibold text-sm">
                         <ArrowUpRight size={14} className="mr-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                         {link.name}
                       </Link>
@@ -138,7 +138,7 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-widest">Location</h4>
               <p className="text-sm text-slate-500 dark:text-slate-400 flex items-start gap-2">
-                <MapPin size={18} className="shrink-0 text-blue-500" />
+                <MapPin size={18} className="shrink-0 text-green-500" />
                 Lagos (21 Salvation Road, Opebi, Ikeja)
               </p>
             </div>
@@ -169,15 +169,14 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-            © 2026 G.G.E.C.L All Rights Reserved by <a href="tel:+2349130993464" className="text-[#1e3a5f] dark:text-blue-400">BiTech</a>
+            © 2026 Rurban Africa All Rights Reserved by <a href="tel:+2349130993464" className="text-[#1e3a5f] dark:text-green-400">BiTech</a>
           </p>
 
           <div className="flex items-center gap-8">
             <div className="flex gap-4 text-[10px] font-black uppercase tracking-tighter text-slate-400">
               <Link to="/privacy-policy" className="hover:text-slate-900 dark:hover:text-white transition-colors">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-slate-900 dark:hover:text-white transition-colors">Terms & Conditions</Link>
             </div>
-            <div className="p-1 bg-slate-100 dark:bg-slate-900 rounded-full border border-slate-200 dark:border-slate-800 shadow-inner scale-90">
+            <div className="p-1 bg-green-100 dark:bg-green-900 rounded-full border border-slate-200 dark:border-slate-800 shadow-inner scale-90">
               <ModeToggle />
             </div>
           </div>

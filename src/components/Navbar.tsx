@@ -19,7 +19,7 @@ export function Navbar() {
   const navigate = useNavigate()
 
   // 🔥 Adjustable scroll threshold (40% of viewport height)
-  const SCROLL_THRESHOLD = window.innerHeight * 0.4
+  const SCROLL_THRESHOLD = window.innerHeight * 0.5
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,7 +119,7 @@ export function Navbar() {
         {/* MAIN NAV */}
         <nav className={`transition-all duration-500 ${
           isScrolled 
-            ? "bg-white/60 backdrop-blur-xl shadow-sm" 
+            ? "bg-white/60 backdrop-blur-xl shadow-sm dark:bg-green-900/60" 
             : "bg-transparent"
         }`}>
 
@@ -135,13 +135,13 @@ export function Navbar() {
 
               <div className="flex flex-col leading-tight gap-0">
                 <span className={`text-xl lg:text-2xl font-bold -mb-1 tracking-tight transition-colors duration-500 ${
-                  isScrolled ? "text-black" : "text-white"
+                  isScrolled ? "text-black dark:text-white" : "text-white"
                 }`}>
                   Rurban
                 </span>
 
                 <span className={`text-sm lg:text-base font-semibold tracking-widest uppercase transition-colors duration-500 ${
-                  isScrolled ? "text-gray-700" : "text-white/80"
+                  isScrolled ? "text-gray-700 dark:text-white/80" : "text-white/80"
                 }`}>
                   Africa
                 </span>
@@ -150,7 +150,7 @@ export function Navbar() {
 
             {/* DESKTOP LINKS */}
             <ul className={`hidden lg:flex gap-10 font-medium transition-colors duration-500 ${
-              isScrolled ? "text-slate-700" : "text-white"
+              isScrolled ? "text-slate-700 dark:text-white/80" : "text-white"
             }`}>
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>

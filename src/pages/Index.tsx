@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import AfricaOutline from "@/components/AfricaOutline";
 import Hero from "@/_components/Hero";
+import AboutSect from "@/_components/AboutSect";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -72,36 +73,8 @@ const Index = () => {
       </section>
 
       {/* About Teaser */}
-      <section id="about" className="py-24 relative">
-        {/* Subtle Africa outline in background */}
-        <div className="absolute right-0 top-0 opacity-[0.03] pointer-events-none">
-          <AfricaOutline
-            className="h-96 w-auto"
-            strokeColor="hsl(var(--foreground))"
-            strokeWidth={1}
-            duration={2}
-          />
-        </div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-          className="container relative mx-auto px-4 text-center"
-        >
-          <motion.p variants={fadeInUp} className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
-            About Us
-          </motion.p>
-          <motion.h2 variants={fadeInUp} className="mb-6 text-3xl font-bold text-foreground md:text-4xl">
-            Who We Are
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="mx-auto max-w-3xl text-muted-foreground leading-relaxed">
-            Rurban Africa is a non-profit organization dedicated to bridging the divide between rural and urban
-            communities. We believe in the power of education, sustainable development, and community-led
-            initiatives to create lasting change across the African continent. Our programs reach thousands
-            of lives every year, transforming communities one step at a time.
-          </motion.p>
-        </motion.div>
+      <section id="about" className="">
+        <AboutSect />
       </section>
 
       {/* Programs */}

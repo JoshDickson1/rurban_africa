@@ -12,6 +12,15 @@ import Events from "./pages/Events";
 import Team from "./pages/Team";
 import NotFound from "./pages/NotFound";
 import Loading from "./_components/Loading";
+import Partners from "./pages/Partners";
+import { Contact } from "lucide-react";
+import About from "./pages/About";
+import Blogs from "./pages/Blogs";
+import Donate from "./pages/Donate";
+import Terms from "./pages/Terms";
+import FAQs from "./pages/FAQs";
+import Career from "./pages/Career";
+import Layout from "./components/Layout";
 
 const queryClient = new QueryClient();
 
@@ -38,12 +47,22 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+  <Route element={<Layout children={""} />}>
+    <Route path="/" element={<Index />} />
+    <Route path="/gallery" element={<Gallery />} />
+    <Route path="/events" element={<Events />} />
+    <Route path="/team" element={<Team />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/donate" element={<Donate />} />
+    <Route path="/career" element={<Career />} />
+    <Route path="/blogs" element={<Blogs />} />
+    <Route path="/faqs" element={<FAQs />} />
+    <Route path="/terms" element={<Terms />} />
+    <Route path="/partnership" element={<Partners />} />
+  </Route>
+
+  <Route path="*" element={<NotFound />} />
+</Routes>
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
