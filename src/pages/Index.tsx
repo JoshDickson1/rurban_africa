@@ -6,6 +6,9 @@ import AfricaOutline from "@/components/AfricaOutline";
 import Hero from "@/_components/Hero";
 import AboutSect from "@/_components/AboutSect";
 import TargetAudience from "@/_components/TargetAudience";
+import MisVis from "@/_components/MisVis";
+import CTA from "@/_components/CTA";
+import FAQ from "./FAQs";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -53,24 +56,59 @@ const Index = () => {
       {/* Hero Section */}
       <Hero title={"Give Africa Children and Youth in Rural and Peri-urban Communities a Chance"} />
 
-      {/* Impact Stats */}
-      <section className="relative border-y border-border bg-gradient-to-r from-primary/5 via-background to-primary/5 py-16">
+      <section className="relative overflow-hidden bg-white py-24 dark:bg-zinc-950">
+      
+
+      <div className="container relative mx-auto px-6">
         <motion.div
+          // variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-          className="container mx-auto grid grid-cols-2 gap-8 px-4 md:grid-cols-4"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
         >
           {stats.map((stat) => (
-            <motion.div key={stat.label} variants={fadeInUp} className="text-center">
-              <stat.icon className="mx-auto mb-3 h-8 w-8 text-primary" />
-              <p className="text-3xl font-extrabold text-foreground">{stat.value}</p>
-              <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
+            <motion.div
+              key={stat.label}
+              // variants={itemVariants}
+              whileHover={{ y: -5 }}
+              className="group relative flex flex-col items-center justify-center rounded-[2.5rem] border border-emerald-100 bg-white/50 p-10 transition-all duration-500 hover:bg-white dark:border-white/5 dark:bg-emerald-950/10 dark:hover:bg-emerald-950/20"
+            >
+              {/* Subtle Glow Effect on Hover */}
+              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-emerald-500/0 to-emerald-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-5" />
+
+              <div className="relative mb-6">
+                {/* Icon Circle */}
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 transition-colors duration-500 group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-900/20 dark:text-emerald-400">
+                  <stat.icon size={28} strokeWidth={1.5} />
+                </div>
+                
+                {/* Floating particle animation */}
+                <motion.div 
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -right-2 -top-2 h-3 w-3 rounded-full bg-amber-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                />
+              </div>
+
+              <div className="text-center">
+                <motion.h3 
+                  className="text-4xl lg:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white"
+                >
+                  {stat.value}
+                </motion.h3>
+                <p className="mt-2 text-xs font-bold uppercase tracking-[0.2em] text-zinc-400 group-hover:text-emerald-600 dark:text-emerald-500/60 transition-colors">
+                  {stat.label}
+                </p>
+              </div>
+
+              {/* Bottom Line Detail */}
+              <div className="absolute bottom-4 left-1/2 h-1 w-0 -translate-x-1/2 rounded-full bg-emerald-500/20 transition-all duration-500 group-hover:w-12" />
             </motion.div>
           ))}
         </motion.div>
-      </section>
+      </div>
+    </section>
 
       {/* About Teaser */}
       <section id="about" className="">
@@ -79,6 +117,14 @@ const Index = () => {
 
       <div className="">
         <TargetAudience />
+      </div>
+
+      <div className="">
+        <MisVis />
+      </div>
+
+      <div className="">
+        <CTA />
       </div>
 
       {/* Programs */}
@@ -112,84 +158,10 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Get Involved / Donate CTA */}
-      <section id="get-involved" className="py-24">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-          className="container mx-auto px-4 text-center"
-        >
-          <motion.p variants={fadeInUp} className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
-            Get Involved
-          </motion.p>
-          <motion.h2 variants={fadeInUp} className="mb-6 text-3xl font-bold text-foreground md:text-4xl">
-            Make a Difference Today
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="mx-auto mb-10 max-w-2xl text-muted-foreground">
-            Whether you donate, volunteer, or partner with us — every action counts. Join us in building a
-            brighter future for Africa's communities.
-          </motion.p>
-          <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 gap-2" asChild>
-              <a href="#donate">
-                <Heart className="h-5 w-5" /> Donate
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="gap-2">
-              Volunteer
-            </Button>
-            <Button size="lg" variant="outline" className="gap-2">
-              Partner With Us
-            </Button>
-          </motion.div>
-        </motion.div>
-      </section>
+      <div className="">
+        <FAQ />
+      </div>
 
-      {/* Donate Section */}
-      <section id="donate" className="py-24 bg-gradient-to-b from-primary/10 to-background">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={stagger}
-          className="container mx-auto px-4 text-center"
-        >
-          <motion.p variants={fadeInUp} className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
-            Donate
-          </motion.p>
-          <motion.h2 variants={fadeInUp} className="mb-6 text-3xl font-bold text-foreground md:text-4xl">
-            Support Our Mission
-          </motion.h2>
-          <motion.p variants={fadeInUp} className="mx-auto mb-10 max-w-2xl text-muted-foreground">
-            Your generous donation helps us reach more communities. Choose your preferred currency and
-            donation type below.
-          </motion.p>
-          <motion.div variants={fadeInUp} className="mx-auto max-w-md">
-            <div className="flex justify-center gap-3 mb-6">
-              {["₦ Naira", "$ Dollars", "£ Pounds"].map((currency) => (
-                <Button key={currency} variant="outline" className="min-w-[100px]">
-                  {currency}
-                </Button>
-              ))}
-            </div>
-            <div className="flex justify-center gap-3 mb-8">
-              {["One-Time", "Weekly", "Monthly"].map((freq) => (
-                <Button key={freq} variant="secondary" className="min-w-[100px]">
-                  {freq}
-                </Button>
-              ))}
-            </div>
-            <Button size="lg" className="w-full bg-primary hover:bg-primary/90 gap-2">
-              <Heart className="h-5 w-5" /> Donate via Flutterwave
-            </Button>
-            <p className="mt-4 text-xs text-muted-foreground">
-              You'll be redirected to Flutterwave's secure payment page.
-            </p>
-          </motion.div>
-        </motion.div>
-      </section>
     </div>
   );
 };
