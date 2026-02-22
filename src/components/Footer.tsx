@@ -59,7 +59,7 @@ const INSTAGRAM_POSTS = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[url('/footer.png')] dark:bg-green-950 pt-20 pb-10 overflow-hidden transition-colors duration-300">
+    <footer className="relative bg-[url('/footer.png')] dark:bg-[url('/bg-footer.svg')] dark:bg-green-950 pt-20 pb-10 overflow-hidden transition-colors duration-300">
 
       {/* Background Glow - Matches Hero Ball */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 dark:bg-green-400/5 blur-[120px] rounded-full -z-10" />

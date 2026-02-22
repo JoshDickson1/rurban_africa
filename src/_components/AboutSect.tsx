@@ -14,10 +14,6 @@ const AboutSect = () => {
   const leftInView = useInView(leftRef, { once: true, margin: "0px 0px -100px 0px" });
   const rightInView = useInView(rightRef, { once: true, margin: "0px 0px -100px 0px" });
   
-  // Placeholder images - replace with your actual images
-  const image1 = "/images/community.jpg";
-  const image2 = "/images/youth.jpg";
-  
   // Parallax and animation values
   const img1Y = useMotionValue(0);
   const img2Y = useMotionValue(0);
@@ -86,11 +82,11 @@ const AboutSect = () => {
               {/* Image 1 — top */}
               <motion.div
                 style={{ y: img1Y }}
-                className={`relative z-10 overflow-hidden rounded-2xl border  shadow-2xl `}
+                className={`relative z-10 mr-10 overflow-hidden rounded-2xl border  shadow-2xl `}
               >
                 <div className="absolute inset-0 z-10 bg-gradient-to-br from-green-900/10 to-transparent mix-blend-multiply" />
                 <img
-                  src={"/foot1.jpeg"}
+                  src={"/pledge.jpg"}
                   alt="Rurban Africa community"
                   className="h-64 w-full object-cover transition-transform duration-700 hover:scale-105 md:h-72"
                 />
@@ -104,7 +100,7 @@ const AboutSect = () => {
               {/* Image 2 — offset bottom */}
               <motion.div
                 style={{ y: img2Y }}
-                className={`relative z-10 -mt-8 ml-8 overflow-hidden -ml-10 mr-10 mt-3 rounded-2xl border shadow-2xl  `}
+                className={`relative z-10 -mt-8 ml-0 mr-0 overflow-hidden -ml-10 mr-10 mt-3 rounded-2xl border shadow-2xl  `}
               >
                 <div className="absolute inset-0 z-10 bg-gradient-to-tl from-green-900/10 to-transparent mix-blend-multiply" />
                 <img
@@ -187,7 +183,7 @@ const AboutSect = () => {
 
             {/* Body paragraphs */}
             {[
-              "Rurban Africa — incorporated as Rurban Communities Support Foundation — was born from a deep conviction that Africa's future depends on the unity between its rural communities and urban centers.",
+              "Rurban Africa, incorporated as Rurban Communities Support Foundation was born from a deep conviction that Africa's future depends on the unity between its rural communities and urban centers.",
               "Founded in 2025 as a Pan-African non-profit, we are dedicated to transforming rural and peri-urban communities into thriving, connected, and sustainable communities of opportunity. Too often, an invisible line separates villages from cities, limiting access to education, opportunity, and resources.",
               "We exist to replace that invisible line with a golden bridge of shared destiny and mutual prosperity.",
             ].map((p, i) => (

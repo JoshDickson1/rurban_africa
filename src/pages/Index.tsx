@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Heart, Users, BookOpen, Sprout, ArrowRight, HandHeart, Globe, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Layout from "@/components/Layout";
 import AfricaOutline from "@/components/AfricaOutline";
 import Hero from "@/_components/Hero";
 import AboutSect from "@/_components/AboutSect";
+import TargetAudience from "@/_components/TargetAudience";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -49,7 +49,7 @@ const programs = [
 
 const Index = () => {
   return (
-    <Layout>
+    <div>
       {/* Hero Section */}
       <Hero title={"Give Africa Children and Youth in Rural and Peri-urban Communities a Chance"} />
 
@@ -76,6 +76,10 @@ const Index = () => {
       <section id="about" className="">
         <AboutSect />
       </section>
+
+      <div className="">
+        <TargetAudience />
+      </div>
 
       {/* Programs */}
       <section id="programs" className="py-24 bg-gradient-to-b from-secondary/50 to-background">
@@ -186,7 +190,7 @@ const Index = () => {
           </motion.div>
         </motion.div>
       </section>
-    </Layout>
+    </div>
   );
 };
 

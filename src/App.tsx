@@ -47,22 +47,22 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Routes>
-  <Route element={<Layout children={""} />}>
-    <Route path="/" element={<Index />} />
-    <Route path="/gallery" element={<Gallery />} />
-    <Route path="/events" element={<Events />} />
-    <Route path="/team" element={<Team />} />
-    <Route path="/about" element={<About />} />
-    <Route path="/donate" element={<Donate />} />
-    <Route path="/career" element={<Career />} />
-    <Route path="/blogs" element={<Blogs />} />
-    <Route path="/faqs" element={<FAQs />} />
-    <Route path="/terms" element={<Terms />} />
-    <Route path="/partnership" element={<Partners />} />
-  </Route>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Index />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/faqs" element={<FAQs />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/partnership" element={<Partners />} />
+          </Route>
 
-  <Route path="*" element={<NotFound />} />
-</Routes>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
