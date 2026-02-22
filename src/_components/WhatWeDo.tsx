@@ -96,7 +96,7 @@ export default function WhatWeDo() {
               <motion.div
                 key={p.id}
                 {...fade(i * 0.07, -20)}
-                className="group flex gap-4 items-start p-5 rounded-2xl border border-stone-200 dark:border-white/8 bg-white dark:bg-white/4 hover:border-emerald-300 dark:hover:border-emerald-700/50 hover:shadow-md transition-all duration-300"
+                className="group flex gap-4 items-start p-5 rounded-2xl border border-stone-200 dark:border-emerald-800/40 bg-white dark:bg-emerald-950/10 hover:border-emerald-300 dark:hover:border-emerald-700/50 hover:shadow-md transition-all duration-300"
               >
                 {/* Number badge */}
                 <div className="shrink-0 w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800/40 flex items-center justify-center">
@@ -171,7 +171,7 @@ export default function WhatWeDo() {
               <motion.div
                 key={p.id}
                 {...fade(i * 0.07 + 0.1, 20)}
-                className="group flex gap-4 items-start p-5 rounded-2xl border border-stone-200 dark:border-white/8 bg-white dark:bg-white/4 hover:border-emerald-300 dark:hover:border-emerald-700/50 hover:shadow-md transition-all duration-300"
+                className="group flex gap-4 items-start p-5 rounded-2xl border border-stone-200 dark:border-emerald-800/40 bg-white dark:bg-emerald-950/10 hover:border-emerald-300 dark:hover:border-emerald-700/50 hover:shadow-md transition-all duration-300"
               >
                 <div className="shrink-0 w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800/40 flex items-center justify-center">
                   <span className="text-[11px] font-black text-emerald-700 dark:text-emerald-400 tracking-wide">
