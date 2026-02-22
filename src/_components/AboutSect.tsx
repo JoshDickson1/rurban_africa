@@ -99,7 +99,7 @@ const AboutSect = () => {
               {/* Image 2 — offset bottom */}
               <motion.div
                 style={{ y: img2Y }}
-                className={`relative z-10 -mt-8 ml-0 mr-0 overflow-hidden -ml-10 mr-10 mt-3 rounded-2xl border shadow-2xl  `}
+                className={`relative z-10 -mt-8 ml-0 mr-0 overflow-hidden -ml-10 md:mr-10 mt-3 rounded-2xl border shadow-2xl  `}
               >
                 <div className="absolute inset-0 z-10 bg-gradient-to-tl from-green-900/10 to-transparent mix-blend-multiply" />
                 <img

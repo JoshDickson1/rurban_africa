@@ -11,6 +11,7 @@ import CTA from "@/_components/CTA";
 import FAQ from "./FAQs";
 import DonateHero from "@/_components/DonateHero";
 import DreamHubs from "@/_components/DreamsHub";
+import WhatWeDo from "@/_components/WhatWeDo";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -130,35 +131,9 @@ const Index = () => {
       </div>
 
       {/* Programs */}
-      <section id="programs" className="py-24 bg-gradient-to-b from-secondary/50 to-background">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={stagger}
-          className="container mx-auto px-4"
-        >
-          <motion.div variants={fadeInUp} className="text-center mb-14">
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">What We Do</p>
-            <h2 className="text-3xl font-bold text-foreground md:text-4xl">Our Programs</h2>
-          </motion.div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {programs.map((program) => (
-              <motion.div key={program.title} variants={fadeInUp}>
-                <Card className="group h-full border-border/50 bg-card/80 backdrop-blur hover:shadow-lg hover:border-primary/30 transition-all duration-300">
-                  <CardContent className="flex flex-col items-center text-center p-8">
-                    <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                      <program.icon className="h-7 w-7" />
-                    </div>
-                    <h3 className="mb-2 text-lg font-semibold text-foreground">{program.title}</h3>
-                    <p className="text-sm text-muted-foreground">{program.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
+      <div>
+        <WhatWeDo />
+      </div>
 
       <div className="">
         <FAQ />

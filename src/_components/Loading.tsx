@@ -32,7 +32,7 @@ const Loading = () => {
             initial={{ x: "-100%" }}
             animate={{ x: "0%" }}
             transition={{ duration: 5, ease: "linear" }}
-            className="h-full bg-yellow-500"
+            className="h-full bg-yellow-400"
           />
         </div>
       </motion.div>
