@@ -6,8 +6,8 @@ import { Baby, Users, Sprout, Building2 } from "lucide-react";
 
 const audiences = [
   { id: 1, title: "Children/Youth", icon: Baby, desc: "Rural school children and young adults, targeted for education and career development to foster growth and local leadership.", img: "/youth.png" },
-  { id: 2, title: "Women and Girls", icon: Users, desc: "Empowered through gender-specific programs on hygiene, entrepreneurship, and rights, addressing disparities in access.", img: "/foot2.jpeg" },
-  { id: 3, title: "Farmers & Communities", icon: Sprout, desc: "Supported in sustainable agriculture and market linkages to boost livelihoods and long-term food security.", img: "/foot3.jpeg" },
+  { id: 2, title: "Women and Girls", icon: Users, desc: "Empowered through gender-specific programs on hygiene, entrepreneurship, and rights, addressing disparities in access.", img: "/women.jpeg" },
+  { id: 3, title: "Farmers & Communities", icon: Sprout, desc: "Supported in sustainable agriculture and market linkages to boost livelihoods and long-term food security.", img: "/farmers.jpeg" },
   { id: 4, title: "Urban Partners", icon: Building2, desc: "City-based professionals, businesses, and institutions engaged as mentors and investors to bridge the rural-urban divide.", img: "/foot4.jpeg" },
 ];
 

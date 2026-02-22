@@ -9,6 +9,8 @@ import TargetAudience from "@/_components/TargetAudience";
 import MisVis from "@/_components/MisVis";
 import CTA from "@/_components/CTA";
 import FAQ from "./FAQs";
+import DonateHero from "@/_components/DonateHero";
+import DreamHubs from "@/_components/DreamsHub";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -162,6 +164,13 @@ const Index = () => {
         <FAQ />
       </div>
 
+      <div className="">
+        <DreamHubs />
+      </div>
+
+      <div className="">
+        <DonateHero />
+      </div>
     </div>
   );
 };

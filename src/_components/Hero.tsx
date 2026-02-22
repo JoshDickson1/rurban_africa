@@ -173,10 +173,10 @@ const Hero = ({
                 {/* Primary CTA */}
                 <Link
                   to="/about"
-                  className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-amber-400 px-7 py-3.5 text-sm font-bold text-zinc-900 transition-all hover:bg-amber-300"
+                  className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-amber-400 px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-amber-300"
                 >
                   <span className="relative z-10">Learn More</span>
-                  <span className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-zinc-900/20 transition-transform group-hover:rotate-45">
+                  <span className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-green-900 transition-transform group-hover:rotate-45">
                     <ArrowUpRight size={13} />
                   </span>
                 </Link>
