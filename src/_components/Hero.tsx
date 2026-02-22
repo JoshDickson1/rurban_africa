@@ -44,7 +44,18 @@ const Hero = ({
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+  if (!video) return;
+
+  video.muted = true; // ensure muted before any play attempt
+  video.play().catch(() => {
+    // Fallback: wait for user interaction
+    const unlock = () => {
+      video.muted = true;
+      video.play().catch(() => {});
+    };
+    document.addEventListener("click", unlock, { once: true });
+    document.addEventListener("touchstart", unlock, { once: true });
+  });
 
     const playVideo = async () => {
       try {
@@ -106,7 +117,7 @@ const Hero = ({
             disablePictureInPicture
             className="h-full w-full object-cover"
           >
-            <source src={videoSrc.replace(".mp4", ".webm")} type="video/webm" />
+            {/* <source src={videoSrc.replace(".mp4", ".webm")} type="video/webm" /> */}
             <source src={videoSrc} type="video/mp4" />
           </video>
 
@@ -173,7 +184,7 @@ const Hero = ({
                 {/* Primary CTA */}
                 <Link
                   to="/about"
-                  className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-amber-400 px-7 py-3.5 text-sm font-bold text-white transition-all hover:bg-amber-300"
+                  className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-amber-400 px-7 py-3.5 md:py-3.5 px-4 py-3 text-sm font-bold text-white transition-all hover:bg-amber-300"
                 >
                   <span className="relative z-10">Learn More</span>
                   <span className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-green-900 transition-transform group-hover:rotate-45">
@@ -184,7 +195,7 @@ const Hero = ({
                 {/* Video CTA */}
                 <button
                   onClick={() => setVideoOpen(true)}
-                  className="group flex items-center gap-3 rounded-full border border-white/20 bg-white/8 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white/15 hover:border-white/40"
+                  className="group flex items-center gap-3 rounded-full border border-white/20 bg-white/8 md:px-6 md:py-3.5 px-4 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white/15 hover:border-white/40"
                 >
                   <span className="flex h-7 w-7 items-center justify-center rounded-full border border-white/30 transition-all group-hover:border-amber-400 group-hover:bg-amber-400/10">
                     <Play size={12} className="fill-white ml-0.5" />
