@@ -12,6 +12,7 @@ import FAQ from "./FAQs";
 import DonateHero from "@/_components/DonateHero";
 import DreamHubs from "@/_components/DreamsHub";
 import WhatWeDo from "@/_components/WhatWeDo";
+import TeamsOverview from "@/_components/TeamsOverview";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -120,6 +121,10 @@ const Index = () => {
 
       <div className="">
         <TargetAudience />
+      </div>
+
+      <div className="">
+        <TeamsOverview />
       </div>
 
       <div className="">
