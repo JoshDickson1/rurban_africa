@@ -35,10 +35,9 @@ const AboutSect = () => {
           transition={{ duration: 0.6 }}
           className="mb-10 flex flex-col items-center gap-3"
         >
-          <span className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] backdrop-blur-sm border-stone-200 bg-stone-100/50 text-stone-700 dark:text-white`}>
-            <span className={`h-1.5 w-1.5 rounded-full bg-green-600 dark:text-white animate-pulse`} />
-            Why Choose Us
-          </span>
+          <span className="inline-block text-amber-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-4 bg-white/5 px-4 py-1 rounded-full border border-white/10">
+                  Why Choose Us
+                </span>
           {/* Decorative dividers */}
           <div className="flex items-center gap-2 opacity-60">
             <div className={`h-px w-10 bg-yellow-300`} />
@@ -82,7 +81,7 @@ const AboutSect = () => {
               {/* Image 1 — top */}
               <motion.div
                 style={{ y: img1Y }}
-                className={`relative z-10 mr-10 overflow-hidden rounded-2xl border  shadow-2xl `}
+                className={`relative z-10 mr-0 md:mr-10 overflow-hidden rounded-2xl border  shadow-2xl `}
               >
                 <div className="absolute inset-0 z-10 bg-gradient-to-br from-green-900/10 to-transparent mix-blend-multiply" />
                 <img
@@ -210,7 +209,7 @@ const AboutSect = () => {
               {["Education", "Opportunity", "Sustainability", "Community", "Inclusion"].map((tag) => (
                 <span
                   key={tag}
-                  className={`rounded-lg border px-3 py-1 text-[12px] font-semibold tracking-wide border-green-300 bg-green-100 text-green-900`}
+                  className={`rounded-lg border px-3 py-1 text-[12px] font-semibold tracking-wide border-green-300 dark:border-green-900 bg-green-100 dark:bg-emerald-950/30 dark:text-emerald-400`}
                 >
                   {tag}
                 </span>

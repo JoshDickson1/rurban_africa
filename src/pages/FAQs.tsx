@@ -19,7 +19,7 @@ const FAQs = [
   },
   {
     question: "Are your programs specific to certain ages?",
-    answer: "While we have a strong focus on K-12 education for Children and Youth, our Farmers and Women’s Empowerment programs are designed for adults to foster immediate economic growth and household stability."
+    answer: "While we have a strong focus on K-12 education for children and youth, our Farmers and Women's Empowerment programs are designed for adults to foster immediate economic growth and household stability."
   }
 ];
 
@@ -27,97 +27,151 @@ export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-24 bg-white dark:bg-zinc-950 transition-colors duration-500 overflow-hidden">
-      {/* Decorative background blur to match your brand style */}
-      <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-emerald-50/50 dark:bg-emerald-900/5 blur-3xl rounded-full translate-x-1/3" />
+    <section className="relative py-24 md:py-32 bg-[#F9FBFA] dark:bg-[#041d14] transition-colors duration-700 overflow-hidden">
 
-      <div className="container mx-auto px-6 max-w-4xl">
-        <div className="text-center mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800 mb-6"
-          >
-            <HelpCircle size={14} className="text-emerald-600 dark:text-emerald-400" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400">
+      {/* Ambient glow */}
+      <div className="absolute bottom-0 left-0 -z-10 w-96 h-96 bg-emerald-300/10 dark:bg-emerald-400/5 blur-3xl rounded-full -translate-x-1/3 translate-y-1/4 pointer-events-none" />
+
+      <div className="mx-auto px-6 max-w-7xl lg:px-14">
+
+        {/* Section label */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800/50 mb-4">
+            <HelpCircle size={13} className="text-emerald-600 dark:text-emerald-400" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-400">
               Support Center
             </span>
-          </motion.div>
-          
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tighter"
+          </div>
+          <h2
+            className="text-4xl md:text-5xl font-black text-stone-900 dark:text-white tracking-tight text-center"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
-            Common <span className="text-emerald-600 italic">Questions</span>
-          </motion.h2>
-        </div>
-
-        <div className="space-y-4">
-          {FAQs.map((faq, index) => {
-            const isActive = activeIndex === index;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className={`group rounded-[2rem] border transition-all duration-500 ${
-                  isActive 
-                  ? "bg-emerald-900 text-white border-emerald-800 shadow-xl shadow-emerald-900/20" 
-                  : "bg-zinc-50 dark:bg-white/5 border-zinc-100 dark:border-white/10 hover:border-emerald-200 dark:hover:border-emerald-800"
-                }`}
-              >
-                <button
-                  onClick={() => setActiveIndex(isActive ? null : index)}
-                  className="w-full flex items-center justify-between p-8 text-left"
-                >
-                  <span className={`text-lg font-bold transition-colors duration-300 ${
-                    isActive ? "text-amber-400" : "text-zinc-900 dark:text-zinc-100"
-                  }`}>
-                    {faq.question}
-                  </span>
-                  <div className={`p-2 rounded-full transition-all duration-500 ${
-                    isActive ? "bg-amber-400 text-black rotate-180" : "bg-white dark:bg-white/10 text-emerald-600"
-                  }`}>
-                    {isActive ? <Minus size={18} /> : <Plus size={18} />}
-                  </div>
-                </button>
-
-                <AnimatePresence>
-                  {isActive && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-8 pb-8 text-emerald-50/70 leading-relaxed text-base md:text-lg border-t border-white/5 pt-4">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Optional: Final CTA linked to your donation page */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-zinc-500 dark:text-zinc-400 text-sm mb-4">
-            Still have questions about our mission?
-          </p>
-          <button className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline underline-offset-4">
-            Contact our team →
-          </button>
+            Common{" "}
+            <span className="text-emerald-700 dark:text-emerald-400 italic">Questions</span>
+          </h2>
         </motion.div>
+
+        {/* Two-column layout */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+          {/* LEFT: FAQ accordion */}
+          <div className="space-y-3">
+            {FAQs.map((faq, index) => {
+              const isActive = activeIndex === index;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08, duration: 0.6 }}
+                  className={`rounded-2xl border transition-all duration-500 ${
+                    isActive
+                      ? "bg-[#064e3b] border-emerald-800 shadow-xl shadow-emerald-950/20"
+                      : "bg-white dark:bg-white/4 border-stone-200 dark:bg-emerald-800 dark:border-emerald-800 dark:border-white/8 hover:border-emerald-200 dark:hover:border-emerald-800/50"
+                  }`}
+                >
+                  <button
+                    onClick={() => setActiveIndex(isActive ? null : index)}
+                    className="w-full flex items-center justify-between px-6 py-5 text-left gap-4"
+                  >
+                    <span className={`text-base font-bold leading-snug transition-colors duration-300 ${
+                      isActive ? "text-amber-400" : "text-stone-900 dark:text-zinc-100"
+                    }`}>
+                      {faq.question}
+                    </span>
+                    <div className={`shrink-0 p-1.5 rounded-full transition-all duration-300 ${
+                      isActive
+                        ? "bg-amber-400 text-black"
+                        : "bg-emerald-50 dark:bg-emerald-900/70 text-emerald-700 dark:text-emerald-400"
+                    }`}>
+                      {isActive ? <Minus size={15} /> : <Plus size={15} />}
+                    </div>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isActive && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <p className="px-6 pb-6 pt-2 text-emerald-100/70 leading-relaxed text-[15px] border-t border-white/8">
+                          {faq.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+
+            {/* Footer CTA */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="pt-4"
+            >
+              <p className="text-stone-400 dark:text-stone-500 text-sm mb-2">
+                Still have questions about our mission?
+              </p>
+              <button className="text-emerald-700 dark:text-emerald-400 font-bold text-sm hover:underline underline-offset-4 transition-colors">
+                Contact our team →
+              </button>
+            </motion.div>
+          </div>
+
+          {/* RIGHT: Images — hidden on mobile */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden lg:flex flex-col sticky top-28"
+          >
+
+            {/* Image 2 — inset right, overlapping */}
+            <div className="relative  -mt-10 ml-10 border-4 border-[#F9FBFA] dark:border-[#041d14]">
+              <img
+                src="/README.png"
+                alt="Youth education"
+                className="w-full h-[500px] object-contain"
+              />
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-[#064e3b]/50 to-transparent" />
+              <div className="absolute bottom-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-md bg-white/80 dark:bg-black/50 border border-white/30 text-[11px] font-semibold text-stone-700 dark:text-stone-200">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                Youth Education
+              </div> */}
+            </div>
+
+            {/* Stat pill */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="-mt-[4.6rem] z-10 self-start flex items-center gap-4 bg-white dark:bg-white/5 border border-stone-200 dark:border-white/8 rounded-2xl px-5 py-4 shadow-md"
+            >
+              <div className="h-9 w-9 rounded-full bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center shrink-0">
+                <span className="text-base">🌍</span>
+              </div>
+              <div>
+                <p className="text-[11px] text-stone-400 dark:text-stone-500 font-medium mb-0.5">Our reach</p>
+                <p className="text-lg font-black text-stone-900 dark:text-white leading-none">5+ States · 500+ Lives</p>
+              </div>
+            </motion.div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

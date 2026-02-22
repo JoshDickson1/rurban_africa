@@ -177,7 +177,7 @@ export function Navbar() {
 
             {/* MOBILE BUTTON */}
             <button
-              className={`lg:hidden ${isScrolled ? "text-black" : "text-white"}`}
+              className={`lg:hidden ${isScrolled ? "text-black dark:text-white" : "text-white"}`}
               onClick={() => setMenuOpen(true)}
             >
               <PanelRight size={28} />

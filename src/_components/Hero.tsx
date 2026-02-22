@@ -169,7 +169,7 @@ const Hero = ({
               </p>
 
               {/* ─ CTA Buttons ─ */}
-              <div className="flex flex-wrap items-center justify-center gap-3 md:justify-start md:flex-shrink-0">
+              <div className="flex flex-row items-center justify-center gap-3 md:justify-start md:flex-shrink-0">
                 {/* Primary CTA */}
                 <Link
                   to="/about"
