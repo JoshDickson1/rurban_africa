@@ -21,6 +21,8 @@ export default function CTA() {
       ref={containerRef}
       className="relative py-16 md:py-24 overflow-hidden bg-[#F9FBFA] dark:bg-[#041d14] transition-colors duration-700"
     >
+                  {/* Radial glow top-left */}
+        <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-emerald-400/10 blur-3xl pointer-events-none" />
       <div className="max-w-6xl mx-auto px-6">
         <div className="relative bg-[#064e3b] rounded-[2.5rem] p-8 md:p-14 lg:p-16 overflow-visible shadow-2xl shadow-emerald-950/30">
 

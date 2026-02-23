@@ -59,9 +59,9 @@ const App = () => {
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/partnership" element={<Partners />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
 
-          <Route path="*" element={<NotFound />} />
         </Routes>
           </BrowserRouter>
         </TooltipProvider>
