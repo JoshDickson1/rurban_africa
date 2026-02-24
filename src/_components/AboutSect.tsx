@@ -225,7 +225,7 @@ const AboutSect = () => {
             >
               <Link
                 to="/about"
-                className={`group inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-bold bg-[#015219] text-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
+                className={`group inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-bold bg-[#064e3b] text-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
               >
                 Learn More
                 <span className={`flex h-7 w-7 items-center justify-center rounded-full transition-transform bg-yellow-500 group-hover:rotate-45 font-black`}>

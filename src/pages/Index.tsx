@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Heart, Users, BookOpen, Sprout, ArrowRight, HandHeart, Globe, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,7 @@ import DonateHero from "@/_components/DonateHero";
 import DreamHubs from "@/_components/DreamsHub";
 import WhatWeDo from "@/_components/WhatWeDo";
 import TeamsOverview from "@/_components/TeamsOverview";
+import BlogPreview from "@/_components/BlogPreview";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -55,10 +57,14 @@ const programs = [
 ];
 
 const Index = () => {
+  const sectionRef = useRef(null);
   return (
     <div>
+      <div id="hero-section" ref={sectionRef} className="">
       {/* Hero Section */}
       <Hero title={"Give Africa Children and Youth in Rural and Peri-urban Communities a Chance"} />
+
+      </div>
 
       <section className="relative overflow-hidden bg-white py-24 dark:bg-zinc-950">
       
@@ -138,6 +144,10 @@ const Index = () => {
       {/* Programs */}
       <div>
         <WhatWeDo />
+      </div>
+
+      <div className="">
+        <BlogPreview />
       </div>
 
       <div className="">

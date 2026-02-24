@@ -50,7 +50,7 @@ export function Navbar() {
       <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
 
         {/* TOP BAR */}
-        <div className={`bg-[#00521A] text-white transition-all duration-500 overflow-hidden hidden lg:block ${
+        <div className={`bg-[#064e3b] text-white transition-all duration-500 overflow-hidden hidden lg:block ${
           isScrolled ? "h-0 opacity-0" : "h-14 opacity-100"
         }`}>
           <div className="flex justify-between items-center h-14 px-6 xl:px-16 text-sm">
@@ -168,7 +168,7 @@ export function Navbar() {
 
               <button
                 onClick={() => navigate("/donate")}
-                className="h-12 px-8 rounded-lg bg-[#00521A] text-white font-semibold shadow-lg hover:scale-105 active:scale-95 transition"
+                className="h-12 px-8 rounded-lg bg-[#064e3b] text-white font-semibold shadow-lg hover:scale-105 active:scale-95 transition"
               >
                 Donate Now
               </button>
@@ -207,7 +207,7 @@ export function Navbar() {
 
             <button
               onClick={() => navigate("/donate")}
-              className="mt-6 h-12 px-8 bg-[#00521A] rounded-lg"
+              className="mt-6 h-12 px-8 bg-[#064e3b] rounded-lg"
             >
               Donate Now
             </button>

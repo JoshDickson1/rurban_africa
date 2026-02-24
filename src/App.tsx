@@ -13,7 +13,7 @@ import Team from "./pages/Team";
 import NotFound from "./pages/NotFound";
 import Loading from "./_components/Loading";
 import Partners from "./pages/Partners";
-import { Contact } from "lucide-react";
+import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
 import Donate from "./pages/Donate";
@@ -21,6 +21,7 @@ import Terms from "./pages/Terms";
 import FAQs from "./pages/FAQs";
 import Career from "./pages/Career";
 import Layout from "./components/Layout";
+import SingleBlog from "./pages/SingleBlog";
 
 const queryClient = new QueryClient();
 
@@ -56,9 +57,11 @@ const App = () => {
             <Route path="/donate" element={<Donate />} />
             <Route path="/career" element={<Career />} />
             <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blogs/:slug" element={<SingleBlog />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/partnership" element={<Partners />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 
