@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, HelpCircle } from "lucide-react";
+import PageHero from "@/_components/PageHero";
 
 const FAQs = [
   {
@@ -27,7 +28,16 @@ export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-24 md:py-32 bg-[#F9FBFA] dark:bg-[#041d14] transition-colors duration-700 overflow-hidden">
+    <section className="relative  bg-[#F9FBFA] dark:bg-[#041d14] transition-colors duration-700 overflow-hidden">
+      {/* Page Hero */}
+      <PageHero
+              tag="FAQs"
+              title="Frequently Asked Questions"
+              accentWord="You"
+              description="Answers to common questions about our mission, impact, and how you can get involved."
+              crumbs={[{ label: "FAQs" }]}
+            />
+
 
       {/* Ambient glow */}
       <div className="absolute bottom-0 left-0 -z-10 w-96 h-96 bg-emerald-300/10 dark:bg-emerald-400/5 blur-3xl rounded-full -translate-x-1/3 translate-y-1/4 pointer-events-none" />

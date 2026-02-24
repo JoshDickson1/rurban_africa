@@ -22,6 +22,7 @@ import FAQs from "./pages/FAQs";
 import Career from "./pages/Career";
 import Layout from "./components/Layout";
 import SingleBlog from "./pages/SingleBlog";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +63,7 @@ const App = () => {
             <Route path="/terms" element={<Terms />} />
             <Route path="/partnership" element={<Partners />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 

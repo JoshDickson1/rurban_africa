@@ -47,7 +47,7 @@ const FOOTER_LINKS = {
   ],
   "Community": [
     { name: "FAQs", to: "/faqs" },
-    { name: "Terms & Services", to: "/terms" },
+    { name: "Privacy Policy", to: "/privacy" },
     { name: "Work hours", to: "/work-hours" },
   ]
 };

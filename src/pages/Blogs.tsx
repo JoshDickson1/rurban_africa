@@ -50,7 +50,7 @@ export default function Blogs() {
                   className={`flex h-9 w-9 items-center justify-center rounded-xl border transition-all ${
                     view === "list"
                       ? "bg-[#064e3b] border-[#064e3b] text-white"
-                      : "border-stone-200 dark:border-white/10 bg-white dark:bg-white/4 text-stone-400 hover:border-emerald-300"
+                      : "border-stone-200 dark:border-white/10 bg-white dark:bg-[#0d2e1e] text-stone-400 hover:border-emerald-300"
                   }`}
                 >
                   <List size={15} />
@@ -60,7 +60,7 @@ export default function Blogs() {
                   className={`flex h-9 w-9 items-center justify-center rounded-xl border transition-all ${
                     view === "grid"
                       ? "bg-[#064e3b] border-[#064e3b] text-white"
-                      : "border-stone-200 dark:border-white/10 bg-white dark:bg-white/4 text-stone-400 hover:border-emerald-300"
+                      : "border-stone-200 dark:border-white/10 bg-white dark:bg-[#0d2e1e] text-stone-400 hover:border-emerald-300"
                   }`}
                 >
                   <LayoutGrid size={15} />
@@ -83,7 +83,7 @@ export default function Blogs() {
                   placeholder="Search posts…"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-4 pr-10 py-3 rounded-xl bg-white dark:bg-white/5 border border-stone-200 dark:border-white/8 text-stone-800 dark:text-white placeholder:text-stone-400 dark:placeholder:text-stone-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-300 dark:focus:ring-emerald-700 transition"
+                  className="w-full pl-4 pr-10 py-3 rounded-xl bg-white dark:bg-[#0d2e1e] border border-stone-200 dark:border-[#0d2e1e] text-stone-800 dark:text-white placeholder:text-stone-400 dark:placeholder:text-stone-500 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-300 dark:focus:ring-emerald-700 transition"
                 />
                 <button className="absolute right-3 top-1/2 -translate-y-1/2 flex h-7 w-7 items-center justify-center rounded-lg bg-[#064e3b] text-white">
                   <Search size={13} />
@@ -102,7 +102,7 @@ export default function Blogs() {
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl border text-sm font-semibold text-left transition-all ${
                       activeCategory === cat
                         ? "bg-[#064e3b] border-[#064e3b] text-white"
-                        : "bg-white dark:bg-white/4 border-stone-200 dark:border-white/8 text-stone-600 dark:text-stone-300 hover:border-emerald-200 dark:hover:border-emerald-700/40"
+                        : "bg-white dark:bg-[#0d2e1e] border-stone-200 dark:border-[#0d2e1e] text-stone-600 dark:text-stone-300 hover:border-emerald-200 dark:hover:border-emerald-700/40"
                     }`}
                   >
                     <span className={`flex h-7 w-7 items-center justify-center rounded-lg shrink-0 ${
@@ -127,7 +127,7 @@ export default function Blogs() {
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold tracking-wide border transition-all ${
                       activeCategory === tag
                         ? "bg-[#064e3b] border-[#064e3b] text-white"
-                        : "bg-white dark:bg-white/4 border-stone-200 dark:border-white/8 text-stone-600 dark:text-stone-300 hover:border-emerald-200 dark:hover:border-emerald-700/40"
+                        : "bg-white dark:bg-[#0d2e1e] border-stone-200 dark:border-[#064e3b] text-stone-600 dark:text-stone-300 hover:border-emerald-200 dark:hover:border-emerald-700/40"
                     }`}
                   >
                     <Tag size={10} />

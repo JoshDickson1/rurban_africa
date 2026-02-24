@@ -105,7 +105,7 @@ const inputClass = (hasError: boolean) =>
    focus:outline-none focus:ring-2 focus:ring-emerald-300 dark:focus:ring-emerald-700 transition-all
    ${hasError
      ? "border-red-300 dark:border-red-700 bg-red-50/50 dark:bg-red-900/10"
-     : "border-stone-200 dark:border-white/8 hover:border-stone-300 dark:hover:border-white/14"}`;
+     : "border-stone-200 dark:border-[#064e3b] hover:border-stone-300 dark:hover:border-white/14"}`;
 
 // ── Success Dialog ────────────────────────────────────────────
 function SuccessDialog({ name, onClose }: { name: string; onClose: () => void }) {
@@ -123,7 +123,7 @@ function SuccessDialog({ name, onClose }: { name: string; onClose: () => void })
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full max-w-md bg-white dark:bg-[#0d2e1e] rounded-3xl p-8 shadow-2xl border border-stone-200 dark:border-white/8 text-center"
+          className="relative w-full max-w-md bg-white dark:bg-[#0d2e1e] rounded-3xl p-8 shadow-2xl border border-stone-200 dark:border-[#064e3b] text-center"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close */}
@@ -263,7 +263,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-white dark:bg-white/4 rounded-3xl border border-stone-200 dark:border-white/8 p-8 lg:p-10 shadow-sm"
+              className="bg-white dark:bg-emerald-950 rounded-3xl border border-stone-200 dark:border-[#064e3b] p-8 lg:p-10 shadow-sm"
             >
               <div className="flex items-center gap-3 mb-8">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800/40">
@@ -412,7 +412,7 @@ export default function Contact() {
               ))}
 
               {/* Social strip */}
-              <div className="flex items-center gap-3 mt-2 p-5 rounded-2xl bg-white dark:bg-white/4 border border-stone-200 dark:border-white/8">
+              <div className="flex items-center gap-3 mt-2 p-5 rounded-2xl bg-white dark:bg-white/4 border border-stone-200 dark:border-[#064e3b]">
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mr-1">
                   Follow us
                 </p>

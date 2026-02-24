@@ -12,7 +12,7 @@ function FeaturedPost({ post }: { post: BlogPost }) {
   return (
     <Link
       to={`/blogs/${post.slug}`}
-      className="group relative flex flex-col lg:flex-row gap-0 overflow-hidden rounded-3xl border border-stone-200 dark:border-white/8 bg-white dark:bg-white/4 hover:border-emerald-200 dark:hover:border-emerald-700/40 hover:shadow-xl transition-all duration-500 mb-6"
+      className="group relative flex flex-col lg:flex-row gap-0 overflow-hidden rounded-3xl border border-stone-200 dark:border-[#0d2e1e] bg-white dark:bg-[#0d2e1e] hover:border-emerald-200 dark:hover:border-emerald-700/40 hover:shadow-xl transition-all duration-500 mb-6"
     >
       {/* Image */}
       <div className="relative lg:w-[55%] h-56 lg:h-80 overflow-hidden shrink-0">
@@ -34,7 +34,7 @@ function FeaturedPost({ post }: { post: BlogPost }) {
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400">{post.tag}</span>
             {post.location && (
               <>
-                <span className="w-px h-3 bg-stone-200 dark:bg-white/10" />
+                <span className="w-px h-3 bg-stone-200 dark:bg-[#0d2e1e]" />
                 <span className="flex items-center gap-1 text-stone-400 text-[11px]">
                   <MapPin size={10} />
                   {post.location}
@@ -53,10 +53,10 @@ function FeaturedPost({ post }: { post: BlogPost }) {
           </p>
         </div>
 
-        <div className="flex items-center justify-between mt-6 pt-5 border-t border-stone-100 dark:border-white/8">
+        <div className="flex items-center justify-between mt-6 pt-5 border-t border-stone-100 dark:border-[#0d2e1e]">
           <div className="flex items-center gap-3 text-[11px] text-stone-400">
             <span>{post.date}</span>
-            <span className="w-px h-3 bg-stone-200 dark:bg-white/10" />
+            <span className="w-px h-3 bg-stone-200 dark:bg-[#0d2e1e]" />
             <span className="flex items-center gap-1"><Clock size={11} />{post.readTime}</span>
           </div>
           <span className="flex items-center gap-2 text-sm font-bold text-emerald-700 dark:text-emerald-400 group-hover:gap-3 transition-all duration-300">
@@ -75,7 +75,7 @@ function GridCard({ post }: { post: BlogPost }) {
   return (
     <Link
       to={`/blogs/${post.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-stone-200 dark:border-white/8 bg-white dark:bg-white/4 hover:border-emerald-200 dark:hover:border-emerald-700/40 hover:shadow-lg transition-all duration-400"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-stone-200 dark:border-[#0d2e1e] bg-white dark:bg-[#0d2e1e] hover:border-emerald-200 dark:hover:border-emerald-700/40 hover:shadow-lg transition-all duration-400"
     >
       <div className="relative h-44 overflow-hidden">
         <img
@@ -100,7 +100,7 @@ function GridCard({ post }: { post: BlogPost }) {
           {post.excerpt}
         </p>
 
-        <div className="flex items-center justify-between pt-4 border-t border-stone-100 dark:border-white/8">
+        <div className="flex items-center justify-between pt-4 border-t border-stone-100 dark:border-[#0d2e1e]">
           <span className="text-[11px] text-stone-400">{post.date}</span>
           <span className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800/40 text-emerald-700 dark:text-emerald-400 group-hover:bg-amber-400 group-hover:text-black group-hover:border-amber-400 group-hover:rotate-45 transition-all duration-300">
             <ArrowUpRight size={12} strokeWidth={3} />
@@ -162,7 +162,7 @@ export default function BlogsContent({ filter = "All" }: { filter?: string }) {
           <button
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 dark:border-white/10 bg-white dark:bg-white/4 text-stone-600 dark:text-stone-300 disabled:opacity-30 hover:border-emerald-300 dark:hover:border-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-400 transition-all"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 dark:border-white/10 bg-white dark:bg-[#0d2e1e] text-stone-600 dark:text-stone-300 disabled:opacity-30 hover:border-emerald-300 dark:hover:border-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-400 transition-all"
           >
             <ChevronLeft size={15} />
           </button>
@@ -174,7 +174,7 @@ export default function BlogsContent({ filter = "All" }: { filter?: string }) {
               className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold transition-all ${
                 n === page
                   ? "bg-[#064e3b] text-white shadow-md"
-                  : "border border-stone-200 dark:border-white/10 bg-white dark:bg-white/4 text-stone-600 dark:text-stone-300 hover:border-emerald-300 hover:text-emerald-700 dark:hover:border-emerald-700 dark:hover:text-emerald-400"
+                  : "border border-stone-200 dark:border-white/10 bg-white dark:bg-[#0d2e1e] text-stone-600 dark:text-stone-300 hover:border-emerald-300 hover:text-emerald-700 dark:hover:border-emerald-700 dark:hover:text-emerald-400"
               }`}
             >
               {n}
@@ -184,7 +184,7 @@ export default function BlogsContent({ filter = "All" }: { filter?: string }) {
           <button
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 dark:border-white/10 bg-white dark:bg-white/4 text-stone-600 dark:text-stone-300 disabled:opacity-30 hover:border-emerald-300 dark:hover:border-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-400 transition-all"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 dark:border-white/10 bg-white dark:bg-[#0d2e1e] text-stone-600 dark:text-stone-300 disabled:opacity-30 hover:border-emerald-300 dark:hover:border-emerald-700 hover:text-emerald-700 dark:hover:text-emerald-400 transition-all"
           >
             <ChevronRight size={15} />
           </button>
