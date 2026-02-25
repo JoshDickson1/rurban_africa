@@ -13,6 +13,7 @@ const Loading = () => {
         <img
           src="/rurban_logo.svg"
           alt="Rurban Africa"
+          loading="eager"
           className="h-20 w-20 object-contain"
         />
 

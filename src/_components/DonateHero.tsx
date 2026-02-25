@@ -6,7 +6,7 @@ import { ArrowUpRight, Globe, RefreshCw } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 // ⚠️ Replace with your actual Formspree form ID
-const FORMSPREE_ID = "xpwzgknd";
+const FORMSPREE_ID = "mrearwgb";
 
 const fade = (delay = 0, y = 16) => ({
   initial: { opacity: 0, y },

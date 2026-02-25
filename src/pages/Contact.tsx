@@ -8,8 +8,9 @@ import {
   Facebook, Twitter, Linkedin
 } from "lucide-react";
 import PageHero from "@/_components/PageHero";
+import DonateHero from "@/_components/DonateHero";
 
-const FORMSPREE_ID = "YOUR_FORM_ID"; // 🔁 Replace with your Formspree form ID
+const FORMSPREE_ID = "mqedwowg"; // 🔁 Replace with your Formspree form ID
 
 // ── Validation ────────────────────────────────────────────────
 interface FormData {
@@ -412,8 +413,8 @@ export default function Contact() {
               ))}
 
               {/* Social strip */}
-              <div className="flex items-center gap-3 mt-2 p-5 rounded-2xl bg-white dark:bg-white/4 border border-stone-200 dark:border-[#064e3b]">
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 dark:text-stone-500 mr-1">
+              <div className="flex items-center gap-3 mt-2 p-5 rounded-2xl bg-white dark:bg-amber-400 border border-stone-200 dark:border-[#064e3b]">
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-stone-400 dark:text-white mr-1">
                   Follow us
                 </p>
                 {socials.map((s) => (
@@ -423,7 +424,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 dark:border-white/10 bg-stone-50 dark:bg-white/5 text-stone-500 dark:text-stone-400 hover:bg-[#064e3b] hover:text-white hover:border-[#064e3b] transition-all"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 dark:border-emerald-900 bg-stone-50 dark:bg-emerald-900 text-stone-500 dark:text-white hover:bg-[#064e3b] hover:text-white hover:border-[#064e3b] transition-all"
                   >
                     {s.icon}
                   </a>
@@ -433,6 +434,10 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      <div className="">
+        <DonateHero />
+      </div>
 
       {/* Success dialog */}
       {showSuccess && (

@@ -1,20 +1,17 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { Heart, Users, BookOpen, Sprout, ArrowRight, HandHeart, Globe, GraduationCap } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import AfricaOutline from "@/components/AfricaOutline";
+import { Users, BookOpen, Sprout, HandHeart, Globe, GraduationCap } from "lucide-react";
 import Hero from "@/_components/Hero";
 import AboutSect from "@/_components/AboutSect";
 import TargetAudience from "@/_components/TargetAudience";
 import MisVis from "@/_components/MisVis";
 import CTA from "@/_components/CTA";
-import FAQ from "./FAQs";
 import DonateHero from "@/_components/DonateHero";
 import DreamHubs from "@/_components/DreamsHub";
 import WhatWeDo from "@/_components/WhatWeDo";
 import TeamsOverview from "@/_components/TeamsOverview";
 import BlogPreview from "@/_components/BlogPreview";
+import FAQSect from "@/_components/FAQSect";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -66,7 +63,7 @@ const Index = () => {
 
       </div>
 
-      <section className="relative overflow-hidden bg-white py-24 dark:bg-zinc-950">
+      <section className="relative overflow-hidden bg-white py-24 dark:bg-gradient-to-b dark:from-[#064e3b] dark:to-[#064e3b]">
       
 
       <div className="container relative mx-auto px-6">
@@ -89,7 +86,7 @@ const Index = () => {
 
               <div className="relative mb-6">
                 {/* Icon Circle */}
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 transition-colors duration-500 group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-900/20 dark:text-emerald-400">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 transition-colors duration-500 group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-800/30 dark:text-emerald-400">
                   <stat.icon size={28} strokeWidth={1.5} />
                 </div>
                 
@@ -121,7 +118,7 @@ const Index = () => {
     </section>
 
       {/* About Teaser */}
-      <section id="about" className="">
+      <section id="about" className="bg-[#064e3b]">
         <AboutSect />
       </section>
 
@@ -151,7 +148,7 @@ const Index = () => {
       </div>
 
       <div className="">
-        <FAQ />
+        <FAQSect />
       </div>
 
       <div className="">

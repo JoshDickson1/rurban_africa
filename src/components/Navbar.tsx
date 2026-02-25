@@ -119,7 +119,7 @@ export function Navbar() {
         {/* MAIN NAV */}
         <nav className={`transition-all duration-500 ${
           isScrolled 
-            ? "bg-white/60 backdrop-blur-xl shadow-sm dark:bg-green-900/60" 
+            ? "bg-white/60 backdrop-blur-xl shadow-sm dark:bg-[#064e3b]/60" 
             : "bg-transparent"
         }`}>
 
@@ -130,6 +130,7 @@ export function Navbar() {
               <img
                 src="/rurban_logo.svg"
                 alt="Rurban Africa Logo"
+                loading="eager"
                 className="h-12 sm:h-14 lg:h-16 w-auto object-contain"
               />
 
@@ -168,7 +169,7 @@ export function Navbar() {
 
               <button
                 onClick={() => navigate("/donate")}
-                className="h-12 px-8 rounded-lg bg-[#064e3b] text-white font-semibold shadow-lg hover:scale-105 active:scale-95 transition"
+                className="h-12 px-8 rounded-lg bg-[#064e3b] text-white dark:bg-white dark:text-black font-semibold shadow-lg hover:scale-105 active:scale-95 transition"
               >
                 Donate Now
               </button>
@@ -207,7 +208,7 @@ export function Navbar() {
 
             <button
               onClick={() => navigate("/donate")}
-              className="mt-6 h-12 px-8 bg-[#064e3b] rounded-lg"
+              className="mt-6 h-12 px-8 bg-[#064e3b] dark:bg-white dark:text-black rounded-lg"
             >
               Donate Now
             </button>

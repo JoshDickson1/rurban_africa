@@ -61,7 +61,7 @@ const pastEvents = [
 
 const Events = () => {
   return (
-    <Layout>
+    <div>
       <PageHero
         title="Events"
         subtitle="Join Us"
@@ -169,7 +169,7 @@ const Events = () => {
           </div>
         </motion.div>
       </section>
-    </Layout>
+    </div>
   );
 };
 

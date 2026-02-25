@@ -21,7 +21,7 @@ export default function TargetAudience() {
   }, []);
 
   return (
-    <section className="py-20 bg-white dark:bg-[#062c1f] transition-colors duration-700">
+    <section className="py-20 bg-white dark:bg-[#064e3b] transition-colors duration-700">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold mb-12 text-zinc-900 dark:text-white">Target Audience</h2>
         

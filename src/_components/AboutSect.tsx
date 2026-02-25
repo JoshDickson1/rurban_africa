@@ -22,8 +22,17 @@ const AboutSect = () => {
   return (
     <section
       ref={sectionRef}
-      className={`relative overflow-hidden bg-background py-24 md:py-32 lg:py-40`}
+      className={`relative overflow-hidden  dark:bg-[#064e3b]/50 bg-background py-24 md:py-32 lg:py-40`}
     >
+            {/* Dot grid */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-300/10 blur-3xl rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-300/8 blur-3xl rounded-full -translate-x-1/3 translate-y-1/4 pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-14">
 
@@ -132,7 +141,7 @@ const AboutSect = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.7 }}
-              className={`mt-10 grid grid-cols-3 divide-x rounded-2xl border p-5  divide-zinc-800 divide-stone-200 backdrop-blur-sm`}
+              className={`mt-10 grid grid-cols-3 divide-x rounded-2xl border p-5  divide-zinc-800 divide-stone-200 dark:border-emerald-700 dark:bg-emerald-950/20 dark:divide-emerald-800 backdrop-blur-sm`}
             >
               {[
                 { n: "5+",    l: "States Reached" },
@@ -209,7 +218,7 @@ const AboutSect = () => {
               {["Education", "Opportunity", "Sustainability", "Community", "Inclusion"].map((tag) => (
                 <span
                   key={tag}
-                  className={`rounded-lg border px-3 py-1 text-[12px] font-semibold tracking-wide border-green-300 dark:border-green-900 bg-green-100 dark:bg-emerald-950/30 dark:text-emerald-400`}
+                  className={`rounded-lg border px-3 py-1 text-[12px] font-semibold tracking-wide border-green-300 dark:border-green-900 bg-green-100 dark:bg-[#064e3b] dark:text-emerald-400`}
                 >
                   {tag}
                 </span>
@@ -225,7 +234,7 @@ const AboutSect = () => {
             >
               <Link
                 to="/about"
-                className={`group inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-bold bg-[#064e3b] text-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
+                className={`group inline-flex items-center gap-3 rounded-full px-7 py-4 text-sm font-bold bg-[#064e3b] dark:bg-white dark:text-black text-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
               >
                 Learn More
                 <span className={`flex h-7 w-7 items-center justify-center rounded-full transition-transform bg-yellow-500 group-hover:rotate-45 font-black`}>

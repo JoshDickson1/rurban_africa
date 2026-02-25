@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import BlogsContent from "@/_components/BlogsContent";
 import { CATEGORIES, TAGS } from "@/data/BlogData";
 import PageHero from "@/_components/PageHero";
+import DonateHero from "@/_components/DonateHero";
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 14 },
@@ -157,6 +158,9 @@ export default function Blogs() {
 
           </aside>
         </div>
+      </div>
+      <div className="">
+        <DonateHero />
       </div>
     </div>
   );

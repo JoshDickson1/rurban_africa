@@ -88,10 +88,10 @@ export default function TeamsOverview() {
           >
             <Link
               to="/team"
-              className="group inline-flex items-center gap-3 bg-white text-[#064e3b] px-6 py-3 rounded-full font-bold text-sm tracking-wide hover:bg-amber-400 hover:text-black transition-all duration-300 shadow-lg"
+              className="group inline-flex items-center gap-3 bg-white text-[#064e3b] hover:text-white px-6 py-3 rounded-full font-bold text-sm tracking-wide hover:bg-amber-400 hover:text-black transition-all duration-300 shadow-lg"
             >
               View all
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#064e3b]/10 group-hover:bg-black/10 group-hover:rotate-45 transition-transform duration-300">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 group-hover:bg-emerald-900 text-white group-hover:rotate-45 transition-transform duration-300">
                 <ArrowUpRight size={13} strokeWidth={3} />
               </span>
             </Link>

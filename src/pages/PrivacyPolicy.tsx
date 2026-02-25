@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ChevronUp } from "lucide-react";
+import DonateHero from "@/_components/DonateHero";
 
 const fade = (delay = 0, y = 20) => ({
   initial: { opacity: 0, y },
@@ -350,6 +351,10 @@ export default function PrivacyPolicy() {
             </motion.div>
           </main>
         </div>
+      </div>
+
+      <div className="">
+        <DonateHero />
       </div>
 
       {/* ─── SCROLL TO TOP ─── */}

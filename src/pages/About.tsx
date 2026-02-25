@@ -1,6 +1,15 @@
+import DonateHero from "@/_components/DonateHero"
+
 const About = () => {
   return (
-    <div>About</div>
+    <div>
+      
+
+
+      <div className="">
+        <DonateHero />
+      </div>
+    </div>
   )
 }
 

@@ -24,20 +24,11 @@ const FAQs = [
   }
 ];
 
-export default function FAQ() {
+export default function FAQSect() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative bg-[#F9FBFA] dark:bg-[#064e3b] transition-colors duration-700 overflow-hidden">
-      {/* Page Hero */}
-      <PageHero
-              tag="FAQs"
-              title="Frequently Asked Questions"
-              accentWord="You"
-              description="Answers to common questions about our mission, impact, and how you can get involved."
-              crumbs={[{ label: "FAQs" }]}
-            />
-
+    <section className="relative bg-[#F9FBFA] dark:bg-[#064e3b] transition-colors duration-700 overflow-hidden py-10">
 
       {/* Ambient glow */}
       <div className="absolute bottom-0 left-0 -z-10 w-96 h-96 bg-emerald-300/10 dark:bg-emerald-400/5 blur-3xl rounded-full -translate-x-1/3 translate-y-1/4 pointer-events-none" />

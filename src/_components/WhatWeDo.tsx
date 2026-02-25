@@ -1,6 +1,8 @@
 "use client";
 
 import { motion, cubicBezier } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const programs = [
   {
@@ -60,10 +62,18 @@ const fade = (delay = 0, x = 0, y = 16) => ({
 
 export default function WhatWeDo() {
   return (
-    <section className="relative py-24 md:py-32 bg-[#F9FBFA] dark:bg-[#041d14] transition-colors duration-700 overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-[#F9FBFA] dark:bg-[#032d20] transition-colors duration-700 overflow-hidden">
 
-      {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-300/8 dark:bg-emerald-400/5 blur-3xl rounded-full pointer-events-none -z-10" />
+
+      {/* Dot grid */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-300/10 blur-3xl rounded-full translate-x-1/3 -translate-y-1/4 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-300/8 blur-3xl rounded-full -translate-x-1/3 translate-y-1/4 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-14">
 
@@ -201,9 +211,38 @@ export default function WhatWeDo() {
               />
             </motion.div>
           </div>
-
+<div className="-mt-20">
+        {/* CTA to join / sponsor outreaches */}
+        <div className="max-w-3xl mt-20 text-left">
+          <motion.h3
+            {...fade(0.3)}
+            className="text-sm text-stone-500 mb-6 leading-snug tracking-tight"
+          >
+            Join us in empowering rural communities and bridging the gap to opportunity.
+          </motion.h3>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="shrink-0"
+          >
+            <Link
+              to="/donate"
+              className="group inline-flex items-center gap-3 bg-white text-[#064e3b] hover:text-white px-6 py-3 rounded-full font-bold text-sm tracking-wide hover:bg-amber-400 hover:text-black transition-all duration-300 shadow-lg"
+            >
+              Get Involved
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 group-hover:bg-emerald-900 text-white group-hover:rotate-45 transition-transform duration-300">
+                <ArrowUpRight size={13} strokeWidth={3} />
+              </span>
+            </Link>
+          </motion.div>
+        </div>  
+      </div>
         </div>
       </div>
+
+      
     </section>
   );
 }
