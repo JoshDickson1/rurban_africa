@@ -436,9 +436,9 @@ export default function WhyDreamHubs() {
                   className="mt-8 flex flex-wrap gap-3"
                 >
                   <a href="/donate"
-                    className="inline-flex items-center gap-2.5 bg-amber-400 hover:bg-amber-300 text-black px-6 py-3 rounded-full font-black text-sm group transition-colors shadow-lg shadow-black/20">
+                    className="inline-flex items-center gap-2.5 bg-amber-400 hover:bg-amber-300 text-white px-6 py-3 rounded-full font-black text-sm group transition-colors shadow-lg shadow-black/20">
                     Donate
-                    <span className="bg-black/10 rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
+                    <span className="bg-emerald-900 rounded-full p-1 group-hover:rotate-45 transition-transform duration-300">
                       <ArrowUpRight size={13} strokeWidth={3} />
                     </span>
                   </a>

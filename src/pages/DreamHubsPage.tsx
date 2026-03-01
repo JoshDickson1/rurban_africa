@@ -1,4 +1,5 @@
 import DonateHero from '@/_components/DonateHero'
+import DreamHubsFeatures from '@/_components/DreamHubsFeatures'
 import DreamHubsIntro from '@/_components/DreamHubsIntro'
 import MisVis from '@/_components/MisVis'
 import OurBook from '@/_components/OurBook'
@@ -25,15 +26,11 @@ const DreamHubs = () => {
             </div>
 
             <div className="">
+                <DreamHubsFeatures />
+            </div>
+
+            <div className="">
                 <WhyDreamHubs />
-            </div>
-
-            <div className="">
-                <MisVis />
-            </div>
-
-            <div className="">
-                <OurBook />
             </div>
 
             <div className="">

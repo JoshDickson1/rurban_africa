@@ -49,7 +49,7 @@ const teamMembers = [
 
 const Team = () => {
   return (
-    <Layout>
+    <div>
       <PageHero
         title="Our Team"
         subtitle="The People Behind the Mission"
@@ -117,7 +117,7 @@ const Team = () => {
           </div>
         </motion.div>
       </section>
-    </Layout>
+    </div>
   );
 };
 

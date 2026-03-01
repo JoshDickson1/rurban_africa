@@ -155,7 +155,7 @@ export function Navbar() {
             }`}>
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
-              <Link to="/partnership">Team</Link>
+              <Link to="/team">Team</Link>
               <Link to="/blogs">Blogs</Link>
               <Link to="/contact">Contact</Link>
               <Link to="/dream_hubs">Dream Hubs</Link>

@@ -97,13 +97,6 @@ export default function DreamHubsIntro() {
               Dream Hubs
             </motion.h2>
 
-            {/* Accent rule */}
-            <motion.div
-              variants={lineVariants}
-              initial="hidden" animate={isInView ? "visible" : "hidden"}
-              className="h-[3px] w-16 bg-gradient-to-r from-emerald-500 to-amber-400 rounded-full mb-8"
-            />
-
             {/* Body copy */}
             <motion.p
               custom={3} variants={fadeUp}
