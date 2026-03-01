@@ -48,7 +48,7 @@ const FOOTER_LINKS = {
   "Community": [
     { name: "FAQs", to: "/faqs" },
     { name: "Privacy Policy", to: "/privacy" },
-    { name: "Work hours", to: "/work-hours" },
+    { name: "Testimonials", to: "/testimonials" },
   ]
 };
 

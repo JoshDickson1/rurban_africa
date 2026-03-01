@@ -24,6 +24,7 @@ import Layout from "./components/Layout";
 import SingleBlog from "./pages/SingleBlog";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import DreamHubsPage from "./pages/DreamHubsPage";
+import Testimonials from "./pages/Testimonials";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/dream_hubs" element={<DreamHubsPage />} /> 
+            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 
