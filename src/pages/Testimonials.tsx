@@ -9,7 +9,7 @@ export default function Testimonials() {
     <div className="">
         <PageHero
             tag="Testimonials"
-            title="Voices of Impact"
+            title="Voices of"
             accentWord="Impact"
             description="Real impact happens where rural resilience meets urban innovation. Here is what our community partners have to say."
             crumbs={[{ label: "Testimonials" }]}

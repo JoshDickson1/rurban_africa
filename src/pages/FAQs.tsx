@@ -32,8 +32,8 @@ export default function FAQ() {
       {/* Page Hero */}
       <PageHero
               tag="FAQs"
-              title="Frequently Asked Questions"
-              accentWord="You"
+              title="Frequently Asked"
+              accentWord="Questions"
               description="Answers to common questions about our mission, impact, and how you can get involved."
               crumbs={[{ label: "FAQs" }]}
             />

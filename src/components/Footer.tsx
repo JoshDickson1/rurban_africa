@@ -90,7 +90,7 @@ const Footer = () => {
             </div>
 
             <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-              Empowering Africa's future through education, one child at a time. Join us in transforming lives and building brighter communities across the continent.
+              Empowering Africa's future through education. one child at a time. Join us in transforming lives and building brighter communities across the continent.
 
             </p>
 
@@ -139,7 +139,7 @@ const Footer = () => {
               <h4 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-widest">Location</h4>
               <p className="text-sm text-slate-500 dark:text-slate-400 flex items-start gap-2">
                 <MapPin size={18} className="shrink-0 text-green-500" />
-                Lagos (21 Salvation Road, Opebi, Ikeja)
+                Lagos 21 Salvation Road, Opebi, Ikeja
               </p>
             </div>
 

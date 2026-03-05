@@ -14,7 +14,7 @@ const DreamHubs = () => {
             <div className="">
                 <PageHero
                     tag="Dream Hubs"
-                    title="Empowering Rural Innovators"
+                    title="Empowering Rural"
                     accentWord="Innovators"
                     description="Discover how Rurban Africa's Dream Hubs are transforming rural communities into vibrant centers of innovation, entrepreneurship, and sustainable development across Nigeria and Africa."
                     crumbs={[{ label: "Dream Hubs" }]}

@@ -78,7 +78,7 @@ export function Navbar() {
 
                   <div className="flex items-center gap-3">
                     <MapPin size={18} className="bg-[#F6CE40] text-black rounded-full p-2" />
-                    <span>Lagos (21 Salvation Road, Opebi, Ikeja)</span>
+                    <span>Lagos 21 Salvation Road, Opebi, Ikeja</span>
                   </div>
 
                 </div>

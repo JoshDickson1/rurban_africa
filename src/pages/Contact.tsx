@@ -51,8 +51,8 @@ const contactCards = [
   {
     icon: <Mail size={20} />,
     label: "Email",
-    lines: ["rurbanafrica037@gmail.com"],
-    href: "mailto:rurbanafrica037@gmail.com",
+    lines: ["info@rurbanafrica.com"],
+    href: "mailto:info@rurbanafrica.com",
     color: "from-amber-500/20 to-amber-700/10",
   },
   {
@@ -219,7 +219,7 @@ export default function Contact() {
     <>
       <PageHero
         tag="Get in Touch"
-        title="We'd Love to Hear From You"
+        title="We'd Love to Hear From"
         accentWord="You"
         description="Whether you want to volunteer, partner, or simply learn more — reach out and we'll respond within 24 hours."
         crumbs={[{ label: "Contact" }]}
@@ -251,7 +251,7 @@ export default function Contact() {
               <span className="italic text-emerald-700 dark:text-emerald-400">Guide You</span>
             </h2>
             <p className="text-stone-500 dark:text-stone-400 text-base max-w-xl mx-auto leading-relaxed">
-              Join us in building bridges, empowering minds, and rising together. Your partnership is not just support — it is an investment in Africa's shared destiny.
+              Join us in building bridges, empowering minds, and rising together. Your partnership is not just support, it is an investment in Africa's shared destiny.
             </p>
           </motion.div>
 

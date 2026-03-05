@@ -144,8 +144,8 @@ const AboutSect = () => {
               className={`mt-10 grid grid-cols-3 divide-x rounded-2xl border p-5  divide-zinc-800 divide-stone-200 dark:border-emerald-700 dark:bg-emerald-950/20 dark:divide-emerald-800 backdrop-blur-sm`}
             >
               {[
-                { n: "5+",    l: "States Reached" },
-                { n: "500+",  l: "Lives Touched" },
+                { n: "2",    l: "States Reached" },
+                { n: "1950+",  l: "Lives Touched" },
                 { n: "Pan‑African", l: "Non‑profit" },
               ].map((s, i) => (
                 <div key={i} className="flex flex-col items-center gap-1 px-2 text-center">
@@ -173,11 +173,11 @@ const AboutSect = () => {
               className={`mb-8 text-[clamp(1.2rem,2.5vw,1.6rem)] font-black leading-[1.25] tracking-tight text-green-700`}
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
-              "Our journey involves creating opportunities and turning{" "}
+              Our journey involves creating opportunities and turning{" "}
               <span className={`italic text-yellow-400`}>
                 red-dust roads
               </span>{" "}
-              into highways of progress for all."
+              into highways of progress for all.
             </motion.blockquote>
 
             {/* Divider */}

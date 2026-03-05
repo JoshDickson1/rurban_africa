@@ -107,7 +107,7 @@ export default function DreamHubsIntro() {
               can dream big and turn those dreams into reality. Our Dream Hubs are innovative,
               community-driven hubs designed to bridge the gap between rural roots and urban
               opportunities — vibrant centres for learning, creativity, and empowerment in underserved
-              rural and peri-urban areas across Africa, starting with pilot locations in Nigeria.
+              rural and peri-urban areas across Africa.
             </motion.p>
             <motion.p
               custom={4} variants={fadeUp}

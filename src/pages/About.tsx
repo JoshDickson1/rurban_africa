@@ -14,7 +14,7 @@ const About = () => {
       <div className="">
         <PageHero
           tag="About Rurban Africa"
-          title="Our Story, Mission, and Impact"
+          title="Our Story, Mission, and"
           accentWord="Impact"
           description="Discover how Rurban Africa is transforming rural communities through sustainable development, education, and empowerment initiatives across Nigeria and Africa."
           crumbs={[{ label: "About" }]}

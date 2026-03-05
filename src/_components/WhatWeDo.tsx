@@ -13,9 +13,9 @@ const programs = [
   },
   {
     id: "02",
-    title: "Rurban Connect & Dream Series",
+    title: "Rurban Connect & Dream Series For Children",
     description:
-      "A curated series of events, mentorship sessions, and digital content designed to spark ambition in rural children and youth.",
+      "This is a fun 10-guide series teaching children (ages 6-14) on how villages and cities connect and depend on each other and it empower Africa's next generation by showing them the bridges between rural roots and urban opportunities and helping them to dream big and value their heritage.",
   },
   {
     id: "03",

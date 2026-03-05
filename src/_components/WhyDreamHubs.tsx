@@ -128,9 +128,9 @@ const REASONS = [
 ];
 
 const DONATE_ITEMS = [
-  "Make a single donation — $, £ and ₦",
-  "Make a weekly donation — $, £ and ₦",
-  "Make a monthly donation — $, £ and ₦",
+  "Make single donation: $, £, ₦",
+  "Make weekly donation: $, £, ₦",
+  "Make monthly donation: $, £, ₦",
 ];
 
 /* ══════════════════════════════════════════════════

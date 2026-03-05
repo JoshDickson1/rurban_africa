@@ -26,7 +26,7 @@ export default function Blogs() {
       <div className="">
         <PageHero
   tag="Blog & Activities"
-  title="Stories of Impact"
+  title="Stories of"
   accentWord="Impact"
   description="Field reports, program updates, and community stories from across Nigeria and Africa."
   crumbs={[{ label: "Blog" }]}

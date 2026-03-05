@@ -29,13 +29,14 @@ const Layout = () => {
   const audioRef  = useRef<HTMLAudioElement | null>(null);
   const footerRef = useRef<HTMLDivElement | null>(null);
 
-  const [playing,      setPlaying]      = useState(false);
-  const [muted,        setMuted]        = useState(false);
-  const [hidePlayer,   setHidePlayer]   = useState(false);
-  const [expanded,     setExpanded]     = useState(false);
-  const [trackTime,    setTrackTime]    = useState({ current: 0, duration: 0 });
+  const [playing,    setPlaying]    = useState(false);
+  const [muted,      setMuted]      = useState(false);
+  const [hidePlayer, setHidePlayer] = useState(false);
+  // collapsed = just the music icon pill; expanded = full card
+  const [collapsed,  setCollapsed]  = useState(true);
+  const [trackTime,  setTrackTime]  = useState({ current: 0, duration: 0 });
 
-  // ── Restore saved preference ──
+  // ── NO autoplay — restore only if user previously played ──
   useEffect(() => {
     const saved = localStorage.getItem("bgAudioPlaying");
     if (saved === "true") setPlaying(true);
@@ -56,52 +57,46 @@ const Layout = () => {
 
   // ── Track progress ──
   useEffect(() => {
-  const audio = audioRef.current;
-  if (!audio) return;
+    const audio = audioRef.current;
+    if (!audio) return;
+    const tick = () => {
+      setTrackTime({ current: audio.currentTime, duration: audio.duration || 0 });
+    };
+    audio.addEventListener("timeupdate", tick);
+    audio.addEventListener("loadedmetadata", tick);
+    return () => {
+      audio.removeEventListener("timeupdate", tick);
+      audio.removeEventListener("loadedmetadata", tick);
+    };
+  }, []);
 
-  const tryPlay = async () => {
-    try {
-      await audio.play();
-      setPlaying(true);
-    } catch {
-      setPlaying(false);
-    }
-  };
+  // ── Collapse card on scroll, hide at footer ──
+  useEffect(() => {
+    let lastY = window.scrollY;
 
-  const handleFirstInteraction = () => {
-    tryPlay();
-    window.removeEventListener("click", handleFirstInteraction);
-  };
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const scrolled  = currentY > 80; // collapsed after 80px of scroll
+      const footer    = footerRef.current;
+      let footerVisible = false;
+      if (footer) {
+        const rect = footer.getBoundingClientRect();
+        footerVisible = rect.top < window.innerHeight;
+      }
 
-  window.addEventListener("click", handleFirstInteraction);
+      // Collapse when scrolling, expand only when near top
+      if (scrolled) {
+        setCollapsed(true);
+      }
 
-  return () => {
-    window.removeEventListener("click", handleFirstInteraction);
-  };
-}, []);
+      setHidePlayer(footerVisible);
+      lastY = currentY;
+    };
 
-  // ── Hide at footer ──
-useEffect(() => {
-  const handleScroll = () => {
-    const threshold = window.innerHeight * 1.2;
-
-    const footer = footerRef.current;
-    let footerVisible = false;
-
-    if (footer) {
-      const rect = footer.getBoundingClientRect();
-      footerVisible = rect.top < window.innerHeight;
-    }
-
-    const beforeThreshold = window.scrollY < threshold;
-
-    setHidePlayer(beforeThreshold || footerVisible);
-  };
-
-  handleScroll();
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const restart = useCallback(() => {
     const audio = audioRef.current;
@@ -110,26 +105,6 @@ useEffect(() => {
     audio.play().catch(() => {});
     setPlaying(true);
   }, []);
-useEffect(() => {
-  const audio = audioRef.current;
-  if (!audio) return;
-
-  const tick = () => {
-    setTrackTime({
-      current: audio.currentTime,
-      duration: audio.duration || 0,
-    });
-  };
-
-  audio.addEventListener("timeupdate", tick);
-  audio.addEventListener("loadedmetadata", tick);
-
-  return () => {
-    audio.removeEventListener("timeupdate", tick);
-    audio.removeEventListener("loadedmetadata", tick);
-  };
-}, []);
-
 
   const seek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const audio = audioRef.current;
@@ -165,145 +140,157 @@ useEffect(() => {
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="fixed bottom-6 right-5 z-50"
           >
-            <motion.div
-              layout
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="relative overflow-hidden rounded-2xl bg-[#064e3b] border border-emerald-700/40 shadow-2xl shadow-emerald-950/40"
-            >
-              {/* Grain texture */}
-              <div
-                className="absolute inset-0 opacity-[0.04] pointer-events-none"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-                  backgroundSize: "160px 160px",
-                }}
-              />
+            <AnimatePresence mode="wait">
 
-              {/* Ambient glow behind play button when active */}
-              {playing && (
+              {/* ── COLLAPSED: icon-only pill ── */}
+              {collapsed ? (
+                <motion.button
+                  key="pill"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                  onClick={() => setCollapsed(false)}
+                  aria-label="Open music player"
+                  className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-[#064e3b] border border-emerald-700/40 shadow-2xl shadow-emerald-950/40 hover:bg-emerald-800 transition-colors overflow-hidden"
+                >
+                  {/* Grain */}
+                  <div
+                    className="absolute inset-0 opacity-[0.04] pointer-events-none"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`, backgroundSize: "160px 160px" }}
+                  />
+                  {playing ? (
+                    <EqBars playing={playing} />
+                  ) : (
+                    <Music2 size={17} className="text-amber-400" />
+                  )}
+                  {/* Pulse ring when playing */}
+                  {playing && (
+                    <motion.span
+                      className="absolute inset-0 rounded-2xl border border-amber-400/40"
+                      animate={{ scale: [1, 1.25], opacity: [0.5, 0] }}
+                      transition={{ duration: 1.4, repeat: Infinity }}
+                    />
+                  )}
+                </motion.button>
+
+              ) : (
+
+                /* ── EXPANDED: full card ── */
                 <motion.div
-                  className="absolute -top-8 -left-8 w-24 h-24 bg-amber-400/20 rounded-full blur-2xl pointer-events-none"
-                  animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                />
+                  key="card"
+                  initial={{ opacity: 0, scale: 0.9, y: 8 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 8 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative overflow-hidden rounded-2xl bg-[#064e3b] border border-emerald-700/40 shadow-2xl shadow-emerald-950/40 w-[240px]"
+                >
+                  {/* Grain */}
+                  <div
+                    className="absolute inset-0 opacity-[0.04] pointer-events-none"
+                    style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`, backgroundSize: "160px 160px" }}
+                  />
+                  {/* Ambient glow */}
+                  {playing && (
+                    <motion.div
+                      className="absolute -top-8 -left-8 w-24 h-24 bg-amber-400/20 rounded-full blur-2xl pointer-events-none"
+                      animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                  )}
+
+                  <div className="relative px-4 py-3">
+                    {/* Top row */}
+                    <div className="flex items-center gap-3">
+
+                      {/* Eq / collapse button */}
+                      <button
+                        onClick={() => setCollapsed(true)}
+                        className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/8 hover:bg-white/14 transition-all shrink-0"
+                        aria-label="Collapse player"
+                      >
+                        <EqBars playing={playing} />
+                      </button>
+
+                      {/* Track info */}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[11px] font-bold text-white truncate leading-none mb-0.5">Anlele</p>
+                        <p className="text-[10px] text-emerald-100/40 truncate">Rurban Africa</p>
+                      </div>
+
+                      {/* Controls */}
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <button
+                          onClick={restart}
+                          className="flex h-7 w-7 items-center justify-center rounded-lg text-emerald-100/40 hover:text-white hover:bg-white/10 transition-all"
+                          aria-label="Restart"
+                        >
+                          <RotateCcw size={13} />
+                        </button>
+                        <button
+                          onClick={() => setPlaying((v) => !v)}
+                          className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-amber-400 hover:bg-amber-300 text-black transition-all shadow-md shadow-amber-900/30"
+                          aria-label={playing ? "Pause" : "Play"}
+                        >
+                          {playing && (
+                            <motion.span
+                              className="absolute inset-0 rounded-xl bg-amber-400"
+                              animate={{ scale: [1, 1.35], opacity: [0.5, 0] }}
+                              transition={{ duration: 1.2, repeat: Infinity }}
+                            />
+                          )}
+                          <motion.span
+                            key={String(playing)}
+                            initial={{ scale: 0.7, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ duration: 0.15 }}
+                          >
+                            {playing
+                              ? <Pause size={14} className="fill-black" />
+                              : <Play size={14} className="fill-black ml-0.5" />
+                            }
+                          </motion.span>
+                        </button>
+                        <button
+                          onClick={() => setMuted((v) => !v)}
+                          className="flex h-7 w-7 items-center justify-center rounded-lg text-emerald-100/40 hover:text-white hover:bg-white/10 transition-all"
+                          aria-label={muted ? "Unmute" : "Mute"}
+                        >
+                          {muted ? <VolumeX size={13} /> : <Volume2 size={13} />}
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Progress bar */}
+                    <div className="pt-3 pb-1">
+                      <div className="relative h-1.5 w-full rounded-full bg-white/10 mb-2 group cursor-pointer">
+                        <div
+                          className="absolute left-0 top-0 h-full rounded-full bg-amber-400 transition-all"
+                          style={{ width: `${progress}%` }}
+                        />
+                        <input
+                          type="range"
+                          min={0}
+                          max={trackTime.duration || 100}
+                          value={trackTime.current}
+                          onChange={seek}
+                          className="absolute inset-0 w-full opacity-0 cursor-pointer h-full"
+                        />
+                        <div
+                          className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-white shadow border-2 border-amber-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                          style={{ left: `calc(${progress}% - 6px)` }}
+                        />
+                      </div>
+                      <div className="flex justify-between text-[10px] text-emerald-100/35 font-medium">
+                        <span>{fmt(trackTime.current)}</span>
+                        <span>{fmt(trackTime.duration)}</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               )}
 
-              <div className="relative px-4 py-3">
-                {/* Collapsed / always-visible row */}
-                <div className="flex items-center gap-3">
-
-                  {/* Music icon + eq */}
-                  <button
-                    onClick={() => setExpanded((v) => !v)}
-                    className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/8 hover:bg-white/14 transition-all shrink-0"
-                    aria-label="Expand player"
-                  >
-                    {expanded
-                      ? <EqBars playing={playing} />
-                      : <Music2 size={15} className="text-amber-400" />
-                    }
-                  </button>
-
-                  {/* Track name */}
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[11px] font-bold text-white truncate leading-none mb-0.5">
-                      Anlele
-                    </p>
-                    <p className="text-[10px] text-emerald-100/40 truncate">
-                      Rurban Africa
-                    </p>
-                  </div>
-
-                  {/* Controls */}
-                  <div className="flex items-center gap-1.5 shrink-0">
-                    {/* Restart */}
-                    <button
-                      onClick={restart}
-                      className="flex h-7 w-7 items-center justify-center rounded-lg text-emerald-100/40 hover:text-white hover:bg-white/10 transition-all"
-                      aria-label="Restart"
-                    >
-                      <RotateCcw size={13} />
-                    </button>
-
-                    {/* Play / Pause */}
-                    <button
-                      onClick={() => setPlaying((v) => !v)}
-                      className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-amber-400 hover:bg-amber-300 text-black transition-all shadow-md shadow-amber-900/30"
-                      aria-label={playing ? "Pause" : "Play"}
-                    >
-                      {playing && (
-                        <motion.span
-                          className="absolute inset-0 rounded-xl bg-amber-400"
-                          animate={{ scale: [1, 1.35], opacity: [0.5, 0] }}
-                          transition={{ duration: 1.2, repeat: Infinity }}
-                        />
-                      )}
-                      <motion.span
-                        key={String(playing)}
-                        initial={{ scale: 0.7, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.15 }}
-                      >
-                        {playing
-                          ? <Pause size={14} className="fill-black" />
-                          : <Play size={14} className="fill-black ml-0.5" />
-                        }
-                      </motion.span>
-                    </button>
-
-                    {/* Mute */}
-                    <button
-                      onClick={() => setMuted((v) => !v)}
-                      className="flex h-7 w-7 items-center justify-center rounded-lg text-emerald-100/40 hover:text-white hover:bg-white/10 transition-all"
-                      aria-label={muted ? "Unmute" : "Mute"}
-                    >
-                      {muted ? <VolumeX size={13} /> : <Volume2 size={13} />}
-                    </button>
-                  </div>
-                </div>
-
-                {/* Expanded: progress bar + timestamps */}
-                <AnimatePresence>
-                  {expanded && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pt-3 pb-1">
-                        {/* Custom range */}
-                        <div className="relative h-1.5 w-full rounded-full bg-white/10 mb-2 group cursor-pointer">
-                          <div
-                            className="absolute left-0 top-0 h-full rounded-full bg-amber-400 transition-all"
-                            style={{ width: `${progress}%` }}
-                          />
-                          <input
-                            type="range"
-                            min={0}
-                            max={trackTime.duration || 100}
-                            value={trackTime.current}
-                            onChange={seek}
-                            className="absolute inset-0 w-full opacity-0 cursor-pointer h-full"
-                          />
-                          {/* Thumb */}
-                          <div
-                            className="absolute top-1/2 -translate-y-1/2 h-3 w-3 rounded-full bg-white shadow border-2 border-amber-400 opacity-0 group-hover:opacity-100 transition-opacity"
-                            style={{ left: `calc(${progress}% - 6px)` }}
-                          />
-                        </div>
-
-                        <div className="flex justify-between text-[10px] text-emerald-100/35 font-medium">
-                          <span>{fmt(trackTime.current)}</span>
-                          <span>{fmt(trackTime.duration)}</span>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </motion.div>
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>

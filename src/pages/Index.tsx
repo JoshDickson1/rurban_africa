@@ -9,7 +9,7 @@ import CTA from "@/_components/CTA";
 import DonateHero from "@/_components/DonateHero";
 import DreamHubs from "@/_components/DreamsHub";
 import WhatWeDo from "@/_components/WhatWeDo";
-import TeamsOverview from "@/_components/TeamsOverview";
+// import TeamsOverview from "@/_components/TeamsOverview";
 import BlogPreview from "@/_components/BlogPreview";
 import FAQSect from "@/_components/FAQSect";
 // import heroBg from "@/assets/hero-bg.jpg";
@@ -126,9 +126,9 @@ const Index = () => {
         <TargetAudience />
       </div>
 
-      <div className="">
+      {/* <div className="">
         <TeamsOverview />
-      </div>
+      </div> */}
 
       <div className="">
         <MisVis />

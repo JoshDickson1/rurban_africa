@@ -96,7 +96,7 @@ export default function DreamHubs() {
                 className="text-stone-700 dark:text-stone-200 text-lg lg:text-xl leading-relaxed font-medium mb-8"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
-                Our Dream Hubs are innovative, community-driven centers designed to bridge the gap between rural roots and urban opportunities. These hubs serve as vibrant centers for learning, creativity, and empowerment in underserved rural and peri-urban areas across Africa — starting with pilot locations in Nigeria.
+                Our Dream Hubs are innovative, community-driven centers designed to bridge the gap between rural roots and urban opportunities. These hubs serve as vibrant centers for learning, creativity, and empowerment in underserved rural and peri-urban areas across Africa.
               </p>
 
               {/* Stats */}
