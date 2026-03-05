@@ -90,8 +90,7 @@ const Footer = () => {
             </div>
 
             <p className="text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-              Empowering Africa's future through education. one child at a time. Join us in transforming lives and building brighter communities across the continent.
-
+Empowering Africa's future through education. A child at a time. Join us in transforming lives and building brighter communities across the continent.
             </p>
 
             <div className="flex gap-4">

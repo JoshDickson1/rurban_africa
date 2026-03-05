@@ -214,7 +214,7 @@ const Layout = () => {
 
                       {/* Track info */}
                       <div className="flex-1 min-w-0">
-                        <p className="text-[11px] font-bold text-white truncate leading-none mb-0.5">Anlele</p>
+                        <p className="text-[11px] font-bold text-white truncate leading-none mb-0.5">Amina lele</p>
                         <p className="text-[10px] text-emerald-100/40 truncate">Rurban Africa</p>
                       </div>
 

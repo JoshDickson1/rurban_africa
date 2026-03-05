@@ -4,7 +4,7 @@ import { Linkedin, Twitter, Mail } from 'lucide-react';
 import PageHero from '@/_components/PageHero';
 
 const TEAM_MEMBERS = [
-  { id: "exec", segment: "Founder & Executive Direction", name: "Omehoduonye C. Alvin", role: "Executive Director / Trustee", img: "/alvin.jpg" },
+  { id: "exec", segment: "Founder & Executive Direction", name: "Omehoduonye C. Alvin", role: "Executive Director / Trustee", img: "/alvin_new.jpeg" },
   { id: "finance", segment: "Financial Management", name: "Sarah Jenkins", role: "Finance Lead", img: "/placeholder.svg" },
   { id: "ops", segment: "Operations & Strategy", name: "Marcus Thorne", role: "Programs/Operations Lead", img: "/placeholder.svg" },
   { id: "comm", segment: "Media & Brand", name: "Communications Outreach", role: "Communication Lead", img: "/placeholder.svg" },

@@ -187,7 +187,7 @@ export default function OurBook() {
 
               {/* Book image — fills the dashed frame edge to edge */}
               <motion.img
-                src="/book.png"
+                src="/book_back.jpeg"
                 alt="Rurban Africa Pledge Notebook"
                 initial={{ opacity: 0, y: 16 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}

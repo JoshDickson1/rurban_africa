@@ -52,9 +52,9 @@ const SOCIALS = [
 /* ══════════════════════════════════════════════════
    BIO TEXT — highlights "One Africa. Two Worlds. One Future."
 ══════════════════════════════════════════════════ */
-const BIO_BEFORE = `Alvin is a passionate advocate for inclusive African growth and a proud product of one of Nigeria's rural communities. He has spent years visiting villages, engaging with residents, and deepening his understanding of the vital yet often overlooked relationship between rural/peri-urban communities and urban centres. He firmly believes that for Africa to truly rise, rural and peri-urban communities must not be left behind — they must grow hand-in-hand with cities, sharing opportunities, resources, and pride. As a qualified lawyer with expertise in Corporate/Commercial, Entertainment, Clean Energy, and Technology Law practice, Alvin brings sharp strategic insight and real-world experience to nonprofit leadership. Having grown up in a rural setting, he intimately understands the barriers many children face and the immense potential waiting to be unlocked when those barriers are removed. Driven by the conviction of `;
+const BIO_BEFORE = `Alvin is a passionate advocate for inclusive African growth and a proud product of one of Nigeria's rural communities. He has spent time visiting villages, engaging with communities, and deepening his understanding of the vital yet often overlooked relationship between rural/peri-urban communities and urban centres. He firmly believes that for Africa to truly rise, rural and peri-urban communities must not be left behind. They must grow hand-in-hand with cities, sharing opportunities, resources, and pride, and no child's dream should be limited by their birthplace. As a qualified lawyer, Alvin brings sharp strategic insight and real-world experience to nonprofit leadership. Having grown up in a rural setting, he intimately understands the barriers many children and communities face and the immense potential waiting to be unlocked when those barriers are removed. He is driven by the conviction of One Africa. Two Worlds. One Future. `;
 const BIO_HIGHLIGHT = "One Africa. Two Worlds. One Future.";
-const BIO_AFTER = `, Alvin founded Rurban Africa to bridge divides through education, youth empowerment, teacher development, scholarships, and community transformation. His mission is clear: to instil unbreakable pride, purpose, and possibility in Africa's next generation — ensuring no child's dream is limited by their birthplace.`;
+// const BIO_AFTER = `, Alvin founded Rurban Africa to bridge divides through education, youth empowerment, teacher development, scholarships, and community transformation. His mission is clear: to instil unbreakable pride, purpose, and possibility in Africa's next generation — ensuring no child's dream is limited by their birthplace.`;
 
 /* ══════════════════════════════════════════════════
    COMPONENT
@@ -127,7 +127,7 @@ export default function MeetFounder() {
 
               <div className="relative w-64 h-72 rounded-[2rem] overflow-hidden shadow-2xl shadow-black/50 border border-white/10">
                 <img
-                  src="/alvin.jpg"
+                  src="/alvin_new.jpeg"
                   alt="Omehoduonye C. Alvin"
                   className="w-full h-full object-cover object-top"
                 />
@@ -193,7 +193,7 @@ export default function MeetFounder() {
             <p className="text-emerald-100/70 text-base leading-[1.95] mb-8">
               {BIO_BEFORE}
               <span className="text-amber-400 font-semibold not-italic">{BIO_HIGHLIGHT}</span>
-              {BIO_AFTER}
+              {/* {BIO_AFTER} */}
             </p>
             </div>
 

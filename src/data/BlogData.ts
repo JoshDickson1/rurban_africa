@@ -195,185 +195,185 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 
   // ── 04 ──────────────────────────────────────────────────────
-  {
-    id: 4,
-    slug: "dream-hub-launch-2025",
-    category: "Programs",
-    tag: "Dream Hubs",
-    title: "Launching Our First Dream Hub in Rural Nigeria",
-    excerpt: "A milestone moment — the inauguration of Rurban Africa's first Dream Hub, a community innovation center for learning and empowerment.",
-    img: "/africa.jpg",
-    date: "Dec 20, 2025",
-    readTime: "6 min read",
-    location: "Edo State, Nigeria",
-    content: [
-      {
-        type: "paragraph",
-        text: "On the morning of December 20th, 2025, what had been an empty concrete room six months prior became Rurban Africa's first operational Dream Hub. The ribbon-cutting drew over two hundred community members, local officials, and young people who would become the Hub's first cohort.",
-      },
-      {
-        type: "heading",
-        id: "what-is-a-dream-hub",
-        text: "What Is a Dream Hub?",
-      },
-      {
-        type: "paragraph",
-        text: "A Dream Hub is a community-driven innovation centre designed to bridge the gap between rural talent and urban opportunity. It provides a physical and digital infrastructure for learning: computers, internet access, books, a fabrication corner, and trained human facilitators who come from the same communities they serve.",
-      },
-      {
-        type: "quote",
-        text: "This Hub is proof that a community that decides to invest in itself cannot be stopped. We built this together. We will fill it together.",
-      },
-      {
-        type: "heading",
-        id: "the-build",
-        text: "The Build",
-      },
-      {
-        type: "paragraph",
-        text: "Construction was a genuine community effort. Local artisans handled the renovation work under the supervision of a contractor engaged by the foundation. Materials were sourced regionally wherever possible. Three young men from the community trained as the Hub's first technicians during the installation phase — they are now on staff.",
-      },
-      {
-        type: "images",
-        srcs: ["/africa.jpg", "/pledge.jpg"],
-      },
-      {
-        type: "heading",
-        id: "first-cohort",
-        text: "The First Cohort",
-      },
-      {
-        type: "paragraph",
-        text: "Forty-two young people — ranging from 14 to 24 years old — enrolled in the Hub's first three-month programme covering digital literacy, entrepreneurship fundamentals, and a practical skills track. Sixteen are girls, reflecting the foundation's commitment to gender parity in every programme.",
-      },
-      {
-        type: "paragraph",
-        text: "We are already in conversations with two corporate partners about sponsoring the second cohort and funding the establishment of a second Hub in Delta State by mid-2026.",
-      },
-    ],
-  },
+  // {
+  //   id: 4,
+  //   slug: "dream-hub-launch-2025",
+  //   category: "Programs",
+  //   tag: "Dream Hubs",
+  //   title: "Launching Our First Dream Hub in Rural Nigeria",
+  //   excerpt: "A milestone moment — the inauguration of Rurban Africa's first Dream Hub, a community innovation center for learning and empowerment.",
+  //   img: "/africa.jpg",
+  //   date: "Dec 20, 2025",
+  //   readTime: "6 min read",
+  //   location: "Edo State, Nigeria",
+  //   content: [
+  //     {
+  //       type: "paragraph",
+  //       text: "On the morning of December 20th, 2025, what had been an empty concrete room six months prior became Rurban Africa's first operational Dream Hub. The ribbon-cutting drew over two hundred community members, local officials, and young people who would become the Hub's first cohort.",
+  //     },
+  //     {
+  //       type: "heading",
+  //       id: "what-is-a-dream-hub",
+  //       text: "What Is a Dream Hub?",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "A Dream Hub is a community-driven innovation centre designed to bridge the gap between rural talent and urban opportunity. It provides a physical and digital infrastructure for learning: computers, internet access, books, a fabrication corner, and trained human facilitators who come from the same communities they serve.",
+  //     },
+  //     {
+  //       type: "quote",
+  //       text: "This Hub is proof that a community that decides to invest in itself cannot be stopped. We built this together. We will fill it together.",
+  //     },
+  //     {
+  //       type: "heading",
+  //       id: "the-build",
+  //       text: "The Build",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "Construction was a genuine community effort. Local artisans handled the renovation work under the supervision of a contractor engaged by the foundation. Materials were sourced regionally wherever possible. Three young men from the community trained as the Hub's first technicians during the installation phase — they are now on staff.",
+  //     },
+  //     {
+  //       type: "images",
+  //       srcs: ["/africa.jpg", "/pledge.jpg"],
+  //     },
+  //     {
+  //       type: "heading",
+  //       id: "first-cohort",
+  //       text: "The First Cohort",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "Forty-two young people — ranging from 14 to 24 years old — enrolled in the Hub's first three-month programme covering digital literacy, entrepreneurship fundamentals, and a practical skills track. Sixteen are girls, reflecting the foundation's commitment to gender parity in every programme.",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "We are already in conversations with two corporate partners about sponsoring the second cohort and funding the establishment of a second Hub in Delta State by mid-2026.",
+  //     },
+  //   ],
+  // },
 
   // ── 05 ──────────────────────────────────────────────────────
-  {
-    id: 5,
-    slug: "scholarship-recipients-2025",
-    category: "Scholarships",
-    tag: "Youth",
-    title: "Meet Our 2025 Educational Scholarship Recipients",
-    excerpt: "Ten exceptional students from rural communities across Nigeria were awarded full scholarships through our educational development program.",
-    img: "/pledge.jpg",
-    date: "Dec 5, 2025",
-    readTime: "4 min read",
-    location: "Lagos, Nigeria",
-    content: [
-      {
-        type: "paragraph",
-        text: "Every year, thousands of talented young Nigerians fail to continue their education — not because of ability, but because of money. This year, Rurban Africa's scholarship programme intervened in ten of those stories.",
-      },
-      {
-        type: "heading",
-        id: "selection-process",
-        text: "The Selection Process",
-      },
-      {
-        type: "paragraph",
-        text: "Applications were received from 340 candidates across five states. A review panel assessed academic records, community recommendations, financial need assessments, and personal essays. The ten recipients were selected over three rounds of evaluation, with particular weight given to students from communities where secondary completion rates fall below 40%.",
-      },
-      {
-        type: "quote",
-        text: "I did not know someone who had never met me could believe in me this much. I will spend the rest of my life proving they were right.",
-      },
-      {
-        type: "heading",
-        id: "the-recipients",
-        text: "The Recipients",
-      },
-      {
-        type: "paragraph",
-        text: "This year's cohort includes six girls and four boys. Three are pursuing sciences, two are in the arts, and five are enrolled in vocational-technical programmes. They come from Delta, Edo, Anambra, Kogi, and Benue states. Their ages range from 15 to 19.",
-      },
-      {
-        type: "images",
-        srcs: ["/pledge.jpg", "/foot2.jpeg"],
-      },
-      {
-        type: "paragraph",
-        text: "Each scholarship covers full school fees for one academic year, with renewable assessment at year-end. Recipients are also paired with a professional mentor from our urban partner network and receive a quarterly welfare check-in from the foundation's student support officer.",
-      },
-      {
-        type: "heading",
-        id: "what-we-need",
-        text: "What We Need",
-      },
-      {
-        type: "paragraph",
-        text: "We received nearly 350 qualified applications for 10 spaces. The gap between what is needed and what we can currently fund is not a gap in talent — it is a gap in resources. A single full-year scholarship costs ₦180,000 (approximately $115 USD). If you are in a position to sponsor one, please visit our donation page.",
-      },
-    ],
-  },
+  // {
+  //   id: 5,
+  //   slug: "scholarship-recipients-2025",
+  //   category: "Scholarships",
+  //   tag: "Youth",
+  //   title: "Meet Our 2025 Educational Scholarship Recipients",
+  //   excerpt: "Ten exceptional students from rural communities across Nigeria were awarded full scholarships through our educational development program.",
+  //   img: "/pledge.jpg",
+  //   date: "Dec 5, 2025",
+  //   readTime: "4 min read",
+  //   location: "Lagos, Nigeria",
+  //   content: [
+  //     {
+  //       type: "paragraph",
+  //       text: "Every year, thousands of talented young Nigerians fail to continue their education — not because of ability, but because of money. This year, Rurban Africa's scholarship programme intervened in ten of those stories.",
+  //     },
+  //     {
+  //       type: "heading",
+  //       id: "selection-process",
+  //       text: "The Selection Process",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "Applications were received from 340 candidates across five states. A review panel assessed academic records, community recommendations, financial need assessments, and personal essays. The ten recipients were selected over three rounds of evaluation, with particular weight given to students from communities where secondary completion rates fall below 40%.",
+  //     },
+  //     {
+  //       type: "quote",
+  //       text: "I did not know someone who had never met me could believe in me this much. I will spend the rest of my life proving they were right.",
+  //     },
+  //     {
+  //       type: "heading",
+  //       id: "the-recipients",
+  //       text: "The Recipients",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "This year's cohort includes six girls and four boys. Three are pursuing sciences, two are in the arts, and five are enrolled in vocational-technical programmes. They come from Delta, Edo, Anambra, Kogi, and Benue states. Their ages range from 15 to 19.",
+  //     },
+  //     {
+  //       type: "images",
+  //       srcs: ["/pledge.jpg", "/foot2.jpeg"],
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "Each scholarship covers full school fees for one academic year, with renewable assessment at year-end. Recipients are also paired with a professional mentor from our urban partner network and receive a quarterly welfare check-in from the foundation's student support officer.",
+  //     },
+  //     {
+  //       type: "heading",
+  //       id: "what-we-need",
+  //       text: "What We Need",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "We received nearly 350 qualified applications for 10 spaces. The gap between what is needed and what we can currently fund is not a gap in talent — it is a gap in resources. A single full-year scholarship costs ₦180,000 (approximately $115 USD). If you are in a position to sponsor one, please visit our donation page.",
+  //     },
+  //   ],
+  // },
 
   // ── 06 ──────────────────────────────────────────────────────
-  {
-    id: 6,
-    slug: "teachers-training-program",
-    category: "Training",
-    tag: "Education",
-    title: "Empowering 50 Rural Teachers with Modern Pedagogy",
-    excerpt: "Our teachers training program equipped 50 rural educators with modern classroom techniques, digital tools, and a renewed sense of mission.",
-    img: "/foot4.jpeg",
-    date: "Nov 18, 2025",
-    readTime: "5 min read",
-    location: "Anambra, Nigeria",
-    content: [
-      {
-        type: "paragraph",
-        text: "A school is only as strong as its teachers. Rurban Africa's teachers training programme launched in Anambra State this November, gathering fifty educators from fourteen schools across three local government areas for a four-day residential workshop.",
-      },
-      {
-        type: "heading",
-        id: "why-teacher-training",
-        text: "Why Teacher Training?",
-      },
-      {
-        type: "paragraph",
-        text: "Many rural teachers in Nigeria received their initial qualification years ago and have had little or no access to continuing professional development since. Curriculum changes, new pedagogical approaches, and digital tools have passed them by — not through any fault of their own, but because the systems that should support them simply do not reach rural areas.",
-      },
-      {
-        type: "quote",
-        text: "I have been teaching for eleven years. This is the first training I have attended that actually treated me like a professional who has something to offer, not just a problem to be fixed.",
-      },
-      {
-        type: "heading",
-        id: "what-the-programme-covered",
-        text: "What the Programme Covered",
-      },
-      {
-        type: "paragraph",
-        text: "Day one focused on active learning methodologies — moving away from rote recitation toward enquiry-based instruction. Day two introduced digital tools: how to use offline educational apps, basic tablet management, and how to create simple visual aids with free software.",
-      },
-      {
-        type: "images",
-        srcs: ["/foot4.jpeg", "/africa.jpg"],
-      },
-      {
-        type: "paragraph",
-        text: "Day three was dedicated to child psychology and inclusive education — recognising signs of learning difficulty, trauma-informed practice, and strategies for keeping girls engaged through adolescence. Day four was practical application: each teacher designed and delivered a fifteen-minute micro-lesson to their peers and received structured feedback.",
-      },
-      {
-        type: "heading",
-        id: "outcomes-and-follow-up",
-        text: "Outcomes & Follow-up",
-      },
-      {
-        type: "paragraph",
-        text: "End-of-workshop assessments showed a 78% improvement in participants' self-reported confidence across all four competency areas. Each teacher left with a printed resource pack, access to a WhatsApp community of practice, and a scheduled follow-up visit from a Rurban Africa education advisor within sixty days.",
-      },
-      {
-        type: "paragraph",
-        text: "The next cohort is planned for Edo State in February 2026. Schools wishing to nominate teachers should contact us via the partnership page.",
-      },
-    ],
-  },
+  // {
+  //   id: 6,
+  //   slug: "teachers-training-program",
+  //   category: "Training",
+  //   tag: "Education",
+  //   title: "Empowering 50 Rural Teachers with Modern Pedagogy",
+  //   excerpt: "Our teachers training program equipped 50 rural educators with modern classroom techniques, digital tools, and a renewed sense of mission.",
+  //   img: "/foot4.jpeg",
+  //   date: "Nov 18, 2025",
+  //   readTime: "5 min read",
+  //   location: "Anambra, Nigeria",
+  //   content: [
+  //     {
+  //       type: "paragraph",
+  //       text: "A school is only as strong as its teachers. Rurban Africa's teachers training programme launched in Anambra State this November, gathering fifty educators from fourteen schools across three local government areas for a four-day residential workshop.",
+  //     },
+  //     {
+  //       type: "heading",
+  //       id: "why-teacher-training",
+  //       text: "Why Teacher Training?",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "Many rural teachers in Nigeria received their initial qualification years ago and have had little or no access to continuing professional development since. Curriculum changes, new pedagogical approaches, and digital tools have passed them by — not through any fault of their own, but because the systems that should support them simply do not reach rural areas.",
+  //     },
+  //     {
+  //       type: "quote",
+  //       text: "I have been teaching for eleven years. This is the first training I have attended that actually treated me like a professional who has something to offer, not just a problem to be fixed.",
+  //     },
+  //     {
+  //       type: "heading",
+  //       id: "what-the-programme-covered",
+  //       text: "What the Programme Covered",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "Day one focused on active learning methodologies — moving away from rote recitation toward enquiry-based instruction. Day two introduced digital tools: how to use offline educational apps, basic tablet management, and how to create simple visual aids with free software.",
+  //     },
+  //     {
+  //       type: "images",
+  //       srcs: ["/foot4.jpeg", "/africa.jpg"],
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "Day three was dedicated to child psychology and inclusive education — recognising signs of learning difficulty, trauma-informed practice, and strategies for keeping girls engaged through adolescence. Day four was practical application: each teacher designed and delivered a fifteen-minute micro-lesson to their peers and received structured feedback.",
+  //     },
+  //     {
+  //       type: "heading",
+  //       id: "outcomes-and-follow-up",
+  //       text: "Outcomes & Follow-up",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "End-of-workshop assessments showed a 78% improvement in participants' self-reported confidence across all four competency areas. Each teacher left with a printed resource pack, access to a WhatsApp community of practice, and a scheduled follow-up visit from a Rurban Africa education advisor within sixty days.",
+  //     },
+  //     {
+  //       type: "paragraph",
+  //       text: "The next cohort is planned for Edo State in February 2026. Schools wishing to nominate teachers should contact us via the partnership page.",
+  //     },
+  //   ],
+  // },
 
 ];
 
