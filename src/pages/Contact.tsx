@@ -51,16 +51,16 @@ const contactCards = [
   {
     icon: <Mail size={20} />,
     label: "Email",
-    lines: ["info@rurbanafrica.com"],
-    href: "mailto:info@rurbanafrica.com",
+    lines: ["info@rurbanafrica.org"],
+    href: "mailto:info@rurbanafrica.org",
     color: "from-amber-500/20 to-amber-700/10",
   },
   {
     icon: <MapPin size={20} />,
     label: "Locations",
     lines: [
-      "Lagos — 21 Salvation Road, Opebi, Ikeja",
-      "Delta — 46 Ogwashi-Uku Road, Umunede",
+      "Lagos: 21 Salvation Road, Opebi, Ikeja",
+      "Delta: 46 Ogwashi-Uku Road, Umunede",
     ],
     href: "https://maps.google.com",
     color: "from-sky-500/20 to-sky-700/10",
