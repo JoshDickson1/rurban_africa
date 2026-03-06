@@ -159,7 +159,7 @@ export default function OurBook() {
             initial="hidden" animate={isInView ? "visible" : "hidden"}
             className="text-zinc-600 dark:text-emerald-100/60 text-lg leading-relaxed max-w-3xl mx-auto"
           >
-            More than ordinary school supplies — these are empowering tools designed to instil pride, purpose,
+            More than ordinary school supplies, these are empowering tools designed to instil pride, purpose,
             and possibility in children and youth from rural and peri-urban communities across Africa.
             Distributed during school outreach visits to inspire pupils, reinforce self-belief, and connect
             their personal growth to a broader vision of African development and unity.

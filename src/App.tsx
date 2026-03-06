@@ -25,6 +25,9 @@ import SingleBlog from "./pages/SingleBlog";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import DreamHubsPage from "./pages/DreamHubsPage";
 import Testimonials from "./pages/Testimonials";
+import Volunteer from "./pages/Volunteer";
+import Partner from "./pages/Partner";
+import OurBook from "./_components/OurBook";
 
 const queryClient = new QueryClient();
 
@@ -68,6 +71,9 @@ const App = () => {
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/dream_hubs" element={<DreamHubsPage />} /> 
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/volunteer" element={<Volunteer />} />
+            <Route path="/partner" element={<Partner />} />
+            <Route path="/pledge" element={<OurBook />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 

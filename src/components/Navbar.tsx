@@ -20,8 +20,8 @@ const NAV_ITEMS = [
       {
         group: "Who We Are",
         items: [
-          { label: "Vision Statement",  href: "/about/vision",   icon: <Star size={14} />,      desc: "Where we're heading" },
-          { label: "Mission Statement", href: "/about/mission",  icon: <Target size={14} />,    desc: "Why we exist" },
+          { label: "Vision Statement",  href: "/about#vision",   icon: <Star size={14} />,      desc: "Where we're heading" },
+          { label: "Mission Statement", href: "/about#",  icon: <Target size={14} />,    desc: "Why we exist" },
         ],
       },
       {
@@ -36,7 +36,6 @@ const NAV_ITEMS = [
   },
   {
     label: "What We Do",
-    href: "/what-we-do",
     dropdown: [
       {
         group: "Programmes",
@@ -49,10 +48,10 @@ const NAV_ITEMS = [
     ],
   },
   { label: "Dream Hubs", href: "/dream_hubs" },
-  {
-    label: "Why Rural",
-    href: "/why-rural",
-  },
+  // {
+  //   label: "Why Rural",
+  //   href: "/why-rural",
+  // },
   {
     label: "Get Involved",
     href: "/get-involved",
@@ -132,6 +131,7 @@ function DropdownPanel({
               >
                 <span className="w-7 h-7 rounded-lg
                   bg-emerald-50 dark:bg-emerald-900/40
+                  backdrop-blur-2xl
                   flex items-center justify-center shrink-0
                   text-[#064e3b] dark:text-emerald-400
                   group-hover:bg-[#064e3b] group-hover:text-white

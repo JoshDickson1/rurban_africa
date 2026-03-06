@@ -23,7 +23,7 @@ const About = () => {
       <div className="">
         <DreamHubsIntro />
       </div>
-      <div className="">
+      <div className="" id="vision">
         <MisVis />
       </div>
       <div className="">
