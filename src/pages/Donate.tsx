@@ -823,7 +823,7 @@ export default function DonatePage() {
                           {[
                             "Transfer your desired amount to the account above.",
                             "Use your full name as the transfer narration/reference.",
-                            "Send proof of payment to donations@rurbanafrica.org for your receipt.",
+                            "Send proof of payment to info@rurbanafrica.org for your receipt.",
                           ].map((step, i) => (
                             <div key={i} className="flex items-start gap-3">
                               <span className="w-5 h-5 rounded-full bg-[#064e3b] text-white text-[10px] font-black flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
@@ -836,7 +836,7 @@ export default function DonatePage() {
                         <DonorModeSection donorMode={donorMode} setDonorMode={setDonorMode} form={form} updateForm={updateForm} />
 
                         <div className="mt-4 flex gap-3">
-                          <a href="mailto:donations@rurbanafrica.org?subject=Donation%20Confirmation"
+                          <a href="mailto:info@rurbanafrica.org?subject=Donation%20Confirmation"
                             className="flex-1 flex items-center justify-between bg-zinc-800 dark:bg-emerald-900/40 hover:bg-zinc-700 text-white py-4 px-5 rounded-2xl font-black text-sm group transition-colors">
                             <span className="text-xs">Send proof via email</span>
                             <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform" />

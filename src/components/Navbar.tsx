@@ -4,6 +4,7 @@ import {
   Search, X, Mail, ChevronDown, ArrowUpRight,
   BookOpen, Users, Heart, Globe, Handshake, MessageSquare,
   Building2, Target, Star, MapPinned, UserCheck, Newspaper,
+  InfoIcon,
 } from "lucide-react"
 import { Link, useNavigate, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
@@ -20,7 +21,7 @@ const NAV_ITEMS = [
       {
         group: "Who We Are",
         items: [
-          { label: "Vision Statement",  href: "/about#vision",   icon: <Star size={14} />,      desc: "Where we're heading" },
+          { label: "Vision Statement",  href: "/about/#vision",   icon: <Star size={14} />,      desc: "Where we're heading" },
           { label: "Mission Statement", href: "/about#",  icon: <Target size={14} />,    desc: "Why we exist" },
         ],
       },
@@ -42,7 +43,8 @@ const NAV_ITEMS = [
         items: [
           { label: "Our Programs",        href: "/programs",          icon: <BookOpen size={14} />,  desc: "All active initiatives" },
           { label: "Target Audience",     href: "/target-audience",   icon: <MapPinned size={14} />, desc: "Who we serve" },
-          { label: "Rurban Africa Pledge",href: "/pledge",            icon: <Heart size={14} />,     desc: "Our daily declaration" },
+          { label: "Rurban Africa Pledge", href: "/pledge",            icon: <Heart size={14} />,     desc: "Our daily declaration" },
+          { label: "Why Rural", href: "/why-rural",            icon: <InfoIcon size={14} />,     desc: "Why we focus on rural areas" },
         ],
       },
     ],

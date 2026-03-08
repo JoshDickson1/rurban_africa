@@ -12,7 +12,7 @@ const FEATURES = [
     num:   "01",
     title: "Interactive Learning Zones",
     highlight: "hands-on activities",
-    body:  "Equipped with child-friendly spaces for hands-on activities, these zones host sessions from our 10-guide series on rural-urban connections. Kids engage in fun quizzes, group discussions, and creative projects that make learning exciting and relevant — turning abstract concepts like building bridges into tangible experiences.",
+    body:  "Equipped with child-friendly spaces for hands-on activities, these zones host sessions from our 10-guide series on rural-urban connections. Kids engage in fun quizzes, group discussions, and creative projects that make learning exciting and relevant, turning abstract concepts like building bridges into tangible experiences.",
   },
   {
     num:   "02",
@@ -156,7 +156,7 @@ export default function DreamHubsFeatures() {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-zinc-500 dark:text-emerald-100/50 text-base leading-relaxed max-w-xl mx-auto"
           >
-            Our Dream Hubs are thoughtfully designed to be inclusive, accessible, and impactful —
+            Our Dream Hubs are thoughtfully designed to be inclusive, accessible, and impactful,
             incorporating feedback from communities, educators, and partners.
           </motion.p>
         </div>

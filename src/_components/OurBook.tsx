@@ -45,7 +45,7 @@ const PLEDGE_LINES = [
   "Today, I will study hard and give my best.",
   "I will respect my teachers, help my classmates, and honour my school.",
   "My future is in my hands.",
-  "With discipline today, I build a brighter tomorrow — for my family, my community, and for Africa.",
+  "With discipline today, I build a brighter tomorrow, for my family, my community, and for Africa.",
   "Africa is rising and I am rising with it.",
   "This is my pledge. I will make it happen.",
 ];
@@ -91,7 +91,7 @@ const KEY_FEATURES = [
   {
     icon: <Heart size={16} />,
     title: "Group Pledge Recitations",
-    desc: "During school visits, our teams lead pupils in energetic, collective recitations — creating powerful moments of shared motivation and identity.",
+    desc: "During school visits, our teams lead pupils in energetic, collective recitations, creating powerful moments of shared motivation and identity.",
   },
   {
     icon: <Lightbulb size={16} />,
@@ -158,11 +158,7 @@ export default function OurBook() {
             custom={2} variants={fadeUpVariants}
             initial="hidden" animate={isInView ? "visible" : "hidden"}
             className="text-zinc-600 dark:text-emerald-100/60 text-lg leading-relaxed max-w-3xl mx-auto"
-          >
-            More than ordinary school supplies, these are empowering tools designed to instil pride, purpose,
-            and possibility in children and youth from rural and peri-urban communities across Africa.
-            Distributed during school outreach visits to inspire pupils, reinforce self-belief, and connect
-            their personal growth to a broader vision of African development and unity.
+          >The Rurban Africa Pledge Notebooks is our key initiative, designed as more than ordinary school supplies. They serve as empowering tools to instill pride, purpose, and possibility in children and youth from rural and peri-urban communities across Africa. These notebooks are distributed during school outreach visits to inspire pupils, young students, reinforce self-belief, and connect their personal growth to a broader vision of African development and unity.
           </motion.p>
         </div>
 
@@ -318,7 +314,7 @@ export default function OurBook() {
                       >
                         <p className="text-amber-400 text-xs font-black uppercase tracking-widest mb-1">Recited together</p>
                         <p className="text-emerald-100/50 text-xs leading-relaxed">
-                          During school outreach visits, our teams lead students in group recitations — creating energetic, collective moments of motivation and shared African identity.
+                          During school outreach visits, our teams lead students in group recitations, creating energetic, collective moments of motivation and shared African identity.
                         </p>
                       </motion.div>
                     </div>
@@ -404,7 +400,7 @@ export default function OurBook() {
                 </span>
               </motion.a>
               <motion.a
-                href="/contact"
+                href="/partner"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 className="flex-1 flex items-center justify-between border-2 border-zinc-200 dark:border-emerald-800/50 hover:border-[#064e3b] dark:hover:border-emerald-500 text-zinc-700 dark:text-emerald-300 px-6 py-4 rounded-2xl font-black text-sm group transition-all"

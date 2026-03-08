@@ -383,7 +383,7 @@ export default function Partner() {
               <span className="block italic text-amber-400">Shared impact.</span>
             </h2>
             <p className="text-emerald-100/60 text-sm leading-relaxed">
-              Every partnership with Rurban Africa comes with transparent reporting, measurable outcomes, and a direct line to the communities your support transforms. We don't just take funding — we build relationships.
+              Every partnership with Rurban Africa comes with transparent reporting, measurable outcomes, and a direct line to the communities your support transforms. We don't just take funding, we build relationships.
             </p>
           </div>
 
@@ -498,11 +498,11 @@ export default function Partner() {
                   Direct enquiries
                 </p>
                 <a
-                  href="mailto:partnerships@rurbanafrica.org"
+                  href="mailto:info@rurbanafrica.org"
                   className="flex items-center gap-2 text-sm font-semibold text-zinc-700 dark:text-emerald-300 hover:text-[#064e3b] dark:hover:text-emerald-400 transition-colors"
                 >
                   <Heart size={14} className="text-[#064e3b] dark:text-emerald-500" />
-                  partnerships@rurbanafrica.org
+                  info@rurbanafrica.org
                 </a>
               </div>
             </motion.div>

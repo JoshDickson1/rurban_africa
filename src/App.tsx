@@ -28,6 +28,9 @@ import Testimonials from "./pages/Testimonials";
 import Volunteer from "./pages/Volunteer";
 import Partner from "./pages/Partner";
 import OurBook from "./_components/OurBook";
+import WhyRural from "./pages/WhyRural";
+import TargetAudiencePage from "./pages/TargetAudiencePage";
+import Programs from "./pages/Programs";
 
 const queryClient = new QueryClient();
 
@@ -74,6 +77,9 @@ const App = () => {
             <Route path="/volunteer" element={<Volunteer />} />
             <Route path="/partner" element={<Partner />} />
             <Route path="/pledge" element={<OurBook />} />
+            <Route path="/why-rural" element={<WhyRural />} />
+            <Route path="/programs" element={<Programs />} />
+            <Route path="/target-audience" element={<TargetAudiencePage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 

@@ -440,7 +440,7 @@ export default function Volunteer() {
               </h2>
               <div className="h-[3px] w-12 bg-gradient-to-r from-emerald-500 to-amber-400 rounded-full mb-6" />
               <p className="text-zinc-500 dark:text-emerald-100/50 text-sm leading-[1.9] max-w-sm mb-8">
-                Fill out this short form and we'll match you to the right opportunity. Every volunteer matters — from one hour a week to full-time dedication.
+                Fill out this short form and we'll match you to the right opportunity. Every volunteer matters, from one hour a week to full-time dedication.
               </p>
               <blockquote
                 className="border-l-2 border-amber-400/50 pl-5"

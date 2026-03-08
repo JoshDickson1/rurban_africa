@@ -106,7 +106,7 @@ export default function DreamHubsIntro() {
               At Rurban Africa, we envision a continent where every child, regardless of their location,
               can dream big and turn those dreams into reality. Our Dream Hubs are innovative,
               community-driven hubs designed to bridge the gap between rural roots and urban
-              opportunities — vibrant centres for learning, creativity, and empowerment in underserved
+              opportunities vibrant centres for learning, creativity, and empowerment in underserved
               rural and peri-urban areas across Africa.
             </motion.p>
             <motion.p
@@ -119,7 +119,7 @@ export default function DreamHubsIntro() {
                 One Africa. Two Worlds. One Future.
               </span>
               , the Dream Hubs transform ordinary community or school-based facilities into dynamic
-              environments where children, youth, teachers, and local leaders come together — blending
+              environments where children, youth, teachers, and local leaders come together blending
               hands-on education with cultural pride, innovation, and practical skills-building.
             </motion.p>
 
@@ -160,7 +160,7 @@ export default function DreamHubsIntro() {
             animate={isInView ? "visible" : "hidden"}
             className="relative"
           >
-            {/* Image — top-right and bottom-right corners rounded-2xl, left corners rounded-2xl too for clean look */}
+            {/* Image top-right and bottom-right corners rounded-2xl, left corners rounded-2xl too for clean look */}
             <div className="relative overflow-hidden rounded-l-2xl rounded-tr-2xl rounded-br-2xl shadow-2xl shadow-zinc-300/30 dark:shadow-black/40">
               <img
                 src="/about101.png"
@@ -172,7 +172,7 @@ export default function DreamHubsIntro() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none" />
             </div>
 
-            {/* Floating stat badge — bottom-left of image */}
+            {/* Floating stat badge bottom-left of image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.75, y: 10 }}
               animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
@@ -200,7 +200,7 @@ export default function DreamHubsIntro() {
               </div>
             </motion.div>
 
-            {/* Decorative amber ring — top-right corner */}
+            {/* Decorative amber ring top-right corner */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}

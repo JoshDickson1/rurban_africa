@@ -97,3 +97,50 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ══════════════════════════════════════════════════
+   RURBAN AFRICA — Custom Scrollbar
+   Works in Chrome/Edge/Safari (webkit) + Firefox
+══════════════════════════════════════════════════ */
+
+/* ── Webkit (Chrome, Edge, Safari) ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #064e3b;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0a6b52;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* ── Firefox ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #064e3b transparent;
+}
+
+/* ── Dark mode variants ── */
+.dark ::-webkit-scrollbar-thumb {
+  background: #10b981;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #34d399;
+}
+
+.dark * {
+  scrollbar-color: #10b981 transparent;
+}

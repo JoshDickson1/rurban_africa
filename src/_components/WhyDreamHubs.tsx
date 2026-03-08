@@ -303,8 +303,8 @@ export default function WhyDreamHubs() {
             initial="hidden" animate={headerInView ? "visible" : "hidden"}
             className="text-zinc-500 dark:text-emerald-100/50 text-base leading-relaxed max-w-2xl mx-auto"
           >
-            Africa's future hinges on empowering its youth, yet rural and peri-urban communities —
-            home to over 60% of the continent's population — face systemic barriers that stifle potential.
+            Africa's future hinges on empowering its youth, yet rural and peri-urban communities,
+            home to over 60% of the continent's population face systemic barriers that stifle potential.
           </motion.p>
         </div>
 
@@ -413,7 +413,7 @@ export default function WhyDreamHubs() {
                   transition={{ duration: 0.65, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
                   className="text-emerald-100/70 text-base md:text-lg leading-relaxed mb-5"
                 >
-                  By nurturing confident, connected young minds, we are not just educating individuals —
+                  By nurturing confident, connected young minds, we are not just educating individuals,
                   we are building a resilient, innovative Africa where every village and city thrives together.
                 </motion.p>
 
