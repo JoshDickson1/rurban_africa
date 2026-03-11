@@ -1,11 +1,9 @@
 import DonateHero from '@/_components/DonateHero'
 import DreamHubsFeatures from '@/_components/DreamHubsFeatures'
 import DreamHubsIntro from '@/_components/DreamHubsIntro'
-import MisVis from '@/_components/MisVis'
-import OurBook from '@/_components/OurBook'
 import PageHero from '@/_components/PageHero'
 import WhyDreamHubs from '@/_components/WhyDreamHubs'
-import React from 'react'
+import DreamHubsSponsorship from '@/_components/DreamHubsSponsorship.tsx'
 
 const DreamHubs = () => {
     return (
@@ -31,6 +29,10 @@ const DreamHubs = () => {
 
             <div className="">
                 <WhyDreamHubs />
+            </div>
+
+            <div className="">
+                <DreamHubsSponsorship />
             </div>
 
             <div className="">

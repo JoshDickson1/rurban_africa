@@ -5,57 +5,44 @@ import { motion, useInView } from "framer-motion";
 import { ArrowUpRight, MapPin, TrendingDown, Users, Sprout, AlertTriangle, Globe } from "lucide-react";
 import PageHero from "@/_components/PageHero";
 
-const STATS = [
-  { num: "70%",    label: "of Africa's population lives in rural areas" },
-  { num: "60%",    label: "of out-of-school children are in rural regions" },
-  { num: "2×",     label: "higher dropout rate in rural vs urban schools" },
-  { num: "2050",   label: "Africa's youth population doubles by this year" },
-];
+// const STATS = [
+//   { num: "70%",    label: "of Africa's population lives in rural areas" },
+//   { num: "60%",    label: "of out-of-school children are in rural regions" },
+//   { num: "2×",     label: "higher dropout rate in rural vs urban schools" },
+//   { num: "2050",   label: "Africa's youth population doubles by this year" },
+// ];
 
 const REASONS = [
   {
-    icon: <TrendingDown size={20} strokeWidth={1.8} />,
+    icon: <Users size={20} strokeWidth={1.8} />,
     num: "01",
-    title: "The education gap is sharpest at the margins",
-    highlight: "rural children",
-    body: "Rural children in sub-Saharan Africa are significantly less likely to complete secondary education than their urban peers. Overcrowded classrooms, teacher shortages, and a lack of learning materials compound daily. Without targeted intervention, this gap widens each year.",
+    title: "They Are Home to Most Africans",
+    highlight: "untapped talent",
+    body: "A large portion of Africa's population live in rural areas or fast-growing peri-urban areas. These communities produce much of the continent's food, preserve cultural heritage, and hold untapped talent, yet they are frequently overlooked in development efforts.",
+  },
+  {
+    icon: <TrendingDown size={20} strokeWidth={1.8} />,
+    num: "02",
+    title: "The Rural-Urban Education Divide Is Profound",
+    highlight: "severe barriers",
+    body: "Children in rural and peri-urban settings often face severe barriers to quality education. Inadequate infrastructure, teacher shortages and inadequate training, limited resources, and higher dropout rates due to poverty leave millions without the skills for healthy, productive lives, widening inequality and slowing Africa's overall rise.",
   },
   {
     icon: <AlertTriangle size={20} strokeWidth={1.8} />,
-    num: "02",
-    title: "Poverty cycles begin and end in communities",
-    highlight: "generational poverty",
-    body: "Generational poverty is not inevitable, but it is self-reinforcing. When children grow up without access to quality education, skilled mentors, or exposure to opportunity, they inherit the same limited horizon as their parents. Breaking that cycle requires presence on the ground.",
-  },
-  {
-    icon: <Users size={20} strokeWidth={1.8} />,
     num: "03",
-    title: "Rural communities are Africa's largest untapped resource",
-    highlight: "untapped potential",
-    body: "Africa's rural youth represent untapped potential on a continental scale. These are not communities to be pitied, they are communities to be invested in. A child in Kogi State or Cross River carries the same capacity for greatness as one in Lagos or London. Geography should not determine destiny.",
+    title: "Peri-Urban Areas Are Rapidly Changing and at Risk",
+    highlight: "connecting worlds",
+    body: "As cities expand, peri-urban communities experience land conversion, rising costs, and mixed opportunities. These areas blend rural roots with urban influences, making them ideal for connecting worlds. Farm-to-table supply chains, blending traditional knowledge with modern tools, and pathways for youth to access better jobs and education. Ignoring them risks deepening divides.",
   },
   {
     icon: <Globe size={20} strokeWidth={1.8} />,
     num: "04",
-    title: "Urban Africa cannot rise while rural Africa is left behind",
-    highlight: "One Africa",
-    body: "One Africa cannot thrive when half of it is structurally excluded. The cities of Lagos, Nairobi, and Accra depend on the agricultural output, labour, and cultural richness of rural regions. True African development demands that both worlds grow together, not one at the expense of the other.",
-  },
-  {
-    icon: <Sprout size={20} strokeWidth={1.8} />,
-    num: "05",
-    title: "Peri-urban communities are falling through the cracks",
-    highlight: "invisible gap",
-    body: "Peri-urban areas occupy an invisible gap, too close to cities to qualify for rural aid, yet too underserved to benefit from urban infrastructure. These communities grow rapidly and chaotically, and without deliberate attention, they become tomorrow's underclass.",
-  },
-  {
-    icon: <MapPin size={20} strokeWidth={1.8} />,
-    num: "06",
-    title: "Change must be rooted where it matters most",
-    highlight: "community-led",
-    body: "Top-down development rarely sticks. Community-led transformation, co-created with the people it serves, builds ownership, trust, and longevity. That is why Rurban Africa embeds itself in communities, trains local leaders, and builds systems that outlast our presence.",
+    title: "Investing Here Drives Broader Impact",
+    highlight: "ripple effects",
+    body: "Empowering rural and peri-urban children, teachers, and schools creates ripple effects: stronger local economies, reduced poverty, improved food security, and youth who return as leaders bridging villages and cities. When rural hearts thrive with pride, purpose, and possibility, the whole of Africa rises together.",
   },
 ];
+
 
 /* ── Highlighted body text ── */
 function HighBody({ text, keyword }: { text: string; keyword: string }) {
@@ -154,15 +141,15 @@ export default function WhyRural() {
         tag="Our Focus"
         title="Why Rural &amp;"
         accentWord="Peri-Urban?"
-        description="The story of Africa's future is being written in its villages, farming communities, and peri-urban fringes not only in its skyline cities. Rurban Africa exists because that story has for too long been written without those communities' voices."
+        description="We focus on rural and peri-urban communities because they represent the heart of Africa's potential and often its greatest challenges. These areas are home to the majority of the continent's population, and yet they face stark inequalities that hinder progress for entire nations. By investing here, we bridge the rural-urban divide, unlock inclusive growth, and build a stronger, more connected Africa."
         crumbs={[{ label: "Why Rural" }]}
       />
       </div>
 
       {/* ══════════ STATS STRIP ══════════ */}
-      <section className="py-14 border-y border-zinc-100 dark:border-emerald-900/20 bg-white dark:bg-[#071f12]">
-        <div ref={statsRef} className="max-w-7xl mx-auto px-6 lg:px-14">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* <section className="py-14 border-y border-zinc-100 dark:border-emerald-900/20 bg-white dark:bg-[#071f12]"> */}
+        {/* <div ref={statsRef} className="max-w-7xl mx-auto px-6 lg:px-14"> */}
+          {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {STATS.map((s, i) => (
               <motion.div
                 key={s.label}
@@ -180,9 +167,9 @@ export default function WhyRural() {
                 </p>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
+          </div> */}
+        {/* </div> */}
+      {/* </section> */}
 
       {/* ══════════ SIX REASONS ══════════ */}
       <section className="py-24">

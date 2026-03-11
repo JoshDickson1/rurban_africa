@@ -7,6 +7,7 @@ import {
   Heart, Users, Sprout, ExternalLink, CheckCircle2,
 } from "lucide-react";
 import PageHero from "@/_components/PageHero";
+import WhatWeDo from "@/_components/WhatWeDo";
 
 /* ══════════════════════════════════════════════════
    PROGRAM DATA
@@ -547,38 +548,12 @@ export default function Programs() {
       />
 
       {/* ══ STATS STRIP ══ */}
-      <section className="py-14 border-b border-zinc-100 dark:border-emerald-900/20 bg-white dark:bg-[#071f12]">
-        <div ref={statsRef} className="max-w-7xl mx-auto px-6 lg:px-14">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { num: "6",       label: "Active programmes" },
-              { num: "50,000+", label: "Notebooks distributed" },
-              { num: "38+",     label: "Communities reached" },
-              { num: "120+",    label: "Partner schools" },
-            ].map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 14 }}
-                animate={statsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-center"
-              >
-                <p className="text-4xl font-black text-zinc-900 dark:text-white mb-1.5"
-                  style={{ fontFamily: "'Playfair Display', serif" }}>
-                  {s.num}
-                </p>
-                <p className="text-[11px] font-bold uppercase tracking-[0.18em]
-                  text-zinc-400 dark:text-emerald-700 leading-snug">
-                  {s.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <div>
+        <WhatWeDo />
+      </div>
 
       {/* ══ PROGRAM GRID ══ */}
-      <section className="py-24">
+      {/* <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-14">
           <div className="text-center mb-14">
             <motion.h2
@@ -612,7 +587,7 @@ export default function Programs() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ══ BOTTOM CTA ══ */}
       <section

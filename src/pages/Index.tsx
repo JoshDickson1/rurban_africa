@@ -122,9 +122,9 @@ const Index = () => {
         <AboutSect />
       </section>
 
-      <div className="">
+      {/* <div className="">
         <TargetAudience />
-      </div>
+      </div> */}
 
       {/* <div className="">
         <TeamsOverview />

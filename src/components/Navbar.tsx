@@ -23,6 +23,7 @@ const NAV_ITEMS = [
         items: [
           { label: "Vision Statement",  href: "/about/#vision",   icon: <Star size={14} />,      desc: "Where we're heading" },
           { label: "Mission Statement", href: "/about#",  icon: <Target size={14} />,    desc: "Why we exist" },
+          { label: "Our Team", href: "/team",  icon: <Users size={14} />,    desc: "Our Vision Bearers" },
         ],
       },
       {

@@ -91,8 +91,11 @@ export default function Team() {
     <div className="bg-white dark:bg-emerald-950 transition-colors duration-700">
       <div className="relative">
         <PageHero
-          title="Meet the Team"
-          description="The passionate individuals driving our mission forward."
+            tag="Our Vision Bearers"
+            title="Meet The"
+            accentWord="Team"
+            description=""
+            crumbs={[{ label: "Team" }]}
         />
       </div>
 

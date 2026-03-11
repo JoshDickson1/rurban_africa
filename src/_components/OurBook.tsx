@@ -71,7 +71,7 @@ const KEY_FEATURES = [
   {
     icon: <BookOpen size={16} />,
     title: "The Rurban Africa Pledge",
-    desc: "A central and powerful daily declaration that children and youth recite — emphasising self-belief, discipline, love for their roots, and pride in African identity.",
+    desc: "A central and powerful daily declaration that children and youth recite, emphasising self-belief, discipline, love for their roots, and pride in African identity.",
   },
   {
     icon: <Star size={16} />,
@@ -158,7 +158,8 @@ export default function OurBook() {
             custom={2} variants={fadeUpVariants}
             initial="hidden" animate={isInView ? "visible" : "hidden"}
             className="text-zinc-600 dark:text-emerald-100/60 text-lg leading-relaxed max-w-3xl mx-auto"
-          >The Rurban Africa Pledge Notebooks is our key initiative, designed as more than ordinary school supplies. They serve as empowering tools to instill pride, purpose, and possibility in children and youth from rural and peri-urban communities across Africa. These notebooks are distributed during school outreach visits to inspire pupils, young students, reinforce self-belief, and connect their personal growth to a broader vision of African development and unity.
+          >
+            The Rurban Africa Pledge Notebooks is our key initiative, designed as more than ordinary school supplies. They serve as empowering tools to instill pride, purpose, and possibility in children and youth from rural and peri-urban communities across Africa. These notebooks are distributed during school outreach visits to inspire pupils, young students, reinforce self-belief, and connect their personal growth to a broader vision of African development and unity.
           </motion.p>
         </div>
 

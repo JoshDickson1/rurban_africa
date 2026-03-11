@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import {
-  ArrowUpRight, Handshake, Building2, Globe, BarChart3,
+  ArrowUpRight, Building2, Globe, BarChart3,
   Megaphone, Heart, CheckCircle2, ChevronDown, Star,
 } from "lucide-react";
 import PageHero from "@/_components/PageHero";
@@ -39,9 +39,9 @@ const PARTNERSHIP_TYPES = [
 ];
 
 const IMPACT_STATS = [
-  { num: "50,000+", label: "Pledge Notebooks distributed" },
-  { num: "38+",     label: "Communities reached"          },
-  { num: "120+",    label: "Partner schools"              },
+  { num: "20,000+", label: "Pledge Notebooks distributed" },
+  { num: "6+",     label: "Communities reached"          },
+  { num: "6+",    label: "Partner schools"              },
   { num: "100%",    label: "Free to recipients"           },
 ];
 
@@ -291,12 +291,12 @@ export default function Partner() {
       {/* ════════════════════ HERO ════════════════════ */}
       <section className="">
         <PageHero
-                          tag="Partner with Rurban Africa"
-                          title="Partner With in Making"
-                          accentWord="Impact"
-                          description="Make a real impact by sharing your skills and time with rural communities across Africa. Whether you have 3 hours a week or can commit full-time, there's a role for you."
-                          crumbs={[{ label: "Partner" }]}
-                        />
+          tag="Partner with Rurban Africa"
+          title="Partner With Us In Making"
+          accentWord="Impact"
+          description="Make a real impact by sharing your skills and time with rural communities across Africa. Whether you have 3 hours a week or can commit full-time, there's a role for you."
+          crumbs={[{ label: "Partner" }]}
+        />
       </section>
 
       {/* ════════════════════ STATS ════════════════════ */}
