@@ -45,7 +45,7 @@ const TIERS = [
       "All four sponsor benefits included",
       "Dedicated impact report monthly",
       "Invitation to the official Hub launch event",
-      "Village selection — your choice or ours",
+      "Village selection, your choice or ours",
     ],
   },
   {
@@ -368,7 +368,7 @@ export default function DreamHubsSponsorship() {
                 className="text-zinc-500 dark:text-emerald-100/50 text-sm leading-[1.85] mb-8 max-w-lg"
               >
                 The village may be chosen by us, proposed by the sponsor, or determined jointly through mutual agreement.{" "}
-                <span className="text-amber-500 font-semibold">Co-sponsorship is also warmly welcomed</span> — multiple partners can combine contributions to bring a Hub to life.
+                <span className="text-amber-500 font-semibold">Co-sponsorship is also warmly welcomed</span>, multiple partners can combine contributions to bring a Hub to life.
               </motion.p>
 
               <motion.div
@@ -431,7 +431,7 @@ export default function DreamHubsSponsorship() {
                   <ul className="space-y-4 mb-8">
                     {[
                       { letter: "a", text: "Regular weekly progress reports detailing milestones, activities, and impact" },
-                      { letter: "b", text: "Special public recognition on our website, social media, reports, and events — if desired" },
+                      { letter: "b", text: "Special public recognition on our website, social media, reports, and events, if desired" },
                     ].map((item) => (
                       <li key={item.letter} className="flex items-start gap-3">
                         <span className="w-6 h-6 rounded-full bg-amber-400/15 border border-amber-400/25
