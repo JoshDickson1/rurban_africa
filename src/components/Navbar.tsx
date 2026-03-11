@@ -1,13 +1,57 @@
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useCallback } from "react"
 import {
   Phone, MapPin, Facebook, Instagram, Twitter, Linkedin,
   Search, X, Mail, ChevronDown, ArrowUpRight,
   BookOpen, Users, Heart, Globe, Handshake, MessageSquare,
   Building2, Target, Star, MapPinned, UserCheck, Newspaper,
-  InfoIcon,
 } from "lucide-react"
 import { Link, useNavigate, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
+
+/* ══════════════════════════════════════════════════
+   HASH-AWARE NAVIGATION HOOK
+   Handles hrefs like "/team#management":
+   1. If already on the right page — scroll immediately
+   2. If on a different page — navigate first, then scroll
+      once the new page has mounted (polls for the element)
+══════════════════════════════════════════════════ */
+function useHashNav() {
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const scrollToId = useCallback((id: string) => {
+    let attempts = 0
+    const tryScroll = () => {
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" })
+      } else if (attempts < 20) {
+        attempts++
+        setTimeout(tryScroll, 100)
+      }
+    }
+    tryScroll()
+  }, [])
+
+  const go = useCallback((href: string) => {
+    if (!href.includes("#")) {
+      navigate(href)
+      return
+    }
+    const [path, hash] = href.split("#")
+    const targetPath = path || "/"
+    const samePage = location.pathname === targetPath || (!path && location.pathname)
+    if (samePage) {
+      scrollToId(hash)
+    } else {
+      navigate(targetPath)
+      // Wait for the new page to mount then scroll
+      setTimeout(() => scrollToId(hash), 80)
+    }
+  }, [navigate, location.pathname, scrollToId])
+
+  return go
+}
 
 /* ══════════════════════════════════════════════════
    NAV STRUCTURE
@@ -21,40 +65,40 @@ const NAV_ITEMS = [
       {
         group: "Who We Are",
         items: [
-          { label: "Vision Statement",  href: "/about/#vision",   icon: <Star size={14} />,      desc: "Where we're heading" },
-          { label: "Mission Statement", href: "/about#",  icon: <Target size={14} />,    desc: "Why we exist" },
-          { label: "Our Team", href: "/team",  icon: <Users size={14} />,    desc: "Our Vision Bearers" },
+          { label: "Vision Statement",  href: "/about#vision",   icon: <Star size={14} />,      desc: "Where we're heading" },
+          { label: "Mission Statement", href: "/about#vision",  icon: <Target size={14} />,    desc: "Why we exist" },
+          { label: "Our Team",          href: "/team",           icon: <Users size={14} />,     desc: "Our Vision Bearers" },
         ],
       },
       {
         group: "Our People",
         items: [
-          { label: "Board of Trustees", href: "/team/trustees",  icon: <Building2 size={14} />, desc: "Governance & leadership" },
-          { label: "Management Team",   href: "/team/management",icon: <Users size={14} />,     desc: "Operational leaders" },
-          { label: "Advisory Board",    href: "/team/advisory",  icon: <UserCheck size={14} />, desc: "Strategic advisors" },
+          { label: "Board of Trustees", href: "/team#trustees",  icon: <Building2 size={14} />, desc: "Governance & leadership" },
+          { label: "Management Team",   href: "/team#management",icon: <Users size={14} />,     desc: "Operational leaders" },
+          { label: "Advisory Board",    href: "/team#advisory",  icon: <UserCheck size={14} />, desc: "Strategic advisors" },
         ],
       },
     ],
   },
   {
     label: "What We Do",
+    href: "/what-we-do",
     dropdown: [
       {
         group: "Programmes",
         items: [
           { label: "Our Programs",        href: "/programs",          icon: <BookOpen size={14} />,  desc: "All active initiatives" },
           { label: "Target Audience",     href: "/target-audience",   icon: <MapPinned size={14} />, desc: "Who we serve" },
-          { label: "Rurban Africa Pledge", href: "/pledge",            icon: <Heart size={14} />,     desc: "Our daily declaration" },
-          { label: "Why Rural", href: "/why-rural",            icon: <InfoIcon size={14} />,     desc: "Why we focus on rural areas" },
+          { label: "Rurban Africa Pledge",href: "/pledge",            icon: <Heart size={14} />,     desc: "Our daily declaration" },
         ],
       },
     ],
   },
   { label: "Dream Hubs", href: "/dream_hubs" },
-  // {
-  //   label: "Why Rural",
-  //   href: "/why-rural",
-  // },
+  {
+    label: "Why Rural",
+    href: "/why-rural",
+  },
   {
     label: "Get Involved",
     href: "/get-involved",
@@ -92,9 +136,11 @@ const NAV_ITEMS = [
 function DropdownPanel({
   groups,
   onClose,
+  go,
 }: {
   groups: { group: string; items: { label: string; href: string; icon: React.ReactNode; desc: string }[] }[]
   onClose: () => void
+  go: (href: string) => void
 }) {
   const wide = groups.length > 1
 
@@ -104,7 +150,6 @@ function DropdownPanel({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 4 }}
       transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      /* left-0 = aligns left edge with the trigger's left edge */
       className={`absolute top-[calc(100%+8px)] left-0 z-50
         ${wide ? "w-[420px]" : "w-[240px]"}
         rounded-2xl overflow-hidden
@@ -124,17 +169,15 @@ function DropdownPanel({
               {g.group}
             </p>
             {g.items.map((item) => (
-              <Link
+              <button
                 key={item.href}
-                to={item.href}
-                onClick={onClose}
-                className="group flex items-center gap-3 px-2 py-2 rounded-xl
+                onClick={() => { go(item.href); onClose() }}
+                className="group w-full flex items-center gap-3 px-2 py-2 rounded-xl
                   hover:bg-black/[0.05] dark:hover:bg-white/[0.06]
-                  transition-colors duration-150"
+                  transition-colors duration-150 text-left"
               >
                 <span className="w-7 h-7 rounded-lg
                   bg-emerald-50 dark:bg-emerald-900/40
-                  backdrop-blur-2xl
                   flex items-center justify-center shrink-0
                   text-[#064e3b] dark:text-emerald-400
                   group-hover:bg-[#064e3b] group-hover:text-white
@@ -151,7 +194,7 @@ function DropdownPanel({
                     {item.desc}
                   </p>
                 </div>
-              </Link>
+              </button>
             ))}
           </div>
         ))}
@@ -170,6 +213,7 @@ export function Navbar() {
   const closeTimer                       = useRef<ReturnType<typeof setTimeout>>()
   const navigate                         = useNavigate()
   const location                         = useLocation()
+  const go                               = useHashNav()
 
   const SCROLL_THRESHOLD = typeof window !== "undefined" ? window.innerHeight * 0.08 : 60
 
@@ -331,6 +375,7 @@ export function Navbar() {
                         <DropdownPanel
                           groups={item.dropdown}
                           onClose={() => setOpenDropdown(null)}
+                          go={go}
                         />
                       )}
                     </AnimatePresence>
@@ -446,19 +491,18 @@ export function Navbar() {
                         <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-zinc-100 dark:border-emerald-900/30 pl-3">
                           {item.dropdown.flatMap((g) =>
                             g.items.map((sub) => (
-                              <Link
+                              <button
                                 key={sub.href}
-                                to={sub.href}
-                                onClick={() => setMenuOpen(false)}
-                                className={`flex items-center gap-2.5 px-2 py-2 rounded-lg text-[13px] font-medium transition-colors ${
-                                  isActive(sub.href)
+                                onClick={() => { go(sub.href); setMenuOpen(false) }}
+                                className={`w-full flex items-center gap-2.5 px-2 py-2 rounded-lg text-[13px] font-medium transition-colors text-left ${
+                                  location.pathname === sub.href.split("#")[0]
                                     ? "text-[#064e3b] dark:text-emerald-400"
                                     : "text-zinc-500 dark:text-emerald-700 hover:text-zinc-800 dark:hover:text-emerald-300"
                                 }`}
                               >
                                 <span className="text-zinc-400 dark:text-emerald-800">{sub.icon}</span>
                                 {sub.label}
-                              </Link>
+                              </button>
                             ))
                           )}
                         </div>

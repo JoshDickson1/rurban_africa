@@ -36,7 +36,7 @@ const BENEFITS = [
 const TIERS = [
   {
     label: "Full Sponsor",
-    amount: "$50,000",
+    amount: "$80,000",
     amountSub: "Single contributor",
     icon: <Star size={18} strokeWidth={1.8} />,
     featured: true,
@@ -58,7 +58,7 @@ const TIERS = [
       "Shared recognition as a co-founding sponsor",
       "Weekly progress reports",
       "Public recognition if desired",
-      "Contribute any amount toward the $50,000 goal",
+      "Contribute any amount toward the $80,000 goal",
       "Combine with other partners to fully fund a Hub",
     ],
   },
@@ -243,12 +243,12 @@ const FAQS = [
     a: "Yes. You may propose a village, select one from our shortlist of high-need communities, or agree on a location jointly with our team. We are flexible and will work with your preferences while ensuring the community is truly ready and willing to host a Hub.",
   },
   {
-    q: "What does the $50,000 cover?",
+    q: "What does the $80,000 cover?",
     a: "The full contribution funds the physical setup of a Dream Hub: space renovation, solar power installation, devices and furniture, learning materials, signage, facilitator training, and the first year of operational running costs.",
   },
   {
     q: "How does co-sponsorship work?",
-    a: "Multiple contributors can pool resources to reach the $50,000 target. Each co-sponsor is recognised publicly if desired, receives progress reports, and is credited in all Hub materials. There is no minimum contribution required to participate as a co-sponsor.",
+    a: "Multiple contributors can pool resources to reach the $80,000 target. Each co-sponsor is recognised publicly if desired, receives progress reports, and is credited in all Hub materials. There is no minimum contribution required to participate as a co-sponsor.",
   },
   {
     q: "How will I know my contribution is making impact?",
@@ -358,7 +358,7 @@ export default function DreamHubsSponsorship() {
                 className="text-zinc-600 dark:text-emerald-100/60 text-base leading-[1.85] mb-5 max-w-lg"
               >
                 We invite individuals, corporations, and partners to make a transformative impact by sponsoring a Rurban Africa Dream Hub. For a contribution of{" "}
-                <span className="font-black text-zinc-900 dark:text-white">$50,000</span>, a sponsor can fully fund the establishment of a Dream Hub in a selected village.
+                <span className="font-black text-zinc-900 dark:text-white">$80,000</span>, a sponsor can fully fund the establishment of a Dream Hub in a selected village.
               </motion.p>
 
               <motion.p
