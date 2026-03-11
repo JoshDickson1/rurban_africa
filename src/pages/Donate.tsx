@@ -28,7 +28,7 @@ interface DonorForm {
    CONSTANTS
 ══════════════════════════════════════════════════════ */
 const CURRENCIES: Record<Currency, { symbol: string; flag: string; label: string; presets: number[] }> = {
-  ngn: { symbol: "₦", flag: "🇳🇬", label: "NGN",  presets: [500, 1000, 2500, 5000, 10000, 25000] },
+  ngn: { symbol: "₦", flag: "🇳🇬", label: "NGN",  presets: [5000, 10000, 15000, 20000, 25000, 50000] },
   usd: { symbol: "$", flag: "🇺🇸", label: "USD",  presets: [5, 10, 25, 50, 100, 250] },
   gbp: { symbol: "£", flag: "🇬🇧", label: "GBP",  presets: [5, 10, 20, 50, 100, 200] },
 };
