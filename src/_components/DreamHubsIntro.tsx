@@ -103,11 +103,7 @@ export default function DreamHubsIntro() {
               initial="hidden" animate={isInView ? "visible" : "hidden"}
               className="text-zinc-600 dark:text-emerald-50/80 text-base leading-[1.85] mb-5 max-w-[540px]"
             >
-              At Rurban Africa, we envision a continent where every child, regardless of their location,
-              can dream big and turn those dreams into reality. Our Dream Hubs are innovative,
-              community-driven hubs designed to bridge the gap between rural roots and urban
-              opportunities vibrant centres for learning, creativity, and empowerment in underserved
-              rural and peri-urban areas across Africa.
+              At Rurban Africa, we envision a continent where every child, regardless of their location, can dream big and turn those dreams into reality. Our Dream Hubs entirely powered by solar energy, are innovative and community-driven hubs designed to bridge the gap between rural roots and urban opportunities. These hubs serve as vibrant centers for learning and creativity, thereby empowering rural and peri-urban areas across Africa with digital education and essential resources. They are a comprehensive hub that is designed to foster lifelong learning and community well-being.
             </motion.p>
             <motion.p
               custom={4} variants={fadeUp}
@@ -118,10 +114,8 @@ export default function DreamHubsIntro() {
               <span className="font-bold text-zinc-700 dark:text-white">
                 One Africa. Two Worlds. One Future.
               </span>
-              , the Dream Hubs transform ordinary community or school-based facilities into dynamic
-              environments where children, youth, teachers, and local leaders come together blending
-              hands-on education with cultural pride, innovation, and practical skills-building.
-            </motion.p>
+              , the Dream Hubs transform ordinary community or school based facility into dynamic environments where children, youth, teachers, and local leaders come together. They go beyond traditional classrooms by blending hands-on education with cultural pride, innovation, and practical skills-building. The hubs plant seeds of pride, purpose, and possibility helping young Africans see themselves as architects of a thriving and rising Africa.
+               </motion.p>
 
             {/* CTAs */}
             <motion.div
@@ -192,7 +186,7 @@ export default function DreamHubsIntro() {
                   className="text-xl font-black text-zinc-900 dark:text-white leading-none mb-0.5"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  38+
+                  6+
                 </p>
                 <p className="text-[10px] uppercase tracking-widest font-bold text-emerald-600 dark:text-emerald-300">
                   Communities Reached

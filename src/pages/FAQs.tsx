@@ -176,7 +176,7 @@ export default function FAQ() {
               </div>
               <div>
                 <p className="text-[11px] text-stone-400 dark:text-stone-500 font-medium mb-0.5">Our reach</p>
-                <p className="text-lg font-black text-stone-900 dark:text-white leading-none">5+ States · 500+ Lives</p>
+                <p className="text-lg font-black text-stone-900 dark:text-white leading-none">2+ States · 1950+ Lives</p>
               </div>
             </motion.div>
           </motion.div>

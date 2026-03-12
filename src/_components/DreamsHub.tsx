@@ -10,10 +10,10 @@ const fade = (delay = 0, y = 16) => ({
   transition: { duration: 0.7, delay },
 });
 
-const stats = [
-  { label: "Children", value: "1,450" },
-  { label: "Youths",   value: "500" },
-];
+// const stats = [
+//   { label: "Children", value: "1,450" },
+//   { label: "Youths",   value: "500" },
+// ];
 
 export default function DreamHubs() {
   return (
@@ -100,7 +100,7 @@ export default function DreamHubs() {
               </p>
 
               {/* Stats */}
-              <div className="flex flex-wrap gap-4">
+              {/* <div className="flex flex-wrap gap-4">
                 {stats.map(({ label, value }) => (
                   <div
                     key={label}
@@ -113,7 +113,7 @@ export default function DreamHubs() {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Decorative bottom row */}

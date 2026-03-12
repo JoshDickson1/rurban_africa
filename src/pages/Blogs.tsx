@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Search, Tag, LayoutGrid, List, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import BlogsContent from "@/_components/BlogsContent";

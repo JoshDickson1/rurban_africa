@@ -171,7 +171,7 @@ export default function WhyRural() {
         {/* </div> */}
       {/* </section> */}
 
-      {/* ══════════ SIX REASONS ══════════ */}
+      {/* ══════════ Four REASONS ══════════ */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-14">
           <div className="text-center mb-14">
@@ -183,7 +183,7 @@ export default function WhyRural() {
               className="text-3xl md:text-4xl font-black text-zinc-900 dark:text-white mb-3"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
-              Six Reasons We Focus Here
+              Four Reasons We Focus Here
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -225,9 +225,9 @@ export default function WhyRural() {
             className="text-lg md:text-xl font-black italic text-white leading-[1.25] mb-6"
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
-            "At Rurban Africa, we choose these communities not out of charity, but because true transformation starts where the need and the potential is greatest. By strengthening our communities, we are planting seeds for
+            At Rurban Africa, we choose these communities not out of charity, but because true transformation starts where the need and the potential is greatest. By strengthening our communities, we are planting seeds for
             <span className="text-amber-400">One Africa. Two Worlds. One Future.</span>
-            <span className="block mt-2 text-white/80"> where no child's dream is limited by location."</span>
+            <span className="block mt-2 text-white/80"> where no child's dream is limited by location.</span>
           </motion.blockquote>
           <motion.p
             initial={{ opacity: 0, y: 10 }}

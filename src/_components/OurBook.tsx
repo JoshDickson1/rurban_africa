@@ -421,8 +421,8 @@ export default function OurBook() {
         >
           {[
             { num: "50,000+", label: "Notebooks Distributed", icon: "📓" },
-            { num: "120+",    label: "Schools Reached",       icon: "🏫" },
-            { num: "38",      label: "Communities Served",    icon: "🌍" },
+            { num: "7+",    label: "Schools Reached",       icon: "🏫" },
+            { num: "6",      label: "Communities Served",    icon: "🌍" },
             { num: "100%",    label: "Free to Students",      icon: "🎁" },
           ].map((stat, i) => (
             <motion.div

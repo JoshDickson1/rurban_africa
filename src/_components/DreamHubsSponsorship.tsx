@@ -449,7 +449,7 @@ export default function DreamHubsSponsorship() {
                     className="text-white/80 text-sm italic leading-relaxed"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    "By sponsoring a Dream Hub, you become a key partner in empowering rural communities, fostering innovation, and turning dreams into sustainable reality."
+                    By sponsoring a Dream Hub, you become a key partner in empowering rural communities, fostering innovation, and turning dreams into sustainable reality.
                   </blockquote>
                 </div>
               </div>

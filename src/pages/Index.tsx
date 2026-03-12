@@ -12,6 +12,7 @@ import WhatWeDo from "@/_components/WhatWeDo";
 // import TeamsOverview from "@/_components/TeamsOverview";
 import BlogPreview from "@/_components/BlogPreview";
 import FAQSect from "@/_components/FAQSect";
+import DownPart from "@/components/DownPart";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -157,6 +158,9 @@ const Index = () => {
 
       <div className="">
         <DonateHero />
+      </div>
+      <div className="">
+        <DownPart />
       </div>
     </div>
   );
