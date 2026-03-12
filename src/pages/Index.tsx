@@ -157,10 +157,11 @@ const Index = () => {
       </div>
 
       <div className="">
-        <DonateHero />
-      </div>
-      <div className="">
         <DownPart />
+      </div>
+      
+      <div className="">
+        <DonateHero />
       </div>
     </div>
   );
