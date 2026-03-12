@@ -244,7 +244,7 @@ const FAQS = [
   },
   {
     q: "What does the $80,000 cover?",
-    a: "The full contribution funds the physical setup of a Dream Hub: space renovation, solar power installation, devices and furniture, learning materials, signage, facilitator training, and the first year of operational running costs.",
+    a: "The full contribution funds the physical setup of a Dream Hub: space installation, solar power installation, devices and furniture, learning materials, signage, facilitator training, and the first year of operational running costs.",
   },
   {
     q: "How does co-sponsorship work?",

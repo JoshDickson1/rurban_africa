@@ -29,13 +29,13 @@ const About = () => {
       <div className="">
         <MeetFounder />
       </div>
-      <div className="">
+      {/* <div className="">
         <DreamHubsFeatures />
       </div>
 
       <div className="">
         <OurBook />
-      </div>
+      </div> */}
       <div className="">
         <DonateHero />
       </div>

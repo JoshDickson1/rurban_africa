@@ -8,19 +8,19 @@ const content = {
   mission: {
     tag: "Our Mission",
     title: "Passionate\nFor Humanity",
-    description:
-      "We envision an Africa where village and city children share the same opportunities; where no dream is limited by geography, and rural and urban communities grow together as equal partners in sustainable development and innovation.",
-    extra:
-      "In a united Africa, once-forgotten rural communities become birthplaces of presidents, CEOs, professors, prophets, and innovators — building a continent where rural and urban worlds rise together.",
     img: "/africa.jpg",
+    description:
+      "We exists to erase the invisible line between rural and urban communities by building bridges of opportunity through community-led programs, education, skills development, and investment in underserved villages and peri-urban areas.",
+    extra:
+      "We empower communities to become self-reliant, digitally connected, and economically vibrant ensuring that every African regardless of location can realize their full potential and shape their own futures.",  
   },
   vision: {
     tag: "Our Vision",
     title: "Building\nthe Future",
     description:
-      "Our vision is to create scalable systems that empower local leaders to transform their own communities through education, technology, and sustainable resource management.",
+      "We envision an Africa where village and city children share the same opportunities; where no dream is limited by geography, and rural and urban communities grow together as equal partners in sustainable development and innovation.",
     extra:
-      "By 2030, we aim to have established 500 self-sustaining hubs across the continent, bridging the digital and economic divide permanently.",
+      "In a united Africa, once-forgotten rural communities become birthplaces of presidents, CEOs, professors, prophets, and innovators — building a continent where rural and urban worlds rise together.",
     img: "/Afircan.png",
   },
 };
