@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Users, BookOpen, Sprout, HandHeart, Globe, GraduationCap } from "lucide-react";
 import Hero from "@/_components/Hero";
 import AboutSect from "@/_components/AboutSect";
-import TargetAudience from "@/_components/TargetAudience";
+// import TargetAudience from "@/_components/TargetAudience";
 import MisVis from "@/_components/MisVis";
 import CTA from "@/_components/CTA";
 import DonateHero from "@/_components/DonateHero";
@@ -149,16 +149,20 @@ const Index = () => {
       </div>
 
       <div className="">
+        <DownPart />
+      </div>
+
+      <div className="">
         <FAQSect />
       </div>
 
       <div className="">
         <DreamHubs />
       </div>
-
-      <div className="">
+      
+      {/* <div className="">
         <DownPart />
-      </div>
+      </div> */}
       
       <div className="">
         <DonateHero />

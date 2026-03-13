@@ -128,7 +128,7 @@ export default function DownPart() {
             >
               <video
                 ref={videoRef}
-                src="/pledge-video.mp4"
+                src="/reciting.mp4"
                 className="w-full h-full object-cover"
                 playsInline
                 loop
@@ -191,55 +191,7 @@ export default function DownPart() {
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       </div>
 
-      {/* ── LEGAL STRIP ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.25 }}
-        className="relative z-10 max-w-7xl mx-auto px-6 lg:px-14 py-10"
-      >
-        <div className="grid md:grid-cols-[auto_1fr] gap-5 items-start">
-
-          {/* Icon */}
-          <div className="w-10 h-10 rounded-xl bg-emerald-400/10 border border-emerald-400/20
-            flex items-center justify-center shrink-0 mt-0.5">
-            <Building2 size={17} className="text-emerald-400" />
-          </div>
-
-          {/* Text block */}
-          <div className="space-y-3">
-
-            {/* Registration line */}
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
-              <span
-                className="text-[13px] font-black text-white/90"
-                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-              >
-                Rurban Communities Support Foundation (Rurban Africa)
-              </span>
-              <span className="flex items-center gap-1 text-[11px] text-emerald-400/60 font-semibold">
-                <Hash size={10} />
-                CAC/IT9413082
-              </span>
-              <span className="hidden md:block w-px h-3.5 bg-white/10" />
-              <span className="flex items-center gap-1 text-[11px] text-emerald-100/40">
-                <MapPin size={10} className="shrink-0" />
-                21 Salvation Road, Opebi, Ikeja, Lagos State, Nigeria
-              </span>
-            </div>
-
-            {/* Mission line */}
-            <p className="text-[12px] text-emerald-100/45 leading-relaxed max-w-3xl">
-              A registered non-profit in Nigeria. Rurban Africa operates with a commitment to bridging rural and urban divides, partnering with communities, institutions, and stakeholders to foster education, empowerment, and inclusive growth across rural communities in Africa.
-            </p>
-
-            {/* Copyright */}
-            <p className="text-[11px] text-emerald-100/25 font-semibold tracking-wide pt-1">
-              &copy; 2026 Rurban Communities Support Foundation (Rurban Africa). All Rights Reserved.
-            </p>
-          </div>
-        </div>
-      </motion.div>
+      
 
     </section>
   );
