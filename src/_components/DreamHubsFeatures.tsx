@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence, useInView, easeInOut } from "framer-motion";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -12,7 +12,7 @@ const FEATURES = [
     num:   "01",
     title: "Interactive Learning Zones",
     highlight: "hands-on activities",
-    body:  "Equipped with child-friendly spaces for hands-on activities, these zones host sessions from our 10-guide series on rural-urban connections. Kids engage in fun quizzes, group discussions, and creative projects that make learning exciting and relevant, turning abstract concepts like building bridges into tangible experiences.",
+    body:  "Equipped with child-friendly spaces for hands-on activities, these zones host sessions from our 10-guide series on rural-urban connections. Kids engage in fun quizzes, group discussions, and creative projects that make learning exciting and relevant — turning abstract concepts like building bridges into tangible experiences.",
   },
   {
     num:   "02",
@@ -72,13 +72,48 @@ function HighlightedBody({ text, keyword }: { text: string; keyword: string }) {
 }
 
 /* ══════════════════════════════════════════════════
+   HUB IMAGES — replace with your actual file paths
+══════════════════════════════════════════════════ */
+const HUB_IMAGES = [
+  "/dream-feat1.jpg",
+  "/dream-feat2.jpg",
+  "/dream-feat3.jpg",
+  "/dream-feat4.jpg",
+  "/dream-feat5.jpg",
+  "/dream-feat6.jpg",
+];
+
+/* ══════════════════════════════════════════════════
    MAIN
 ══════════════════════════════════════════════════ */
 export default function DreamHubsFeatures() {
-  const [active, setActive]   = useState(0);
-  const [dir, setDir]         = useState(1); // 1 = forward, -1 = back
-  const headerRef             = useRef<HTMLDivElement>(null);
-  const headerInView          = useInView(headerRef, { once: true, margin: "-60px" });
+  const [active, setActive]     = useState(0);
+  const [dir, setDir]           = useState(1);
+  const [imgIndex, setImgIndex] = useState(0);
+  const [imgDir,   setImgDir]   = useState(1);
+  const headerRef               = useRef<HTMLDivElement>(null);
+  const headerInView            = useInView(headerRef, { once: true, margin: "-60px" });
+
+  // Auto-advance every 3.5 s
+  useEffect(() => {
+    const t = setInterval(() => {
+      setImgDir(1);
+      setImgIndex((i) => (i + 1) % HUB_IMAGES.length);
+    }, 3500);
+    return () => clearInterval(t);
+  }, []);
+
+  const goImg = (next: number) => {
+    const n = (next + HUB_IMAGES.length) % HUB_IMAGES.length;
+    setImgDir(n > imgIndex ? 1 : -1);
+    setImgIndex(n);
+  };
+
+  const imgVariants = {
+    enter:  (d: number) => ({ opacity: 0, x: d > 0 ? 30 : -30 }),
+    center: { opacity: 1, x: 0, transition: { duration: 0.55, ease: easeInOut } },
+    exit:   (d: number) => ({ opacity: 0, x: d > 0 ? -30 : 30, transition: { duration: 0.35, ease: easeInOut } }),
+  };
 
   const go = (next: number) => {
     setDir(next > active ? 1 : -1);
@@ -95,12 +130,12 @@ export default function DreamHubsFeatures() {
     center: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.45, ease: easeInOut },
+      transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
     },
     exit: (d: number) => ({
       opacity: 0,
       x: d > 0 ? -40 : 40,
-      transition: { duration: 0.3, ease: easeInOut },
+      transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
     }),
   };
 
@@ -164,7 +199,7 @@ export default function DreamHubsFeatures() {
         {/* ── MAIN GRID ── */}
         <div className="grid lg:grid-cols-[1fr_520px] gap-12 xl:gap-20 items-center">
 
-          {/* LEFT: Image */}
+          {/* LEFT: Slideshow */}
           <motion.div
             initial={{ opacity: 0, x: -32 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -172,13 +207,64 @@ export default function DreamHubsFeatures() {
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="relative lg:sticky lg:top-28"
           >
-            <div className="relative overflow-hidden rounded-2xl shadow-xl shadow-zinc-200/60 dark:shadow-black/40">
-              <img
-                src="/hubs.jpeg"
-                alt="Rurban Africa Dream Hub"
-                className="w-full h-[450px] object-cover block"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#064e3b]/30 via-transparent to-transparent pointer-events-none" />
+            {/* Image frame */}
+            <div className="relative overflow-hidden rounded-2xl shadow-xl shadow-zinc-200/60 dark:shadow-black/40 h-[450px] bg-zinc-100 dark:bg-emerald-950">
+              <AnimatePresence custom={imgDir} mode="wait">
+                <motion.img
+                  key={imgIndex}
+                  src={HUB_IMAGES[imgIndex]}
+                  alt={`Dream Hub ${imgIndex + 1}`}
+                  custom={imgDir}
+                  variants={imgVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
+
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#064e3b]/40 via-transparent to-transparent pointer-events-none" />
+
+              {/* Prev / Next hit areas */}
+              <button
+                onClick={() => goImg(imgIndex - 1)}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full
+                  bg-black/25 hover:bg-black/45 backdrop-blur-sm border border-white/15
+                  flex items-center justify-center text-white transition-colors z-10"
+              >
+                <ChevronLeft size={16} strokeWidth={2.5} />
+              </button>
+              <button
+                onClick={() => goImg(imgIndex + 1)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full
+                  bg-black/25 hover:bg-black/45 backdrop-blur-sm border border-white/15
+                  flex items-center justify-center text-white transition-colors z-10"
+              >
+                <ChevronRight size={16} strokeWidth={2.5} />
+              </button>
+
+              {/* Counter */}
+              <div className="absolute bottom-4 right-4 px-3 py-1 rounded-full
+                bg-black/30 backdrop-blur-sm border border-white/15
+                text-white text-[11px] font-bold tabular-nums z-10">
+                {imgIndex + 1} / {HUB_IMAGES.length}
+              </div>
+
+              {/* Dot indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-10">
+                {HUB_IMAGES.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => goImg(i)}
+                    className={`rounded-full transition-all duration-300 ${
+                      i === imgIndex
+                        ? "w-5 h-1.5 bg-amber-400"
+                        : "w-1.5 h-1.5 bg-white/40 hover:bg-white/70"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Decorative ring */}
