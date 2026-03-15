@@ -12,7 +12,7 @@ const FEATURES = [
     num:   "01",
     title: "Interactive Learning Zones",
     highlight: "hands-on activities",
-    body:  "Equipped with child-friendly spaces for hands-on activities, these zones host sessions from our 10-guide series on rural-urban connections. Kids engage in fun quizzes, group discussions, and creative projects that make learning exciting and relevant — turning abstract concepts like building bridges into tangible experiences.",
+    body:  "Equipped with child-friendly spaces for hands-on activities, these zones host sessions from our 10-guide series on rural-urban connections. Kids engage in fun quizzes, group discussions, and creative projects that make learning exciting and relevant, turning abstract concepts like building bridges into tangible experiences.",
   },
   {
     num:   "02",
@@ -302,7 +302,7 @@ export default function DreamHubsFeatures() {
                 <motion.div
                   key={active}
                   custom={dir}
-                  variants={slideVariants}
+                  // variants={slideVariants}
                   initial="enter"
                   animate="center"
                   exit="exit"
