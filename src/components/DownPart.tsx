@@ -128,7 +128,7 @@ export default function DownPart() {
             >
               <video
                 ref={videoRef}
-                src="public/reciting(1).mp4"
+                src="/reciting(1).mp4"
                 className="w-full h-full object-cover"
                 playsInline
                 loop
