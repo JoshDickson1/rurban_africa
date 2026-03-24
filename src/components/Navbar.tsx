@@ -101,7 +101,7 @@ const NAV_ITEMS = [
   },
   {
     label: "Get Involved",
-    href: "/get-involved",
+    // href: "/get-involved",
     dropdown: [
       {
         group: "Join Us",

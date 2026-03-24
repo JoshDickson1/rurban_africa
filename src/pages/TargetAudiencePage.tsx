@@ -76,7 +76,7 @@ const AUDIENCES = [
 
 const REACH_STATS = [
   { num: "5–24",  label: "Age range of direct beneficiaries" },
-  { num: "38+",   label: "Communities reached" },
+  { num: "6+",   label: "Communities reached" },
   { num: "6",     label: "Distinct audience groups" },
   { num: "100%",  label: "Community co-designed" },
 ];

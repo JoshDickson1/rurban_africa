@@ -1,3 +1,4 @@
+import AboutSect from "@/_components/AboutSect"
 import DonateHero from "@/_components/DonateHero"
 import DreamHubsFeatures from "@/_components/DreamHubsFeatures"
 import DreamHubsIntro from "@/_components/DreamHubsIntro"
@@ -21,7 +22,7 @@ const About = () => {
         />
       </div>
       <div className="">
-        <DreamHubsIntro />
+        <AboutSect />
       </div>
       <div className="" id="vision">
         <MisVis />

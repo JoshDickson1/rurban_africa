@@ -24,7 +24,7 @@ const PROGRAMS = [
     highlight: "daily pledge",
     status: "Active",
     reach: "50,000+ students",
-    locations: "38+ communities across Nigeria",
+    locations: "6+ communities across Nigeria",
     partners: "120+ partner schools",
     details: {
       overview: "The Pledge Notebook is one of Rurban Africa's flagship tools for instilling self-belief, cultural pride, and academic discipline in rural students. Each notebook opens with the Rurban Africa Pledge, a declaration that reminds every child of their worth and potential, regardless of where they were born.",
@@ -38,7 +38,7 @@ const PROGRAMS = [
       impact: [
         "Over 50,000 notebooks distributed at no cost to recipients",
         "Measurable improvement in student self-confidence reported by teachers",
-        "Used across 120+ schools in 38+ communities",
+        "Used across 120+ schools in 6+ communities",
         "Tied directly to scholarship tracking and Dream Hub sessions",
       ],
       goals: "Scale to 200,000 notebooks annually and integrate into government school supply chains across three states.",
@@ -54,7 +54,7 @@ const PROGRAMS = [
     image: "/programs/dream-hubs.jpg",
     highlight: "technology-enabled",
     status: "Active",
-    reach: "38+ communities",
+    reach: "6+ communities",
     locations: "Pilot locations across Nigeria",
     partners: "Government bodies, NGOs, corporate sponsors",
     details: {
@@ -67,7 +67,7 @@ const PROGRAMS = [
         "Community members, parents, and leaders are actively involved in governance of each hub",
       ],
       impact: [
-        "38+ active and pilot hub locations across Nigeria",
+        "6+ active and pilot hub locations across Nigeria",
         "Thousands of children and youth accessing structured learning outside school hours",
         "Teachers trained in professional development workshops at each hub",
         "Used as distribution points for Pledge Notebooks and scholarship applications",
@@ -191,7 +191,7 @@ const PROGRAMS = [
         "Pledge recitation is a central ritual of the Rurban Africa culture across all programmes",
       ],
       impact: [
-        "Adopted by every student and teacher across all 38+ communities",
+        "Adopted by every student and teacher across all 6+ communities",
         "Cited by students as a source of daily motivation and self-belief",
         "Pledge ceremonies have become community bonding events attended by parents and leaders",
         "The Pledge embodies the mission: One Africa. Two Worlds. One Future.",

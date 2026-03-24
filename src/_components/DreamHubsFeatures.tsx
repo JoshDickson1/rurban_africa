@@ -99,7 +99,7 @@ export default function DreamHubsFeatures() {
     const t = setInterval(() => {
       setImgDir(1);
       setImgIndex((i) => (i + 1) % HUB_IMAGES.length);
-    }, 3500);
+    }, 10000);
     return () => clearInterval(t);
   }, []);
 

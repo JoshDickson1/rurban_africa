@@ -498,7 +498,7 @@ export default function Gallery() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { num: `${ITEMS.length}+`, label: "Photos in this gallery" },
-              { num: "38+",             label: "Communities captured" },
+              { num: "6+",             label: "Communities captured" },
               { num: "6",               label: "Programme categories" },
               { num: "2023-24",         label: "Coverage period" },
             ].map((s, i) => (

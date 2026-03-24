@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { X, MapPin, Briefcase, ArrowUpRight, Quote } from "lucide-react";
+import { X, MapPin, Briefcase, ArrowUpRight, Quote, GithubIcon } from "lucide-react";
 import PageHero from "@/_components/PageHero";
 
 /* ══════════════════════════════════════════════════
@@ -34,7 +34,7 @@ const TwitterIcon = () => (
 /* ══════════════════════════════════════════════════
    TYPES
 ══════════════════════════════════════════════════ */
-interface Social { label: string; href: string; icon: React.ReactNode; }
+interface Social { label: string; href: string; icon: React.ReactNode; target?: string; }
 interface Member {
   id: string;
   name: string;
@@ -74,13 +74,12 @@ const SECTIONS: Section[] = [
         name: "Omehoduonye C. Alvin",
         role: "Executive Director / Trustee",
         img: "/alvin_new.jpeg",
-        location: "Nigeria",
+        location: "Lagos & Delta, Nigeria",
         bio: "Alvin is a passionate advocate for inclusive African growth and a proud product of one of Nigeria's rural communities. He has spent years visiting villages, engaging with residents, and deepening his understanding of the vital yet often overlooked relationship between rural/peri-urban communities and urban centres. He firmly believes that for Africa to truly rise, rural and peri-urban communities must not be left behind. As a qualified lawyer with expertise in Corporate/Commercial, Entertainment, Clean Energy, and Technology Law, Alvin brings sharp strategic insight and real-world experience to nonprofit leadership. Driven by the conviction of One Africa. Two Worlds. One Future., he founded Rurban Africa to bridge divides through education, youth empowerment, teacher development, scholarships, and community transformation.",
         quote: "No child's dream should be limited by their birthplace.",
         socials: [
-          { label: "Facebook", href: "#", icon: <FacebookIcon /> },
-          { label: "LinkedIn", href: "#", icon: <LinkedInIcon /> },
-          { label: "Email",    href: "#", icon: <MailIcon /> },
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/omehoduonye-c-alvin-aicmc-hrc-078492194", target: "_blank", icon: <LinkedInIcon /> },
+          { label: "Email",    href: "mailto:info@rurbanafrica.org", target: "_blank", icon: <MailIcon /> },
         ],
       },
       {
@@ -92,8 +91,8 @@ const SECTIONS: Section[] = [
         bio: "Ozumah Haggai E. is a graduate of History and International Studies from the Federal University of Oye, Ekiti State. He is passionate about education and the rise of Africa. Having spent his early days in the rural communities, he believes proper attention should be given to the rural and peri-urban communities in order to erase the invisible line and have one united Africa. To him, children's destiny should not be determined by their geographical location.",
         quote: "Every community deserves a champion. Rurban Africa is that champion.",
         socials: [
-          { label: "LinkedIn", href: "#", icon: <LinkedInIcon /> },
-          { label: "Email",    href: "#", icon: <MailIcon /> },
+          { label: "LinkedIn", href: "#", target: "_blank", icon: <LinkedInIcon /> },
+          { label: "Email",    href: "#", target: "_blank", icon: <MailIcon /> },
         ],
       },
     ],
@@ -111,83 +110,82 @@ const SECTIONS: Section[] = [
         name: "Omehoduonye C. Alvin",
         role: "Executive Director",
         img: "/alvin_new.jpeg",
-        location: "Nigeria",
+        location: "Lagos & Delta, Nigeria",
         bio: "Alvin is a passionate advocate for inclusive African growth and a proud product of one of Nigeria's rural communities. He has spent years visiting villages, engaging with residents, and deepening his understanding of the vital yet often overlooked relationship between rural/peri-urban communities and urban centres. He firmly believes that for Africa to truly rise, rural and peri-urban communities must not be left behind. As a qualified lawyer with expertise in Corporate/Commercial, Entertainment, Clean Energy, and Technology Law, Alvin brings sharp strategic insight and real-world experience to nonprofit leadership. Driven by the conviction of One Africa. Two Worlds. One Future., he founded Rurban Africa to bridge divides through education, youth empowerment, teacher development, scholarships, and community transformation.",
         quote: "No child's dream should be limited by their birthplace.",
         socials: [
-          { label: "Facebook", href: "#", icon: <FacebookIcon /> },
-          { label: "LinkedIn", href: "#", icon: <LinkedInIcon /> },
-          { label: "Email",    href: "#", icon: <MailIcon /> },
+          { label: "Facebook", href: "#", target: "_blank", icon: <FacebookIcon /> },
+          { label: "LinkedIn", href: "#", target: "_blank", icon: <LinkedInIcon /> },
+          { label: "Email",    href: "#", target: "_blank", icon: <MailIcon /> },
         ],
       },
       {
-        id: "mgmt-2",
-        name: "Fatima Al-Hassan",
-        role: "Finance Lead",
-        img: PH,
-        location: "Abuja, Nigeria",
-        bio: "Fatima manages Rurban Africa's financial health, donor reporting, and compliance frameworks. A certified accountant with nonprofit sector experience spanning 10 years, she ensures every contribution is stewarded with transparency and precision.",
-        socials: [{ label: "LinkedIn", href: "#", icon: <LinkedInIcon /> }],
+        id: "mgmt-7",
+        name: "Damilola Sulaimon",
+        role: "FINANCE LEAD",
+        img: "/damilola.jpg",
+        location: "Lagos, Nigeria",
+        quote: "Transparency and accountability are the cornerstones of trust in any financial relationship.",
+        bio: "Damilola is a Chartered Accountant and known for her integrity, accuracy, and strong attention to detail. She specializes in financial reporting, budgeting, and compliance, and she is committed to promoting transparency and accountability while supporting impactful and sustainable initiatives.",
+        socials: [
+          { label: "LinkedIn", href: "#", target: "_blank", icon: <LinkedInIcon /> },
+        ],
       },
       {
         id: "mgmt-3",
-        name: "Tobi Adeyemi",
+        name: "Ozuman Haggai E.",
         role: "Programs / Operations Lead",
-        img: PH,
-        location: "Ibadan, Nigeria",
-        bio: "Tobi coordinates the planning, delivery, and evaluation of all Rurban Africa's core programmes including Dream Hubs, Pledge Notebooks, and the Scholarship scheme. He is deeply connected to rural communities and has a gift for translating strategy into action on the ground.",
-        socials: [{ label: "LinkedIn", href: "#", icon: <LinkedInIcon /> }],
+        img: "/haggai.jpeg",
+        location: "Lagos, Nigeria",
+        bio: "Ozumah Haggai E. is a graduate of History and International Studies from the Federal University of Oye, Ekiti State. He is passionate about education and the rise of Africa. Having spent his early days in the rural communities, he believes proper attention should be given to the rural and peri-urban communities in order to erase the invisible line and have one united Africa. To him, children's destiny should not be determined by their geographical location.",
+        quote: "Every community has the potential to thrive when given the right support and resources.",
+        socials: [{ label: "LinkedIn", href: "#", target: "_blank", icon: <LinkedInIcon /> }],
       },
       {
         id: "mgmt-4",
-        name: "Ngozi Eze",
+        name: "IJEOMA SAMUEL",
         role: "Communications Lead",
-        img: PH,
-        location: "Lagos, Nigeria",
-        bio: "Ngozi leads Rurban Africa's brand voice, media presence, and community storytelling. A journalist-turned-communications strategist, she crafts narratives that bring the realities of rural Africa to global audiences and compel people to act.",
+        img: "/ijeoma.jpg",
+        location: "Delta, Nigeria",
+        bio: "Ijeoma is creative and skilled in managing media, engaging content, and sharing the organization’s message in a clear and relatable way. She enjoys connecting with people and is committed to building visibility and meaningful engagement.",
+        quote: "Communication is the bridge between confusion and clarity.",
         socials: [
-          { label: "Twitter",  href: "#", icon: <TwitterIcon /> },
-          { label: "LinkedIn", href: "#", icon: <LinkedInIcon /> },
+          { label: "LinkedIn", href: "#", target: "_blank", icon: <LinkedInIcon /> },
         ],
       },
       {
         id: "mgmt-5",
-        name: "Chukwudi Obi",
+        name: "Joshua U. Dickson",
         role: "Infrastructure & Technology Lead",
-        img: PH,
+        img: "/josh.jpg",
         location: "Enugu, Nigeria",
-        bio: "Chukwudi manages the design, installation, and maintenance of Dream Hub facilities, solar systems, and digital infrastructure. A civil and systems engineer by training, he has overseen the setup of technology-enabled learning spaces in some of Nigeria's most remote communities.",
-        socials: [{ label: "LinkedIn", href: "#", icon: <LinkedInIcon /> }],
-      },
-      {
-        id: "mgmt-6",
-        name: "Hauwa Musa",
-        role: "Volunteers / Outreach Lead",
-        img: PH,
-        location: "Kano, Nigeria",
-        bio: "Hauwa coordinates Rurban Africa's volunteer network, community engagement events, and grassroots outreach campaigns. She has a background in social work and community mobilisation, and is the primary relationship builder between the organisation and the families it serves.",
-        socials: [{ label: "LinkedIn", href: "#", icon: <LinkedInIcon /> }],
-      },
-      {
-        id: "mgmt-7",
-        name: "Seun Adesanya",
-        role: "Partnerships Lead",
-        img: PH,
-        location: "Lagos, Nigeria",
-        bio: "Seun develops and manages Rurban Africa's relationships with corporate partners, institutional donors, and peer organisations. He brings a background in business development and CSR consulting, and has brokered partnerships that have directly expanded our programme reach.",
+        quote: "Technology should be a tool for empowerment, not exclusion.",
+        bio: "Joshua is a software engineer focused on building scalable, user-centric products that solve real-world problems. He works across the stack using modern technologies like TypeScript, React, Node.js, and cloud infrastructure to deliver fast, reliable systems with clean architecture and thoughtful design. Beyond writing code, he is driven by a clear mission: ensuring that innovation and digital growth extend beyond urban centers, so rural communities are not left behind.",
         socials: [
-          { label: "LinkedIn", href: "#", icon: <LinkedInIcon /> },
-          { label: "Email",    href: "#", icon: <MailIcon /> },
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/joshuadickson-ugo/", target: "_blank", icon: <LinkedInIcon /> },
+          { label: "GitHub",   href: "https://github.com/JoshDickson1", target: "_blank", icon: <GithubIcon /> },
+          { label: "Email",    href: "mailto:joshdickson@rexpond.com", target: "_blank", icon: <MailIcon /> },
         ],
       },
       {
-        id: "mgmt-8",
-        name: "Adaeze Okoro",
-        role: "Impact & Reporting Lead",
-        img: PH,
-        location: "Port Harcourt, Nigeria",
-        bio: "Adaeze designs and manages Rurban Africa's monitoring, evaluation, and learning frameworks. She ensures every programme generates credible data that informs decision-making, satisfies donor requirements, and tells an honest story of what is working and why.",
-        socials: [{ label: "LinkedIn", href: "#", icon: <LinkedInIcon /> }],
+        id: "mgmt-6",
+        name: "Favour C. Nwachukwu",
+        role: "Volunteers / Outreach Lead",
+        img: "/favour.jpg",
+        location: "Enugu, Nigeria",
+        quote: "Every act of service, no matter how small, creates ripples of change that can transform communities.",
+        bio: "Favour is a passionate and impact-driven leader known for her dedication to community engagement and people-centered initiatives. She excels in mobilizing volunteers, coordinating outreach programs, and building strong connections that drive meaningful social impact. With excellent organizational, leadership, and communication skills, she is coRurband to service, empathy, and excellence, consistently inspiring collective action and advancing purpose-driven outreach efforts in Rurban Africa.",
+        socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/favour-nwachukwu-94b348288", target: "_blank", icon: <LinkedInIcon /> }],
+      },
+      {
+        id: "mgmt-2",
+        name: "Ikediego Emmanuel",
+        role: "PARTNERSHIP LEAD",
+        img: "/ikediego.jpg",
+        location: "Enugu, Nigeria",
+        bio: "Ikediego is a strategic and relationship-driven leader known for his strong communication skills and ability to build meaningful partnerships. He specializes in fostering collaborations, managing stakeholder relationships, and driving initiatives that create mutual value. With a passion for growth and impact, he is committed to integrity, excellence, and advancing sustainable and purpose-driven partnerships.",
+        quote: "Partnerships are about people. I build them with care, integrity, and a shared vision for impact.",
+        socials: [{ label: "LinkedIn", href: "#", target: "_blank", icon: <LinkedInIcon /> }],
       },
     ],
   },
@@ -366,6 +364,7 @@ function MemberDialog({ member, onClose }: { member: Member; onClose: () => void
                     <motion.a
                       key={s.label}
                       href={s.href}
+                      target={s.target}
                       whileHover={{ scale: 1.12, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                       className="w-10 h-10 rounded-full
@@ -427,16 +426,16 @@ function MemberCard({
       <div className="relative mb-5">
         {/* Hover ring */}
         <div className="absolute -inset-2 rounded-[2rem]
-          border border-amber-400/0 group-hover:border-amber-400/35
+          border border-amber-400/35
           transition-all duration-300 pointer-events-none" />
 
-        <div className={`relative overflow-hidden shadow-md
+        <div className={`relative border-amber-300/50 overflow-hidden shadow-md
           border border-black/5 dark:border-white/8
           group-hover:shadow-2xl group-hover:shadow-emerald-900/20
           transition-all duration-400
           ${compact
-            ? "w-40 h-48 sm:w-44 sm:h-52 rounded-[1.6rem]"
-            : "w-56 h-68 sm:w-60 sm:h-72 rounded-[2rem]"
+            ? "w-56 h-72 sm:w-60 sm:h-80 rounded-[1.6rem]"
+            : "w-72 h-96 sm:w-80 sm:h-[26rem] rounded-[2rem]"
           }`}
         >
           <img
@@ -466,7 +465,7 @@ function MemberCard({
       <h4
         className={`font-black text-zinc-900 dark:text-white leading-snug mb-1.5
           group-hover:text-[#064e3b] dark:group-hover:text-emerald-400 transition-colors duration-200
-          ${compact ? "text-[15px]" : "text-[19px]"}`}
+          ${compact ? "text-[16px]" : "text-[20px]"}`}
         style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
       >
         {member.name}
@@ -485,6 +484,7 @@ function MemberCard({
             <motion.a
               key={s.label}
               href={s.href}
+              target={s.target}
               onClick={(e) => e.stopPropagation()}
               whileHover={{ scale: 1.12, y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -576,8 +576,8 @@ function TeamSection({ section }: { section: Section }) {
         </div>
 
         <div className={`grid ${COLS_CLASS[section.cols]}
-          gap-x-6 gap-y-12
-          ${section.cols === 2 ? "max-w-2xl mx-auto" : ""}`}
+          gap-x-6 gap-y-14
+          ${section.cols === 2 ? "max-w-3xl mx-auto" : ""}`}
         >
           {section.members.map((member) => (
             <MemberCard
