@@ -434,7 +434,7 @@ function MemberCard({
           group-hover:shadow-2xl group-hover:shadow-emerald-900/20
           transition-all duration-400
           ${compact
-            ? "w-[270px] h-72 sm:w-60 sm:h-80 rounded-[1.6rem]"
+            ? "w-[300px] h-96 sm:w-60 sm:h-80 rounded-[1.6rem]"
             : "w-72 h-96 sm:w-80 sm:h-[26rem] rounded-[2rem]"
           }`}
         >
