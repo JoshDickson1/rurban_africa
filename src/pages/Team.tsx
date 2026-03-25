@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { X, MapPin, Briefcase, ArrowUpRight, Quote, GithubIcon } from "lucide-react";
 import PageHero from "@/_components/PageHero";
@@ -603,6 +603,27 @@ function TeamSection({ section }: { section: Section }) {
    PAGE
 ══════════════════════════════════════════════════ */
 export default function Team() {
+  const [activeSection, setActiveSection] = useState(SECTIONS[0].id);
+
+useEffect(() => {
+  const observers = SECTIONS.map((s) => {
+    const el = document.getElementById(s.id);
+    if (!el) return null;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setActiveSection(s.id);
+      },
+      { rootMargin: "-30% 0px -60% 0px", threshold: 0 }
+    );
+
+    observer.observe(el);
+    return observer;
+  });
+
+  return () => observers.forEach((o) => o?.disconnect());
+}, []);
+
   return (
     <div
       className="bg-[#F9FBFA] dark:bg-[#041d14] min-h-screen transition-colors duration-700"
@@ -616,27 +637,30 @@ export default function Team() {
         crumbs={[{ label: "Team" }]}
       />
 
-      {/* Sticky section nav */}
-      <div className="sticky top-0 min-h-[70px] z-50 bg-[#F9FBFA]/90 dark:bg-[#041d14]/90 backdrop-blur-lg
-        border-b border-zinc-100/60 dark:border-emerald-900/20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-14 py-3.5 flex items-center gap-2 overflow-x-auto no-scrollbar">
-          {SECTIONS.map((s) => (
-            <a
-              key={s.id}
-              href={`#${s.id}`}
-              className="shrink-0 px-4 py-1.5 rounded-full
-                text-[11px] font-black uppercase tracking-[0.16em]
-                border border-zinc-200 dark:border-emerald-900/40
-                text-zinc-500 dark:text-emerald-300/60
-                hover:border-[#064e3b] hover:text-zinc-800 dark:hover:text-white
-                hover:bg-white dark:hover:bg-emerald-900/20
-                transition-all duration-200"
-            >
-              {s.label}
-            </a>
-          ))}
-        </div>
-      </div>
+      {/* ── Left sidebar nav (lg+) ── */}
+<div className="flex fixed left-6 xl:left-10 top-1/2 -translate-y-1/2 z-30 flex-col items-start gap-1">
+  {/* Vertical line */}
+  <div className="absolute left-[7px] top-0 bottom-0 w-px bg-amber-200/60 dark:bg-amber-300/30 -z-10" />
+  {SECTIONS.map((s) => {
+    const isActive = activeSection === s.id;
+    return (
+      <a
+        key={s.id}
+        href={`#${s.id}`}
+        className="group flex flex-row items-center gap-3 py-2"
+      >
+        {/* Dot indicator */}
+        <div className={`relative z-10 shrink-0 rounded-full border-2 transition-all duration-300
+          ${isActive
+            ? "w-3.5 h-3.5 border-amber-400 bg-amber-400 dark:border-amber-400 dark:bg-amber-500 shadow-md shadow-emerald-900/30"
+            : "w-2 h-2 ml-1 border-emerald-600 dark:border-emerald-800 bg-emerald-600 dark:bg-[#041d14] group-hover:border-emerald-400 dark:group-hover:border-emerald-500"
+          }`}
+        />
+      </a>
+    );
+  })}
+</div>
+
 
       {SECTIONS.map((section, i) => (
         <div key={section.id} className={i % 2 === 1 ? "bg-white dark:bg-[#071f12]" : ""}>
@@ -646,7 +670,7 @@ export default function Team() {
 
       {/* Bottom CTA */}
       <section
-        className="py-20 relative overflow-hidden"
+        className="py-20 z-40 relative overflow-hidden"
         style={{ background: "linear-gradient(160deg, #064e3b 0%, #052e20 55%, #021a0e 100%)" }}
       >
         <div className="absolute inset-0 opacity-[0.04] pointer-events-none"

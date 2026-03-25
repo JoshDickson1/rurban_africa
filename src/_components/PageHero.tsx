@@ -49,7 +49,7 @@ export default function PageHero({
   });
 
   return (
-    <section className="relative pt-20 overflow-hidden bg-[#064e3b]">
+    <section className="relative pt-20 z-40 overflow-hidden bg-[#064e3b]">
 
       {/* Optional background image */}
       {bgImage && (
