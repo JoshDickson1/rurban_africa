@@ -15,22 +15,22 @@ import { Link } from "react-router-dom";
 const SOCIAL_LINKS = [
   {
     icon: Facebook,
-    href: "https://www.facebook.com/goldengosheneducationalconsultancy",
+    href: "https://www.facebook.com/profile.php?id=61584015542265&mibextid=rS40aB7S9Ucbxw6v",
     label: "Facebook",
   },
   {
     icon: Instagram,
-    href: "https://www.instagram.com/goldengosheneducation",
+    href: "https://www.instagram.com/rurban_africa?igsh=MXJlZTd2anVjdGFxNg==",
     label: "Instagram",
   },
   {
     icon: Twitter,
-    href: "https://www.x.com/goldengoshenedu",
+    href: "https://x.com/RurbanAfrica?t=iTeolOesMeNb1e3lhXrbuA&s=08",
     label: "X (Twitter)",
   },
   {
     icon: Linkedin,
-    href: "https://www.linkedin.com/company/goldengosheneducationalconsultancy",
+    href: "https://www.linkedin.com/company/rurban-africa",
     label: "LinkedIn",
   },
 ];
