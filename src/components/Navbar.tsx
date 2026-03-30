@@ -121,6 +121,8 @@ const NAV_ITEMS = [
         items: [
           { label: "Contact Us", href: "/contact", icon: <MessageSquare size={14} />, desc: "Get in touch" },
           { label: "Blog",       href: "/blogs",   icon: <Newspaper size={14} />,     desc: "Stories & updates" },
+          { label: "Impacts",       href: "/impacts",   icon: <Heart size={14} />,     desc: "Our impact stories" },
+
         ],
       },
     ],

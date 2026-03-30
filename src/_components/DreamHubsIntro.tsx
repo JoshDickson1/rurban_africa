@@ -98,7 +98,8 @@ export default function DreamHubsIntro() {
             </motion.h2>
 
             {/* Body copy */}
-            <motion.p
+            <div className="overflow-y-scroll max-h-52 pr-2 mb-8">
+              <motion.p
               custom={3} variants={fadeUp}
               initial="hidden" animate={isInView ? "visible" : "hidden"}
               className="text-zinc-600 dark:text-emerald-50/80 text-base leading-[1.85] mb-5 max-w-[540px]"
@@ -116,6 +117,7 @@ export default function DreamHubsIntro() {
               </span>
               , the Dream Hubs transform ordinary community or school based facility into dynamic environments where children, youth, teachers, and local leaders come together. They go beyond traditional classrooms by blending hands-on education with cultural pride, innovation, and practical skills-building. The hubs plant seeds of pride, purpose, and possibility helping young Africans see themselves as architects of a thriving and rising Africa.
                </motion.p>
+            </div>
 
             {/* CTAs */}
             <motion.div
@@ -157,7 +159,7 @@ export default function DreamHubsIntro() {
             {/* Image top-right and bottom-right corners rounded-2xl, left corners rounded-2xl too for clean look */}
             <div className="relative overflow-hidden rounded-l-2xl rounded-tr-2xl rounded-br-2xl shadow-2xl shadow-zinc-300/30 dark:shadow-black/40">
               <img
-                src="/about101.png"
+                src="/DH.jpg"
                 alt="Children learning and engaging at Rurban Africa Dream Hubs"
                 loading="lazy"
                 className="w-full h-auto object-cover block"

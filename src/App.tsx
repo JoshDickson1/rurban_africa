@@ -31,6 +31,7 @@ import WhyRural from "./pages/WhyRural";
 import TargetAudiencePage from "./pages/TargetAudiencePage";
 import Programs from "./pages/Programs";
 import Pledge from "./pages/Pledge";
+import Impacts from "./pages/Impacts";
 
 const queryClient = new QueryClient();
 
@@ -80,6 +81,7 @@ const App = () => {
             <Route path="/why-rural" element={<WhyRural />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/target-audience" element={<TargetAudiencePage />} />
+            <Route path="/impacts" element={<Impacts />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 
