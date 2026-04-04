@@ -314,7 +314,7 @@ function SuccessDialog({
                 </div>
                 <p className="text-zinc-600 dark:text-emerald-100/60 text-sm leading-relaxed">
                   {donorMode === "anonymous"
-                    ? "Your anonymous donation has been received. Though your name won't appear on our wall, your impact is absolutely real — and deeply felt."
+                    ? "Your anonymous donation has been received. Though your name won't appear on our wall, your impact is absolutely real, and deeply felt."
                     : `Your donation is making a real difference in rural communities across Africa. ${form.email ? `A confirmation will be sent to ${form.email}.` : ""}`}
                 </p>
               </motion.div>
@@ -483,7 +483,7 @@ export default function DonatePage() {
               </motion.h1>
 
               <motion.p custom={2} variants={heroTextVariants} className="text-emerald-100/55 text-base leading-relaxed mb-10 max-w-[460px]">
-                In a continent of breathtaking potential, poverty is not destiny — it's a condition we can together dismantle. Every naira, every dollar, every pound moves us closer to an Africa where no child's dream is geography-limited.
+                In a continent of breathtaking potential, poverty is not destiny, it's a condition we can together dismantle. Every naira, every dollar, every pound moves us closer to an Africa where no child's dream is geography-limited.
               </motion.p>
 
               {/* Stats grid */}
@@ -618,7 +618,7 @@ export default function DonatePage() {
 
               <motion.p custom={2} variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
                 className="text-zinc-600 dark:text-emerald-100/60 leading-relaxed text-base mb-3 max-w-lg">
-                Rurban Africa bridges the gap between rural and urban communities — building schools, training leaders, installing clean water systems, and creating economic opportunity where none existed.
+                Rurban Africa bridges the gap between rural and urban communities, building schools, training leaders, installing clean water systems, and creating economic opportunity where none existed.
               </motion.p>
               <motion.p custom={3} variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
                 className="text-zinc-400 dark:text-emerald-100/35 leading-relaxed text-sm max-w-lg mb-10">
@@ -651,7 +651,7 @@ export default function DonatePage() {
                   "Because of Rurban Africa, my daughter can dream of becoming a doctor. Three years ago, she had no school to attend."
                 </p>
                 <cite className="text-[10px] font-black uppercase tracking-widest text-emerald-600 dark:text-emerald-500 not-italic">
-                  — Amina B., Sokoto State
+                 , Amina B., Sokoto State
                 </cite>
               </motion.blockquote>
             </div>
@@ -895,7 +895,7 @@ export default function DonatePage() {
           </motion.h2>
           <motion.p custom={2} variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
             className="text-emerald-100/50 text-base leading-relaxed max-w-lg mx-auto mb-10">
-            Whether it's ₦500, $5, or £5 — your gift is proof that human beings still care for one another. Thank you for being part of this.
+            Whether it's ₦500, $5, or £5, your gift is proof that human beings still care for one another. Thank you for being part of this.
           </motion.p>
           <motion.a custom={3} variants={fadeUpVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
             href="#donate-form"
