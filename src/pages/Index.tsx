@@ -142,9 +142,9 @@ const Index = () => {
       </div>
 
       {/* Programs */}
-      <div>
+      {/* <div>
         <WhatWeDo />
-      </div>
+      </div> */}
 
       <div className="">
         <BlogPreview />

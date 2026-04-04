@@ -64,7 +64,7 @@ export default function ImpactHeroImage() {
             {/* Right: CTAs */}
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <a
-                href="/Rurban_Africa_pdf_Q1_.pdf"
+                href="/Rurban_Africa_pdf_Q1!.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2

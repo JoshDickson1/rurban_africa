@@ -503,7 +503,7 @@ export default function Impacts() {
                 Download the complete Q1 2026 Impact Update as a PDF for sharing or offline reading.
               </p>
               <a
-                href="/Rurban_Africa_pdf_Q1_.pdf"
+                href="/Rurban_Africa_pdf_Q1!.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-2

@@ -161,7 +161,7 @@ export default function Q1MilestoneSection() {
                 </span>
               </Link>
               <a
-                href="/Rurban_Africa_pdf_Q1_.pdf"
+                href="/Rurban_Africa_pdf_Q1!.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2
