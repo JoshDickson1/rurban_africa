@@ -13,6 +13,8 @@ import WhatWeDo from "@/_components/WhatWeDo";
 import BlogPreview from "@/_components/BlogPreview";
 import FAQSect from "@/_components/FAQSect";
 import DownPart from "@/components/DownPart";
+import Impacts from "./Impacts";
+import Q1MilestoneSection from "@/_components/Q1MilestoneSection";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -160,9 +162,9 @@ const Index = () => {
         <DreamHubs />
       </div>
       
-      {/* <div className="">
-        <DownPart />
-      </div> */}
+      <div className="">
+        <Q1MilestoneSection />
+      </div>
       
       <div className="">
         <DonateHero />
