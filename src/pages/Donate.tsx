@@ -13,7 +13,7 @@ import {
 ══════════════════════════════════════════════════════ */
 type DonationType = "single" | "monthly";
 type PaymentTab   = "online" | "transfer";
-type OnlineMethod = "flutterwave" | "paystack";
+type OnlineMethod = "flutterwave";
 type Currency     = "ngn" | "usd" | "gbp";
 type DonorMode    = "named" | "anonymous";
 
@@ -62,31 +62,24 @@ const IMPACT_MAP: Record<Currency, Record<number, string>> = {
 
 const BANK_DETAILS: Record<Currency, { bankName: string; accountName: string; accountNumber: string; sortCode?: string; swiftCode?: string; iban?: string; routingNumber?: string }> = {
   ngn: {
-    bankName:      "Guaranty Trust Bank (GTB)",
-    accountName:   "Rurban Africa Foundation",
-    accountNumber: "0123456789",
-    sortCode:      "058152036",
+    bankName:      "Zenith Bank",
+    accountName:   "RURBAN COMMUNITIES SUPPORT FOUNDATION",
+    accountNumber: "1311991142",
   },
   usd: {
-    bankName:      "Zenith Bank Plc",
-    accountName:   "Rurban Africa Foundation",
-    accountNumber: "1234567890",
-    swiftCode:     "ZENITHBANK",
-    routingNumber: "021000021",
+    bankName:      "Coming Soon",
+    accountName:   "Account not yet active",
+    accountNumber: "Coming Soon",
   },
   gbp: {
-    bankName:      "Access Bank UK Ltd",
-    accountName:   "Rurban Africa Foundation",
-    accountNumber: "12345678",
-    sortCode:      "23-14-70",
-    iban:          "GB29NWBK60161331926819",
-    swiftCode:     "ABUKGB2L",
+    bankName:      "Coming Soon",
+    accountName:   "Account not yet active",
+    accountNumber: "Coming Soon",
   },
 };
 
 const PAYMENT_LINKS: Record<OnlineMethod, string> = {
-  flutterwave: "https://flutterwave.com/pay/YOUR_FW_LINK",
-  paystack:    "https://paystack.com/pay/YOUR_PS_LINK",
+  flutterwave: "https://flutterwave.com/donate/vh80d1qlcs7b",
 };
 
 const STATS = [
@@ -416,6 +409,10 @@ export default function DonatePage() {
     setCurrency(c);
     setSelectedAmount(CURRENCIES[c].presets[3]);
     setCustomAmount("");
+    // Switch to online payment if transfer is not available for this currency
+    if (c !== "ngn" && paymentTab === "transfer") {
+      setPaymentTab("online");
+    }
   };
 
   const handleDonate = () => {
@@ -739,9 +736,9 @@ export default function DonatePage() {
                   <div className="flex gap-1 p-1 bg-zinc-100 dark:bg-emerald-950/50 rounded-2xl">
                     {([
                       { id: "online",   label: "Pay Online",    icon: <Smartphone size={14} /> },
-                      { id: "transfer", label: "Bank Transfer",  icon: <Building2 size={14} /> },
+                      ...(currency === "ngn" ? [{ id: "transfer", label: "Bank Transfer",  icon: <Building2 size={14} /> }] : []),
                     ] as const).map((tab) => (
-                      <button key={tab.id} onClick={() => setPaymentTab(tab.id)}
+                      <button key={tab.id} onClick={() => setPaymentTab(tab.id as PaymentTab)}
                         className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold transition-all duration-300 ${paymentTab === tab.id ? "bg-[#064e3b] text-white shadow-md" : "text-zinc-500 dark:text-emerald-400/60 hover:text-zinc-800 dark:hover:text-emerald-300"}`}>
                         {tab.icon}{tab.label}
                       </button>
@@ -755,10 +752,10 @@ export default function DonatePage() {
                     {paymentTab === "online" && (
                       <motion.div key="online" variants={tabContentVariants} initial="hidden" animate="visible" exit="exit">
                         <p className="text-[10px] uppercase tracking-widest font-bold text-zinc-400 dark:text-emerald-600 mb-3">Select processor</p>
-                        <div className="grid grid-cols-2 gap-3 mb-5">
+                        <div className="grid grid-cols-1 gap-3 mb-5">
                           {([
                             { id: "flutterwave", name: "Flutterwave", sub: "Cards, Bank, USSD", color: "bg-orange-500", abbr: "FW" },
-                            { id: "paystack",    name: "Paystack",    sub: "Cards, Transfer, USSD", color: "bg-[#00C3F7]", abbr: "PS" },
+                            // { id: "paystack",    name: "Paystack",    sub: "Cards, Transfer, USSD", color: "bg-[#00C3F7]", abbr: "PS" },
                           ] as const).map((m) => (
                             <button key={m.id} onClick={() => setOnlineMethod(m.id)}
                               className={`relative p-4 rounded-2xl border-2 text-left transition-all duration-200 ${onlineMethod === m.id ? "border-[#064e3b] bg-emerald-50 dark:bg-emerald-900/20" : "border-zinc-200 dark:border-emerald-900/30 hover:border-zinc-300"}`}>
@@ -779,7 +776,7 @@ export default function DonatePage() {
                         <div className="flex items-start gap-2.5 mb-5 px-3.5 py-3 rounded-xl bg-zinc-50 dark:bg-emerald-950/30 border border-zinc-200 dark:border-emerald-900/30">
                           <span className="text-sm mt-0.5">🔒</span>
                           <p className="text-[11px] text-zinc-500 dark:text-emerald-300/55 leading-snug">
-                            You'll be securely redirected to {onlineMethod === "flutterwave" ? "Flutterwave" : "Paystack"}. Rurban Africa never stores your card details.
+                            You'll be securely redirected to Flutterwave. Rurban Africa never stores your card details.
                           </p>
                         </div>
 
@@ -789,7 +786,7 @@ export default function DonatePage() {
                         <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.97 }}
                           onClick={handleDonate} disabled={activeAmount <= 0}
                           className="mt-4 w-full flex items-center justify-between bg-[#064e3b] hover:bg-emerald-800 disabled:opacity-40 disabled:cursor-not-allowed text-white py-4 px-6 rounded-2xl font-black text-sm shadow-lg shadow-emerald-900/20 group transition-colors">
-                          <span>Donate {activeAmount > 0 && `${sym}${activeAmount.toLocaleString()}`} via {onlineMethod === "flutterwave" ? "Flutterwave" : "Paystack"}</span>
+                          <span>Donate {activeAmount > 0 && `${sym}${activeAmount.toLocaleString()}`} via Flutterwave</span>
                           <span className="bg-amber-400 text-white rounded-full p-1.5 group-hover:rotate-45 transition-transform duration-300">
                             <ArrowUpRight size={14} strokeWidth={3} />
                           </span>
