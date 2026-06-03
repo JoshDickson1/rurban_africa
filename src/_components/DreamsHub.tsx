@@ -90,11 +90,10 @@ function MusicPlayer() {
       <audio ref={audioRef} src="/anlele1.mp3" preload="metadata" />
 
       <div className="p-5">
-        {/* Track info row */}
-        <div className="flex md:flex-row flex-col items-start md:items-center gap-4 mb-6">
-          {/* Album art placeholder */}
-          <div className="flex flex-row items-center gap-3 mb-5">
-            <div className="relative shrink-0 w-11 h-11 rounded-xl overflow-hidden"
+        {/* Track info + controls row */}
+        <div className="flex items-center gap-3 mb-6">
+          {/* Album art */}
+          <div className="relative shrink-0 w-11 h-11 rounded-xl overflow-hidden"
             style={{ background: "linear-gradient(135deg, #064e3b, #0d9488)" }}
           >
             <div className="absolute inset-0 flex items-center justify-center">
@@ -102,7 +101,8 @@ function MusicPlayer() {
             </div>
           </div>
 
-          <div className="flex-1 min-w-0">
+          {/* Track name + subtitle — fills remaining space, truncates */}
+          <div className="flex-1 min-w-0 text-left overflow-hidden">
             <p className="text-white font-black text-[13px] truncate tracking-wide"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
@@ -112,11 +112,9 @@ function MusicPlayer() {
               Foundation Song · Congolese Praise
             </p>
           </div>
-          </div>
 
-          
-        {/* Controls */}
-        <div className="flex items-center justify-center gap-4">
+          {/* Controls inline */}
+          <div className="flex items-center shrink-0 gap-3">
           {/* Rewind 5s */}
           <motion.button
             whileHover={{ scale: 1.1 }}
@@ -241,15 +239,15 @@ export default function DreamHubs() {
         </motion.div>
 
         {/* Main grid */}
-        <div className="grid lg:grid-cols-[340px_1fr] gap-6 items-stretch">
+        <div className="flex flex-col lg:grid lg:grid-cols-[340px_1fr] gap-6 items-stretch">
 
           {/* LEFT: Foundation Song card */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative bg-[#064e3b] rounded-3xl p-8 flex flex-col gap-6 shadow-xl shadow-emerald-950/20 overflow-hidden"
+            className="relative bg-[#064e3b] rounded-3xl p-8 flex flex-col items-center lg:items-start gap-6 shadow-xl shadow-emerald-950/20 overflow-hidden"
           >
             {/* Decorative rings */}
             <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full border border-white/5" />
@@ -260,7 +258,7 @@ export default function DreamHubs() {
               <Music2 size={18} className="text-amber-400" />
             </div>
 
-            <div>
+            <div className="text-center lg:text-left">
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-amber-400 mb-2">
                 Foundation Song
               </p>
@@ -275,7 +273,7 @@ export default function DreamHubs() {
               </p>
             </div>
 
-            <div className="mt-auto pt-4 border-t border-white/8">
+            <div className="mt-auto w-full pt-4 border-t border-white/8 text-center lg:text-left">
               <p className="text-emerald-100/40 text-[12px] italic leading-relaxed">
                 "We are grateful to God Almighty for the journey and impacts ahead."
               </p>
@@ -284,13 +282,13 @@ export default function DreamHubs() {
 
           {/* RIGHT: Dream Hubs panel */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="bg-emerald-950 border border-stone-200 dark:border-emerald-800 rounded-3xl p-8 lg:p-10 flex flex-col justify-between gap-8 shadow-sm"
           >
-            <div>
+            <div className="text-center lg:text-left">
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-emerald-700 dark:text-emerald-400 mb-4">
                 Dream Hubs Initiative
               </p>
@@ -306,7 +304,7 @@ export default function DreamHubs() {
             </div>
 
             {/* Decorative bottom row */}
-            <div className="flex flex-wrap gap-2 pt-4 border-t border-white/8">
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-white/8 justify-center lg:justify-start">
               {["Digital Literacy", "Vocational Training", "Mentorship", "Entrepreneurship"].map((tag) => (
                 <span
                   key={tag}

@@ -21,6 +21,7 @@ import Terms from "./pages/Terms";
 import FAQs from "./pages/FAQs";
 import Career from "./pages/Career";
 import Layout from "./components/Layout";
+import ScrollToTop from "./components/ScrollToTop";
 import SingleBlog from "./pages/SingleBlog";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import DreamHubsPage from "./pages/DreamHubsPage";
@@ -57,6 +58,7 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <ScrollToTop />
             <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Index />} />

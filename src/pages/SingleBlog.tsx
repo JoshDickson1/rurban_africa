@@ -238,7 +238,7 @@ function ImageLightbox({
 }
 
 /* ══════════════════════════════════════════════════
-   4-IMAGE GRID
+   4-IMAGE GRID  (supports any number of images)
 ══════════════════════════════════════════════════ */
 function ImageGrid({
   srcs,
@@ -247,39 +247,52 @@ function ImageGrid({
   srcs: string[];
   onOpen: (index: number) => void;
 }) {
-  // Always show exactly 4 slots; repeat images cyclically if fewer provided
-  const slots = Array.from({ length: 4 }, (_, i) => srcs[i % srcs.length]);
+  const visible = Math.min(srcs.length, 4);
+  const remaining = srcs.length - 4; // > 0 means there are hidden images
 
   return (
     <div className="my-8 grid grid-cols-2 gap-2.5">
-      {slots.map((src, i) => (
-        <motion.button
-          key={i}
-          onClick={() => onOpen(i % srcs.length)}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className="group relative overflow-hidden rounded-xl aspect-[4/3] bg-stone-200 dark:bg-stone-800 block w-full"
-        >
-          <img
-            src={src}
-            alt={`Photo ${i + 1}`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.opacity = "0.1";
-            }}
-          />
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-[#064e3b]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <div className="w-10 h-10 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center">
-              <ZoomIn size={16} className="text-white" strokeWidth={2} />
-            </div>
-          </div>
-          {/* Index badge */}
-          <span className="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm text-white text-[10px] font-bold">
-            {i + 1}
-          </span>
-        </motion.button>
-      ))}
+      {Array.from({ length: visible }, (_, i) => {
+        const isOverlay = i === 3 && remaining > 0;
+        return (
+          <motion.button
+            key={i}
+            onClick={() => onOpen(i)}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="group relative overflow-hidden rounded-xl aspect-[4/3] bg-stone-200 dark:bg-stone-800 block w-full"
+          >
+            <img
+              src={srcs[i]}
+              alt={`Photo ${i + 1}`}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onError={(e) => { (e.target as HTMLImageElement).style.opacity = "0.1"; }}
+            />
+
+            {isOverlay ? (
+              /* "+N more" overlay on 4th tile */
+              <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px] flex flex-col items-center justify-center gap-1">
+                <span className="text-white font-black text-3xl leading-none">+{remaining}</span>
+                <span className="text-white/70 text-[11px] font-semibold uppercase tracking-wider">more photos</span>
+              </div>
+            ) : (
+              /* Normal hover overlay */
+              <div className="absolute inset-0 bg-[#064e3b]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center">
+                  <ZoomIn size={16} className="text-white" strokeWidth={2} />
+                </div>
+              </div>
+            )}
+
+            {/* Index badge — hidden when showing +N overlay */}
+            {!isOverlay && (
+              <span className="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm text-white text-[10px] font-bold">
+                {i + 1}
+              </span>
+            )}
+          </motion.button>
+        );
+      })}
     </div>
   );
 }
@@ -472,23 +485,33 @@ export default function SingleBlog() {
               <div className="bg-white dark:bg-[#064e3b]/30 border border-stone-200 dark:border-[#064e3b] rounded-2xl p-5">
                 <p className="text-[10px] font-black uppercase tracking-[0.22em] text-amber-400 mb-3">Photos</p>
                 <div className="grid grid-cols-2 gap-1.5">
-                  {post.images.map((src, i) => (
-                    <button
-                      key={i}
-                      onClick={() => openLightbox(i)}
-                      className="group relative overflow-hidden rounded-lg aspect-square bg-stone-100 dark:bg-emerald-900/20"
-                    >
-                      <img
-                        src={src}
-                        alt={`Photo ${i + 1}`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
-                        onError={(e) => { (e.target as HTMLImageElement).style.opacity = "0.1"; }}
-                      />
-                      <div className="absolute inset-0 bg-[#064e3b]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <ZoomIn size={14} className="text-white" />
-                      </div>
-                    </button>
-                  ))}
+                  {post.images.slice(0, 4).map((src, i) => {
+                    const isOverlay = i === 3 && post.images.length > 4;
+                    return (
+                      <button
+                        key={i}
+                        onClick={() => openLightbox(i)}
+                        className="group relative overflow-hidden rounded-lg aspect-square bg-stone-100 dark:bg-emerald-900/20"
+                      >
+                        <img
+                          src={src}
+                          alt={`Photo ${i + 1}`}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
+                          onError={(e) => { (e.target as HTMLImageElement).style.opacity = "0.1"; }}
+                        />
+                        {isOverlay ? (
+                          <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px] flex flex-col items-center justify-center gap-0.5">
+                            <span className="text-white font-black text-xl leading-none">+{post.images.length - 4}</span>
+                            <span className="text-white/60 text-[9px] font-semibold uppercase tracking-wider">more</span>
+                          </div>
+                        ) : (
+                          <div className="absolute inset-0 bg-[#064e3b]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <ZoomIn size={14} className="text-white" />
+                          </div>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 

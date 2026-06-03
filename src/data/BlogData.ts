@@ -18,7 +18,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   location?: string;
-  images: string[];           // 4 gallery images per post
+  images: string[];           // gallery images (supports any count)
   content: ProseSection[];
 }
 
@@ -187,6 +187,119 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         type: "paragraph",
         text: "The session ended beautifully as we all stood together and proudly recited the Rurban Africa Pledge, filling the environment with hope, unity, and determination.",
+      },
+    ],
+  },
+
+  // ── 05 ────────────────────────────────────────────────────
+  {
+    id: 5,
+    slug: "africa-day-2026-esut-agbani-enugu",
+    category: "Outreach",
+    tag: "Education",
+    title: "Rurban Africa Celebrates Africa Day 2026 with ESUT Primary and Secondary School, Agbani",
+    excerpt:
+      "Under the theme 'Rising Clean, Rising Strong', Rurban Africa brought together hundreds of pupils, students, and teachers for a day of education, hygiene, unity, and continental pride at ESUT School, Agbani.",
+    img: "/africaday-1.jpg",
+    date: "2026",
+    readTime: "5 min read",
+    location: "Agbani, Enugu State",
+    images: [
+      "/africaday-1.jpg",
+      "/africaday-2.jpg",
+      "/africaday-3.jpg",
+      "/africaday-4.jpg",
+      "/africaday-5.jpg",
+      "/africaday-6.jpg",
+      "/africaday-7.jpg",
+      "/africaday-8.jpg",
+      "/africaday-9.jpg",
+      "/africaday-10.jpg",
+      "/africaday-11.jpg",
+      "/africaday-12.jpg",
+      "/africaday-13.jpg",
+      "/africaday-14.jpg",
+    ],
+    content: [
+      {
+        type: "paragraph",
+        text: `Rurban Africa commemorated Africa Day with a purposeful programme at ESUT Primary and Secondary School, Agbani, Enugu State. Held under the theme “Rising Clean, Rising Strong: Education & Pride for Africa’s Future,” the event — tagged Africa Day Empowerment Day — brought together pupils, students, teachers, volunteers, and the Rurban Africa team for a day focused on education, hygiene, unity, and continental development.`,
+      },
+      {
+        type: "heading",
+        id: "interactive-session",
+        text: "Interactive Session: Rising with Africa",
+      },
+      {
+        type: "paragraph",
+        text: `The programme featured an interactive session titled "Rising with Africa: Dreams, Hygiene, and Unity". Pupils and students were encouraged to embrace education, uphold personal and environmental hygiene, foster unity, and believe in Africa's bright future.`,
+      },
+      {
+        type: "heading",
+        id: "rurban-africa-pledge",
+        text: "The Rurban Africa Pledge",
+      },
+      {
+        type: "paragraph",
+        text: "A highlight of the day was the pupils' and students' enthusiastic and unified recitation of the Rurban Africa Pledge, which reflected their pride, hope, and commitment to the continent's progress.",
+      },
+      {
+        type: "images",
+        srcs: [
+          "/africaday-1.jpg",
+          "/africaday-2.jpg",
+          "/africaday-3.jpg",
+          "/africaday-4.jpg",
+          "/africaday-5.jpg",
+          "/africaday-6.jpg",
+          "/africaday-7.jpg",
+          "/africaday-8.jpg",
+          "/africaday-9.jpg",
+          "/africaday-10.jpg",
+          "/africaday-11.jpg",
+          "/africaday-12.jpg",
+          "/africaday-13.jpg",
+          "/africaday-14.jpg",
+        ],
+      },
+      {
+        type: "heading",
+        id: "hygiene-education",
+        text: "Hand-Washing Demonstration & Hygiene Education",
+      },
+      {
+        type: "paragraph",
+        text: "A practical hand-washing demonstration reinforced the importance of hygiene, clean water, and sanitation. Pupils and students learned how proper hygiene practices contribute to disease prevention and healthier communities. The session aligned with established positions from UNESCO and the World Health Organization (WHO). UNESCO emphasises that access to clean water and sanitation is a fundamental human right and a critical enabler of quality education, health, and sustainable development. Similarly, the WHO underscores that regular hand washing and improved hygiene significantly reduce disease transmission, particularly among children, thereby enhancing public health and community productivity.",
+      },
+      {
+        type: "paragraph",
+        text: "The atmosphere was lively and engaging, with pupils and students actively participating, asking insightful questions, and sharing their aspirations for Africa.",
+      },
+      {
+        type: "heading",
+        id: "pledge-notebooks",
+        text: "Pledge Notebooks Distribution",
+      },
+      {
+        type: "paragraph",
+        text: "To support learning, Rurban Africa distributed over 200 Rurban Africa Pledge Notebooks to the pupils and students, reinforcing the organisation's commitment to educational empowerment in rural communities. This programme positively impacted hundreds of young learners and advanced Rurban Africa's mission of nurturing rural talent through education, awareness, and grassroots engagement.",
+      },
+      {
+        type: "heading",
+        id: "gratitude-commitment",
+        text: "Gratitude & Commitment",
+      },
+      {
+        type: "paragraph",
+        text: "Rurban Africa extends profound appreciation to God Almighty, whose divine wisdom, guidance, and grace have made possible the leadership, passion for youth empowerment, and impactful community initiatives across the country. The organisation expresses sincere gratitude to the management and staff of ESUT Primary and Secondary School, the dedicated volunteers, the Southeast team, and all supporters who contributed to the success of the programme. The South East Zonal Steward and Director of Outreach Favour Chiamaka reaffirmed Rurban Africa's commitment to sustained initiatives that uplift rural communities and develop the next generation of African leaders.",
+      },
+      {
+        type: "paragraph",
+        text: "As Africa rises, Rurban Africa remains steadfast in its resolve to ensure no child is left behind in the journey toward a cleaner, better-educated, united, and empowered continent.",
+      },
+      {
+        type: "quote",
+        text: "Rurban Africa: One Africa, Two Worlds, One Future. Africa is rising, and I am rising with it.",
       },
     ],
   },
