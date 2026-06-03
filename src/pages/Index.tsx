@@ -147,19 +147,19 @@ const Index = () => {
       </div> */}
 
       <div className="">
-        <BlogPreview />
+        <DreamHubs />
       </div>
-
+      
       <div className="">
         <DownPart />
       </div>
 
       <div className="">
-        <FAQSect />
+        <BlogPreview />
       </div>
 
       <div className="">
-        <DreamHubs />
+        <FAQSect />
       </div>
       
       <div className="">
