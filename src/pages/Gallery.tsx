@@ -32,7 +32,7 @@ const ITEMS: GalleryItem[] = [
     src: "/gallery/hub-launch-1.jpg",
     thumb: "/gallery/hub-launch-1.jpg",
     alt: "Dream Hub launch ceremony",
-    title: "Dream Hub Launch — Kogi State",
+    title: "Dream Hub Launch , Kogi State",
     location: "Lokoja, Kogi State",
     date: "March 2024",
     category: "Dream Hubs",

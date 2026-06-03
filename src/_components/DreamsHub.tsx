@@ -86,7 +86,7 @@ function MusicPlayer() {
         backdropFilter: "blur(8px)",
       }}
     >
-      {/* Hidden audio element — replace /amina-lele.mp3 with your actual file path */}
+      {/* Hidden audio element , replace /amina-lele.mp3 with your actual file path */}
       <audio ref={audioRef} src="/anlele1.mp3" preload="metadata" />
 
       <div className="p-5">
@@ -101,7 +101,7 @@ function MusicPlayer() {
             </div>
           </div>
 
-          {/* Track name + subtitle — fills remaining space, truncates */}
+          {/* Track name + subtitle , fills remaining space, truncates */}
           <div className="flex-1 min-w-0 text-left overflow-hidden">
             <p className="text-white font-black text-[13px] truncate tracking-wide"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}

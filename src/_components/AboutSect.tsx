@@ -87,7 +87,7 @@ const AboutSect = () => {
 
             {/* Image stack */}
             <div className="relative justify-start">
-              {/* Image 1 — top */}
+              {/* Image 1 , top */}
               <motion.div
                 style={{ y: img1Y }}
                 className={`relative z-10 mr-0 md:mr-10 overflow-hidden rounded-2xl border  shadow-2xl `}
@@ -105,7 +105,7 @@ const AboutSect = () => {
                 </div>
               </motion.div>
 
-              {/* Image 2 — offset bottom */}
+              {/* Image 2 , offset bottom */}
               <motion.div
                 style={{ y: img2Y }}
                 className={`relative z-10 -mt-8 ml-0 mr-0 overflow-hidden -ml-10 md:mr-10 mt-3 rounded-2xl border shadow-2xl  `}

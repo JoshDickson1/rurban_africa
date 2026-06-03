@@ -36,7 +36,7 @@ const Layout = () => {
   const [collapsed,  setCollapsed]  = useState(true);
   const [trackTime,  setTrackTime]  = useState({ current: 0, duration: 0 });
 
-  // ── NO autoplay — restore only if user previously played ──
+  // ── NO autoplay , restore only if user previously played ──
   useEffect(() => {
     const saved = localStorage.getItem("bgAudioPlaying");
     if (saved === "true") setPlaying(true);

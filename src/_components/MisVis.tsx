@@ -20,7 +20,7 @@ const content = {
     description:
       "We envision an Africa where village and city children share the same opportunities; where no dream is limited by geography, and rural and urban communities grow together as equal partners in sustainable development and innovation.",
     extra:
-      "In a united Africa, once-forgotten rural communities become birthplaces of presidents, CEOs, professors, prophets, and innovators — building a continent where rural and urban worlds rise together.",
+      "In a united Africa, once-forgotten rural communities become birthplaces of presidents, CEOs, professors, prophets, and innovators , building a continent where rural and urban worlds rise together.",
     img: "/Afircan.png",
   },
 };

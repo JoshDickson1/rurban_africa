@@ -221,7 +221,7 @@ export default function Contact() {
         tag="Get in Touch"
         title="We'd Love to Hear From"
         accentWord="You"
-        description="Whether you want to volunteer, partner, or simply learn more — reach out and we'll respond within 24 hours."
+        description="Whether you want to volunteer, partner, or simply learn more , reach out and we'll respond within 24 hours."
         crumbs={[{ label: "Contact" }]}
       />
 

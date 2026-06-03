@@ -507,7 +507,7 @@ export default function Partner() {
               </div>
             </motion.div>
 
-            {/* Right — Form */}
+            {/* Right , Form */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               animate={formInView ? { opacity: 1, x: 0 } : {}}

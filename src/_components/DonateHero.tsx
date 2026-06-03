@@ -90,7 +90,7 @@ export default function DonateHero() {
             </motion.p>
 
             <motion.div {...fade(0.26)} className="flex flex-col gap-4 max-w-sm">
-              {/* Single donation — amber pill */}
+              {/* Single donation , amber pill */}
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
@@ -106,7 +106,7 @@ export default function DonateHero() {
                 </span>
               </motion.button>
 
-              {/* Monthly donation — ghost pill */}
+              {/* Monthly donation , ghost pill */}
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
@@ -124,7 +124,7 @@ export default function DonateHero() {
             </motion.div>
           </div>
 
-          {/* RIGHT: Newsletter card — overflows below section */}
+          {/* RIGHT: Newsletter card , overflows below section */}
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +200,7 @@ export default function DonateHero() {
 
                   {error && <p className="text-red-500 dark:text-red-400 text-xs mb-4">{error}</p>}
 
-                  {/* Submit — matches site button style */}
+                  {/* Submit , matches site button style */}
                   <motion.button
                     onClick={handleSubscribe}
                     disabled={!email || !agreed || loading}

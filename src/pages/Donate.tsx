@@ -301,7 +301,7 @@ function SuccessDialog({
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800/40 mb-4">
                   <span className="text-lg">{CURRENCIES[currency].flag}</span>
                   <span className="text-xl font-black text-zinc-900 dark:text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    {sym}{amount > 0 ? amount.toLocaleString() : "—"}
+                    {sym}{amount > 0 ? amount.toLocaleString() : "0"}
                   </span>
                   <span className="text-xs font-bold text-zinc-400 dark:text-emerald-600 uppercase">{CURRENCIES[currency].label}</span>
                 </div>
@@ -680,7 +680,7 @@ export default function DonatePage() {
                       <p className="text-[10px] uppercase tracking-widest font-bold text-zinc-400 dark:text-emerald-600 mb-1">Amount</p>
                       <div className="flex items-baseline gap-2">
                         <p className="text-3xl font-black text-zinc-900 dark:text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
-                          {activeAmount > 0 ? `${sym}${activeAmount.toLocaleString()}` : `${sym}—`}
+                          {activeAmount > 0 ? `${sym}${activeAmount.toLocaleString()}` : `${sym}0`}
                         </p>
                         <span className="text-xs font-bold text-zinc-400 dark:text-emerald-700 uppercase">{CURRENCIES[currency].label}</span>
                       </div>

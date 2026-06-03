@@ -53,7 +53,7 @@ const FEATURES = [
 ];
 
 /* ══════════════════════════════════════════════════
-   HELPERS — highlight keyword in amber
+   HELPERS , highlight keyword in amber
 ══════════════════════════════════════════════════ */
 function HighlightedBody({ text, keyword }: { text: string; keyword: string }) {
   const parts = text.split(keyword);
@@ -72,7 +72,7 @@ function HighlightedBody({ text, keyword }: { text: string; keyword: string }) {
 }
 
 /* ══════════════════════════════════════════════════
-   HUB IMAGES — replace with your actual file paths
+   HUB IMAGES , replace with your actual file paths
 ══════════════════════════════════════════════════ */
 const HUB_IMAGES = [
   "/dream-feat1.jpg",

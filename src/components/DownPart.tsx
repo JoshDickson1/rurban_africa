@@ -58,7 +58,7 @@ export default function DownPart() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-14 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left — copy */}
+          {/* Left , copy */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -107,7 +107,7 @@ export default function DownPart() {
             </motion.blockquote>
           </motion.div>
 
-          {/* Right — video */}
+          {/* Right , video */}
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -156,7 +156,7 @@ export default function DownPart() {
                 </div>
               )}
 
-              {/* Playing controls — hover reveal */}
+              {/* Playing controls , hover reveal */}
               <div className={`absolute bottom-0 inset-x-0 px-4 py-3
                 bg-gradient-to-t from-black/70 to-transparent
                 flex items-center justify-between

@@ -11,7 +11,7 @@ interface RelatedBlogsProps {
 }
 
 export default function RelatedBlogs({ currentSlug, currentCategory }: RelatedBlogsProps) {
-  // Same category first, then fallback to others — exclude current
+  // Same category first, then fallback to others , exclude current
   const related = [
     ...BLOG_POSTS.filter((p) => p.slug !== currentSlug && p.category === currentCategory),
     ...BLOG_POSTS.filter((p) => p.slug !== currentSlug && p.category !== currentCategory),

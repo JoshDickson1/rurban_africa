@@ -290,7 +290,7 @@ export default function TargetAudience() {
             </h2>
             <p className="text-emerald-100/60 text-sm leading-relaxed max-w-md">
               Whether you're a teacher looking for support, a young professional wanting to give back,
-              a company seeking purposeful CSR, or a funder ready to invest in Africa's next generation —
+              a company seeking purposeful CSR, or a funder ready to invest in Africa's next generation ,
               we want to hear from you.
             </p>
           </div>

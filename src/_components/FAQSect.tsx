@@ -131,7 +131,7 @@ export default function FAQSect() {
             </motion.div>
           </div>
 
-          {/* RIGHT: Images — hidden on mobile */}
+          {/* RIGHT: Images , hidden on mobile */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -140,7 +140,7 @@ export default function FAQSect() {
             className="hidden lg:flex flex-col sticky top-28"
           >
 
-            {/* Image 2 — inset right, overlapping */}
+            {/* Image 2 , inset right, overlapping */}
             <div className="relative  -mt-10 ml-10">
               <img
                 src="/README.png"

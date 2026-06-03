@@ -134,7 +134,7 @@ const DONATE_ITEMS = [
 ];
 
 /* ══════════════════════════════════════════════════
-   REASON CARD — each card has its own useInView
+   REASON CARD , each card has its own useInView
 ══════════════════════════════════════════════════ */
 function ReasonCard({
   reason,
@@ -199,7 +199,7 @@ function ReasonCard({
             </motion.span>
           </div>
 
-          {/* Icon — top right, faint until hover */}
+          {/* Icon , top right, faint until hover */}
           <motion.div
             variants={iconVariants}
             initial="hidden"
@@ -338,7 +338,7 @@ export default function WhyDreamHubs() {
             animate={donateInView ? "visible" : "hidden"}
             className="grid md:grid-cols-[300px_1fr] rounded-3xl overflow-hidden border border-zinc-100 dark:border-emerald-900/30 shadow-2xl shadow-zinc-200/70 dark:shadow-black/40"
           >
-            {/* Left — white donate panel */}
+            {/* Left , white donate panel */}
             <div className="bg-white dark:bg-[#0a2318] p-8 border-r border-zinc-100 dark:border-emerald-900/30 flex flex-col">
               <motion.h3
                 initial={{ opacity: 0, y: 12 }}
@@ -394,7 +394,7 @@ export default function WhyDreamHubs() {
               </motion.a>
             </div>
 
-            {/* Right — deep green CTA */}
+            {/* Right , deep green CTA */}
             <div
               className="relative overflow-hidden p-8 md:p-10 flex flex-col justify-center"
               style={{ background: "linear-gradient(145deg, #064e3b 0%, #052e20 55%, #021a0e 100%)" }}

@@ -235,7 +235,7 @@ export default function WhyRural() {
             transition={{ duration: 0.55, delay: 0.35 }}
             className="text-[11px] font-bold uppercase tracking-[0.26em] text-emerald-300/50 mb-10"
           >
-            — Rurban Africa —
+            , Rurban Africa ,
           </motion.p>
           <motion.a
             initial={{ opacity: 0, y: 10 }}

@@ -477,7 +477,7 @@ function MemberCard({
         {member.role}
       </p>
 
-      {/* Socials — trustee cards only */}
+      {/* Socials , trustee cards only */}
       {!compact && member.socials && member.socials.length > 0 && (
         <div className="flex items-center gap-2 mt-5">
           {member.socials.map((s) => (

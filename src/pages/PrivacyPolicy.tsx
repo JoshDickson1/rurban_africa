@@ -25,25 +25,25 @@ Please read this policy carefully. If you disagree with its terms, please discon
     title: "Information We Collect",
     content: `We collect information that you voluntarily provide to us when you register, make a donation, sign up for our newsletter, or contact us. This includes:
 
-**Personal Identifiers** — Your name, email address, postal address, phone number, and other similar identifiers you provide through our forms.
+**Personal Identifiers** , Your name, email address, postal address, phone number, and other similar identifiers you provide through our forms.
 
-**Financial Information** — When you make a donation, payment details such as card numbers are processed securely by our payment providers (e.g., Paystack, Stripe). We do not store full card details on our servers.
+**Financial Information** , When you make a donation, payment details such as card numbers are processed securely by our payment providers (e.g., Paystack, Stripe). We do not store full card details on our servers.
 
-**Communication Data** — Messages you send us, including support queries and feedback.
+**Communication Data** , Messages you send us, including support queries and feedback.
 
-**Usage Data** — Information your browser sends automatically, including your IP address, browser type and version, the pages you visit, time and date of visits, and time spent on pages.`,
+**Usage Data** , Information your browser sends automatically, including your IP address, browser type and version, the pages you visit, time and date of visits, and time spent on pages.`,
   },
   {
     id: "how-we-use",
     title: "How We Use Your Information",
     content: `We use the information we collect to:
 
-— Process and acknowledge your donations and send you tax receipts where applicable.
-— Send you updates about our programmes, impact reports, and fundraising campaigns (only with your consent).
-— Respond to your enquiries and provide support.
-— Improve our website and understand how visitors interact with it.
-— Comply with legal obligations and prevent fraudulent transactions.
-— Fulfil any other purpose for which you provide consent at the point of collection.
+, Process and acknowledge your donations and send you tax receipts where applicable.
+, Send you updates about our programmes, impact reports, and fundraising campaigns (only with your consent).
+, Respond to your enquiries and provide support.
+, Improve our website and understand how visitors interact with it.
+, Comply with legal obligations and prevent fraudulent transactions.
+, Fulfil any other purpose for which you provide consent at the point of collection.
 
 We will never sell, trade, or otherwise transfer your personal information to third parties for their marketing purposes.`,
   },
@@ -52,11 +52,11 @@ We will never sell, trade, or otherwise transfer your personal information to th
     title: "Sharing Your Information",
     content: `We may share your information in the following limited circumstances:
 
-**Service Providers** — We engage trusted third-party companies to assist us in operating our website, processing payments, or communicating with you (e.g., Mailchimp, Formspree, Paystack). These parties are contractually required to keep your information confidential and use it only for the services they provide to us.
+**Service Providers** , We engage trusted third-party companies to assist us in operating our website, processing payments, or communicating with you (e.g., Mailchimp, Formspree, Paystack). These parties are contractually required to keep your information confidential and use it only for the services they provide to us.
 
-**Legal Requirements** — We may disclose your information where required by law, to protect the rights, property, or safety of Rurban Africa, our donors, or others.
+**Legal Requirements** , We may disclose your information where required by law, to protect the rights, property, or safety of Rurban Africa, our donors, or others.
 
-**Business Transfers** — In the unlikely event of a merger or restructuring, your information may be transferred as part of that process, subject to standard confidentiality protections.
+**Business Transfers** , In the unlikely event of a merger or restructuring, your information may be transferred as part of that process, subject to standard confidentiality protections.
 
 We do not share your personal data with any third party for advertising purposes.`,
   },
@@ -65,11 +65,11 @@ We do not share your personal data with any third party for advertising purposes
     title: "Cookies & Tracking",
     content: `We use cookies and similar tracking technologies to improve your browsing experience on our site. Cookies are small data files stored on your device.
 
-**Essential Cookies** — Required for the website to function properly (e.g., session management).
+**Essential Cookies** , Required for the website to function properly (e.g., session management).
 
-**Analytics Cookies** — Help us understand how visitors use our site (e.g., Google Analytics). This data is aggregated and anonymised.
+**Analytics Cookies** , Help us understand how visitors use our site (e.g., Google Analytics). This data is aggregated and anonymised.
 
-**Preference Cookies** — Remember your settings, such as dark/light mode preference.
+**Preference Cookies** , Remember your settings, such as dark/light mode preference.
 
 You can choose to disable cookies through your browser settings. However, disabling certain cookies may affect your experience on the site. You can also opt out of Google Analytics tracking by installing the Google Analytics Opt-out Browser Add-on.`,
   },
@@ -78,9 +78,9 @@ You can choose to disable cookies through your browser settings. However, disabl
     title: "Data Retention",
     content: `We retain your personal information only for as long as necessary to fulfil the purposes outlined in this policy, or as required by law. Specifically:
 
-— Donation records are retained for a minimum of 7 years to comply with financial regulations.
-— Newsletter subscriber data is retained until you unsubscribe or request deletion.
-— General enquiry data is retained for up to 2 years from your last interaction with us.
+, Donation records are retained for a minimum of 7 years to comply with financial regulations.
+, Newsletter subscriber data is retained until you unsubscribe or request deletion.
+, General enquiry data is retained for up to 2 years from your last interaction with us.
 
 When we no longer need your data, we will securely delete or anonymise it.`,
   },
@@ -89,17 +89,17 @@ When we no longer need your data, we will securely delete or anonymise it.`,
     title: "Your Rights",
     content: `Depending on your location, you may have the following rights regarding your personal data:
 
-**Right to Access** — You may request a copy of the personal information we hold about you.
+**Right to Access** , You may request a copy of the personal information we hold about you.
 
-**Right to Rectification** — You may ask us to correct inaccurate or incomplete data.
+**Right to Rectification** , You may ask us to correct inaccurate or incomplete data.
 
-**Right to Erasure** — You may request that we delete your personal data, subject to any legal obligations we have to retain it.
+**Right to Erasure** , You may request that we delete your personal data, subject to any legal obligations we have to retain it.
 
-**Right to Restrict Processing** — You may ask us to limit how we use your data in certain circumstances.
+**Right to Restrict Processing** , You may ask us to limit how we use your data in certain circumstances.
 
-**Right to Object** — You may object to our processing of your data for direct marketing purposes.
+**Right to Object** , You may object to our processing of your data for direct marketing purposes.
 
-**Right to Data Portability** — You may request that we transfer your data to another service provider in a structured, machine-readable format.
+**Right to Data Portability** , You may request that we transfer your data to another service provider in a structured, machine-readable format.
 
 To exercise any of these rights, please contact us at the details below. We will respond within 30 days.`,
   },
@@ -282,7 +282,7 @@ export default function PrivacyPolicy() {
               className="mb-14 p-6 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 border-l-4 border-[#064e3b] dark:border-emerald-500"
             >
               <p className="text-zinc-700 dark:text-emerald-100/70 text-sm leading-relaxed">
-                At Rurban Africa, we believe transparency is the foundation of trust. This policy outlines exactly how we handle your information — we will never exploit your data, and we will always protect your right to privacy.
+                At Rurban Africa, we believe transparency is the foundation of trust. This policy outlines exactly how we handle your information , we will never exploit your data, and we will always protect your right to privacy.
               </p>
             </motion.div>
 
@@ -336,7 +336,7 @@ export default function PrivacyPolicy() {
                   By using our site, you acknowledge you've read and understood this policy.
                 </h3>
                 <p className="text-emerald-100/60 text-sm leading-relaxed mb-6 max-w-xl">
-                  If you have concerns about how we handle your data, we always welcome conversation. Privacy is not just a legal formality for us — it's a reflection of how much we respect the people who support our mission.
+                  If you have concerns about how we handle your data, we always welcome conversation. Privacy is not just a legal formality for us , it's a reflection of how much we respect the people who support our mission.
                 </p>
                 <a
                   href="mailto:info@rurbanafrica.org"

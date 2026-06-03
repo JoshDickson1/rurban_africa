@@ -284,7 +284,7 @@ function ImageGrid({
               </div>
             )}
 
-            {/* Index badge — hidden when showing +N overlay */}
+            {/* Index badge , hidden when showing +N overlay */}
             {!isOverlay && (
               <span className="absolute bottom-2 right-2 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm text-white text-[10px] font-bold">
                 {i + 1}
@@ -428,7 +428,7 @@ export default function SingleBlog() {
                 Back to all posts
               </Link>
 
-              {/* Prose body — passes post.images down for the ImageGrid */}
+              {/* Prose body , passes post.images down for the ImageGrid */}
               <div className="space-y-6">
                 {post.content.map((block, i) => (
                   <ProseBlock

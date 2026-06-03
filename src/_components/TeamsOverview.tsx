@@ -109,7 +109,7 @@ export default function TeamsOverview() {
               transition={{ duration: 0.8, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
               className="group relative overflow-hidden rounded-3xl bg-emerald-900/30 border border-white/8 cursor-pointer"
             >
-              {/* Portrait image — tall */}
+              {/* Portrait image , tall */}
               <div className="relative overflow-hidden h-[480px] md:h-[560px]">
                 <img
                   src={member.img}
@@ -125,7 +125,7 @@ export default function TeamsOverview() {
                   {member.role.split("/")[0].trim()}
                 </div>
 
-                {/* Social icons — bottom of image, slide up on hover */}
+                {/* Social icons , bottom of image, slide up on hover */}
                 <div className="absolute bottom-0 left-0 right-0 px-6 pb-6 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                   <div className="flex items-center gap-2">
                     {Object.entries(member.socials).map(([platform, href]) => (
@@ -145,7 +145,7 @@ export default function TeamsOverview() {
                 </div>
               </div>
 
-              {/* Name block — below image, inside card */}
+              {/* Name block , below image, inside card */}
               <div className="px-6 py-5 flex items-center justify-between">
                 <div>
                   <h3

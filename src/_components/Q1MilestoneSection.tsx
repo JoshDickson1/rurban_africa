@@ -67,7 +67,7 @@ export default function Q1MilestoneSection() {
         {/* ── FLEX LAYOUT: content left | image right ── */}
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-stretch min-h-[520px]">
 
-          {/* LEFT — headline + stats + CTAs */}
+          {/* LEFT , headline + stats + CTAs */}
           <div className="flex-1 flex flex-col justify-center px-6 lg:pl-14 lg:pr-10 py-16 lg:py-20">
 
             {/* Badge */}
@@ -103,10 +103,10 @@ export default function Q1MilestoneSection() {
               transition={{ duration: 0.6, delay: 0.13 }}
               className="text-emerald-100/55 text-sm font-bold uppercase tracking-[0.22em] mb-10"
             >
-              Empowering Rural Futures — Jan to Mar 2026
+              Empowering Rural Futures , Jan to Mar 2026
             </motion.p>
 
-            {/* Stats — 2-col grid */}
+            {/* Stats , 2-col grid */}
             <div className="grid grid-cols-2 gap-3 mb-10 max-w-md">
               {STATS.map((s, i) => {
                 const Icon = s.icon;
@@ -174,7 +174,7 @@ export default function Q1MilestoneSection() {
             </motion.div>
           </div>
 
-          {/* RIGHT — milestone image */}
+          {/* RIGHT , milestone image */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -184,15 +184,15 @@ export default function Q1MilestoneSection() {
           >
             <img
               src="/Q1 milestone 2026.png"
-              alt="Q1 2026 Milestone — Empowering Rural Futures"
+              alt="Q1 2026 Milestone , Empowering Rural Futures"
               className="w-full h-full object-cover object-center block"
             />
 
-            {/* Left fade — blends into content on desktop */}
+            {/* Left fade , blends into content on desktop */}
             <div className="hidden lg:block absolute inset-y-0 left-0 w-24
               bg-gradient-to-r from-[#052e20] to-transparent pointer-events-none" />
 
-            {/* Top fade — blends on mobile (stacked) */}
+            {/* Top fade , blends on mobile (stacked) */}
             <div className="lg:hidden absolute top-0 inset-x-0 h-16
               bg-gradient-to-b from-[#052e20] to-transparent pointer-events-none" />
 

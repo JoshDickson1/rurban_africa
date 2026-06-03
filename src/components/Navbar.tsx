@@ -11,8 +11,8 @@ import { motion, AnimatePresence } from "framer-motion"
 /* ══════════════════════════════════════════════════
    HASH-AWARE NAVIGATION HOOK
    Handles hrefs like "/team#management":
-   1. If already on the right page — scroll immediately
-   2. If on a different page — navigate first, then scroll
+   1. If already on the right page , scroll immediately
+   2. If on a different page , navigate first, then scroll
       once the new page has mounted (polls for the element)
 ══════════════════════════════════════════════════ */
 function useHashNav() {
@@ -131,9 +131,9 @@ const NAV_ITEMS = [
 
 /* ══════════════════════════════════════════════════
    DROPDOWN PANEL
-   — positioned flush under the trigger (left-aligned)
-   — glassmorphism: frosted white/dark backdrop
-   — wider (grid) when 2+ groups
+   , positioned flush under the trigger (left-aligned)
+   , glassmorphism: frosted white/dark backdrop
+   , wider (grid) when 2+ groups
 ══════════════════════════════════════════════════ */
 function DropdownPanel({
   groups,
@@ -282,7 +282,7 @@ export function Navbar() {
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPin size={14} className="bg-amber-400 text-black rounded-full p-[3px]" />
-                      <span className="text-white/70">Lagos — 21 Salvation Road, Opebi, Ikeja</span>
+                      <span className="text-white/70">Lagos , 21 Salvation Road, Opebi, Ikeja</span>
                     </div>
                   </div>
                 ))}
@@ -359,7 +359,7 @@ export function Navbar() {
                         <ChevronDown size={12} strokeWidth={2.5}
                           className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
                       )}
-                      {/* Active: sliding underline only — no bg */}
+                      {/* Active: sliding underline only , no bg */}
                       {active && (
                         <motion.span
                           layoutId="nav-underline"

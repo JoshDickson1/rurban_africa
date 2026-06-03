@@ -70,7 +70,7 @@ const Footer = () => {
         backgroundImage: LIGHT_BG_SVG,
       }}
     >
-      {/* Dark mode override via a child overlay — Tailwind can't apply style= conditionally,
+      {/* Dark mode override via a child overlay , Tailwind can't apply style= conditionally,
           so we use a hidden dark-mode div that sets the bg via a CSS custom property trick.
           Instead, we use a wrapper with both layers and toggle via dark: on an overlay. */}
 
@@ -88,7 +88,7 @@ const Footer = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-        {/* ── Main grid — unchanged ── */}
+        {/* ── Main grid , unchanged ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
 
           {/* Brand Column */}
@@ -220,7 +220,7 @@ const Footer = () => {
         {/* ── BOTTOM DIVIDER ── */}
         <div className="border-t border-slate-200 dark:border-slate-800" />
 
-        {/* ── BOTTOM BAR — unchanged ── */}
+        {/* ── BOTTOM BAR , unchanged ── */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
             © 2026 Rurban Africa All Rights Reserved by{" "}

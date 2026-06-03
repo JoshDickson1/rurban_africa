@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 /* ══════════════════════════════════════════════════
-   SOCIAL ICONS (inline SVGs — no extra deps)
+   SOCIAL ICONS (inline SVGs , no extra deps)
 ══════════════════════════════════════════════════ */
 const SOCIALS = [
   {
@@ -50,11 +50,11 @@ const SOCIALS = [
 ];
 
 /* ══════════════════════════════════════════════════
-   BIO TEXT — highlights "One Africa. Two Worlds. One Future."
+   BIO TEXT , highlights "One Africa. Two Worlds. One Future."
 ══════════════════════════════════════════════════ */
 const BIO_BEFORE = `Alvin is a passionate advocate for inclusive African growth and a proud product of one of Nigeria's rural communities. He has spent time visiting villages, engaging with communities, and deepening his understanding of the vital yet often overlooked relationship between rural/peri-urban communities and urban centres. He firmly believes that for Africa to truly rise, rural and peri-urban communities must not be left behind. They must grow hand-in-hand with cities, sharing opportunities, resources, and pride, and no child's dream should be limited by their birthplace. As a qualified lawyer, Alvin brings sharp strategic insight and real-world experience to nonprofit leadership. Having grown up in a rural setting, he intimately understands the barriers many children and communities face and the immense potential waiting to be unlocked when those barriers are removed. He is driven by the conviction of One Africa. Two Worlds. One Future. `;
 const BIO_HIGHLIGHT = "One Africa. Two Worlds. One Future.";
-// const BIO_AFTER = `, Alvin founded Rurban Africa to bridge divides through education, youth empowerment, teacher development, scholarships, and community transformation. His mission is clear: to instil unbreakable pride, purpose, and possibility in Africa's next generation — ensuring no child's dream is limited by their birthplace.`;
+// const BIO_AFTER = `, Alvin founded Rurban Africa to bridge divides through education, youth empowerment, teacher development, scholarships, and community transformation. His mission is clear: to instil unbreakable pride, purpose, and possibility in Africa's next generation , ensuring no child's dream is limited by their birthplace.`;
 
 /* ══════════════════════════════════════════════════
    COMPONENT

@@ -182,7 +182,7 @@ export default function OurBook() {
               <span className="absolute bottom-3 left-3 w-2 h-2 rounded-full bg-amber-300/70 dark:bg-amber-600/50 z-20" />
               <span className="absolute bottom-3 right-3 w-2 h-2 rounded-full bg-emerald-300/70 dark:bg-emerald-600/50 z-20" />
 
-              {/* Book image — fills the dashed frame edge to edge */}
+              {/* Book image , fills the dashed frame edge to edge */}
               <motion.img
                 src="/book_back.jpeg"
                 alt="Rurban Africa Pledge Notebook"
@@ -194,7 +194,7 @@ export default function OurBook() {
               />
             </motion.div>
 
-            {/* Floating badge — sits below the frame */}
+            {/* Floating badge , sits below the frame */}
             <motion.div
               initial={{ opacity: 0, scale: 0.7, y: 10 }}
               animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}

@@ -223,7 +223,7 @@ export const BLOG_POSTS: BlogPost[] = [
     content: [
       {
         type: "paragraph",
-        text: `Rurban Africa commemorated Africa Day with a purposeful programme at ESUT Primary and Secondary School, Agbani, Enugu State. Held under the theme “Rising Clean, Rising Strong: Education & Pride for Africa’s Future,” the event — tagged Africa Day Empowerment Day — brought together pupils, students, teachers, volunteers, and the Rurban Africa team for a day focused on education, hygiene, unity, and continental development.`,
+        text: `Rurban Africa commemorated Africa Day with a purposeful programme at ESUT Primary and Secondary School, Agbani, Enugu State. Held under the theme “Rising Clean, Rising Strong: Education & Pride for Africa’s Future,” the event , tagged Africa Day Empowerment Day , brought together pupils, students, teachers, volunteers, and the Rurban Africa team for a day focused on education, hygiene, unity, and continental development.`,
       },
       {
         type: "heading",

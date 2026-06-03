@@ -12,17 +12,17 @@ interface Crumb {
 interface PageHeroProps {
   /** Small eyebrow label above the title */
   tag?: string;
-  /** Main headline — supports a highlighted last word automatically */
+  /** Main headline , supports a highlighted last word automatically */
   title: string;
-  /** Optional italic accent word/phrase — replaces auto-detected last word */
+  /** Optional italic accent word/phrase , replaces auto-detected last word */
   accentWord?: string;
   /** Short description under the title */
   description?: string;
-  /** Breadcrumb items — last one is current page (no link) */
+  /** Breadcrumb items , last one is current page (no link) */
   crumbs?: Crumb[];
   /** Optional background image path */
   bgImage?: string;
-  /** Extra content slot — e.g. stat badges, CTA buttons */
+  /** Extra content slot , e.g. stat badges, CTA buttons */
   children?: React.ReactNode;
 }
 
