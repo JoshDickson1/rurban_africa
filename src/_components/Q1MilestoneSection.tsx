@@ -149,7 +149,7 @@ export default function Q1MilestoneSection() {
               className="flex flex-col sm:flex-row items-start gap-3"
             >
               <Link
-                to="/impact"
+                to="/impacts"
                 className="group inline-flex items-center gap-3
                   bg-amber-400 hover:bg-amber-300 text-black
                   px-7 py-3.5 rounded-full font-black text-sm
