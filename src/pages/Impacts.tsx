@@ -121,6 +121,12 @@ const SCHOOLS = [
     date: "February 2026",
     desc: "We focused on hygiene, future aspirations, and African representation, with notebook distribution and group affirmations.",
   },
+    {
+    letter: "g",
+    name: "ESUT Secondary School, Nkanu West LGA, Agbani, Enugu State",
+    date: "March 2026",
+    desc: "We engaged with the passionate leaders on the dangers of drug abuse, and it effect on their health and academics. After which, they were encouraged to make responsible life choices.",
+  },
 ];
 
 /* ══════════════════════════════════════════════════
@@ -156,7 +162,7 @@ export default function Impacts() {
         {/* PDF download inside hero */}
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <a
-            href="/Rurban_Africa_pdf_Q1_.pdf"
+            href="/Rurban_Africa_pdf_Q1!.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2.5

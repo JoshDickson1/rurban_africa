@@ -325,6 +325,10 @@ export function Navbar() {
                   isScrolled ? "text-zinc-500 dark:text-emerald-400" : "text-white/70"}`}>
                   Africa
                 </span>
+                <span className={`text-[10px] font-bold tracking-[0.22em] uppercase transition-colors duration-400 ${
+                  isScrolled ? "text-zinc-500 dark:text-emerald-400" : "text-amber-400"}`}>
+                  MATT 7:24-25; PSALMS 127:1
+                </span>
               </div>
             </Link>
 

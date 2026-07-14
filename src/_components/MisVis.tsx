@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import {useNavigate} from "react-router-dom";
 
 const content = {
   mission: {
@@ -26,6 +27,7 @@ const content = {
 };
 
 export default function MisVis() {
+    const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<"mission" | "vision">("mission");
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -158,6 +160,7 @@ export default function MisVis() {
 
             {/* CTA */}
             <motion.button
+                onClick={() => navigate("/donate")}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
               className="self-start flex items-center gap-3 bg-[#064e3b] text-white px-7 py-3.5 rounded-full font-bold text-sm tracking-wide shadow-xl shadow-emerald-900/20 group"
