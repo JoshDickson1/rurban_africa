@@ -82,19 +82,19 @@ const SECTIONS: Section[] = [
           { label: "Email",    href: "mailto:info@rurbanafrica.org", target: "_blank", icon: <MailIcon /> },
         ],
       },
-      // {
-      //   id: "haggai",
-      //   name: "Ozuman Haggai E.",
-      //   role: "Trustee",
-      //   img: '/haggai.jpeg',
-      //   location: "Abuja, Nigeria",
-      //   bio: "Ozumah Haggai E. is a graduate of History and International Studies from the Federal University of Oye, Ekiti State. He is passionate about education and the rise of Africa. Having spent his early days in the rural communities, he believes proper attention should be given to the rural and peri-urban communities in order to erase the invisible line and have one united Africa. To him, children's destiny should not be determined by their geographical location.",
-      //   quote: "Every community deserves a champion. Rurban Africa is that champion.",
-      //   socials: [
-      //     { label: "LinkedIn", href: "#", target: "_blank", icon: <LinkedInIcon /> },
-      //     { label: "Email",    href: "#", target: "_blank", icon: <MailIcon /> },
-      //   ],
-      // },
+      {
+        id: "haggai",
+        name: "Ozuman Haggai E.",
+        role: "Trustee",
+        img: '/haggai.jpeg',
+        location: "Abuja, Nigeria",
+        bio: "Ozumah Haggai E. is a graduate of History and International Studies from the Federal University of Oye, Ekiti State. He is passionate about education and the rise of Africa. Having spent his early days in the rural communities, he believes proper attention should be given to the rural and peri-urban communities in order to erase the invisible line and have one united Africa. To him, children's destiny should not be determined by their geographical location.",
+        quote: "Every community deserves a champion. Rurban Africa is that champion.",
+        socials: [
+          { label: "LinkedIn", href: "#", target: "_blank", icon: <LinkedInIcon /> },
+          { label: "Email",    href: "#", target: "_blank", icon: <MailIcon /> },
+        ],
+      },
     ],
   },
   {
