@@ -18,7 +18,7 @@ export default function SpotlightAct() {
   const navigate = useNavigate();
 
   return (
-    <section className="py-28 bg-[#F9FBFA] dark:bg-[#041d14] transition-colors duration-700">
+    <section className="pt-28 bg-[#F9FBFA] dark:bg-[#041d14] transition-colors duration-700">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-18 items-center">
           {/* LEFT: Text */}
