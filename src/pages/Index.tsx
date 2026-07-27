@@ -15,7 +15,7 @@ import FAQSect from "@/_components/FAQSect";
 import DownPart from "@/components/DownPart";
 import Impacts from "./Impacts";
 import MilestoneSection from "@/_components/MilestoneSection.tsx";
-import Q1MilestoneSection from "@/_components/Q1MilestoneSection.tsx";
+import SpotlightAct from "@/_components/SpotlightAct.tsx";
 // import heroBg from "@/assets/hero-bg.jpg";
 
 const fadeInUp = {
@@ -153,6 +153,10 @@ const Index = () => {
 
       <div className="">
         <DownPart />
+      </div>
+
+      <div className="">
+        <SpotlightAct />
       </div>
 
       <div className="">
