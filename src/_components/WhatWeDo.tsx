@@ -41,12 +41,12 @@ const programs = [
     description:
       "No child's dream should be limited by economics. We provide financial support and mentorship to talented students from rural communities.",
   },
-  {
-    id: "07",
-    title: "Teachers Training & Development",
-    description:
-      "Our teacher training equips educators with modern pedagogy, classroom management, and tools that inspire self-belief in students.",
-  },
+  // {
+  //   id: "07",
+  //   title: "Teachers Training & Development",
+  //   description:
+  //     "Our teacher training equips educators with modern pedagogy, classroom management, and tools that inspire self-belief in students.",
+  // },
 ];
 
 // Split into left (first 3-4) and right (remaining), center gets image

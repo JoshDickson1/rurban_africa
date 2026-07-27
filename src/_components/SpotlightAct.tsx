@@ -56,7 +56,7 @@ export default function SpotlightAct() {
             </AnimatePresence>
 
             {/* Divider */}
-            <div className="mt-12 mb-10 h-px bg-zinc-900/8 dark:bg-white/8" />
+            <div className="my-5 md:my-10 h-px bg-zinc-900/8 dark:bg-white/8" />
 
             {/* CTA */}
             <motion.button

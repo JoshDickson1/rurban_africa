@@ -80,6 +80,7 @@ const NAV_ITEMS = [
       },
     ],
   },
+  { label: "The Great Mission", href: "/great_mission" },
   {
     label: "What We Do",
     href: "/what-we-do",
@@ -216,6 +217,11 @@ export function Navbar() {
   const navigate                         = useNavigate()
   const location                         = useLocation()
   const go                               = useHashNav()
+  const [openItem, setOpenItem] = useState<string | null>(null);
+
+  const toggleItem = (label: string) => {
+    setOpenItem((prev) => (prev === label ? null : label));
+  };
 
   const SCROLL_THRESHOLD = typeof window !== "undefined" ? window.innerHeight * 0.08 : 60
 
@@ -470,52 +476,107 @@ export function Navbar() {
 
               {/* Links */}
               <div className="flex-1 px-4 py-6 space-y-1">
-                {NAV_ITEMS.map((item, i) => (
-                  <div key={item.label}>
-                    <motion.div
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.05 + i * 0.05 }}
-                    >
-                      <Link
-                        to={item.href}
-                        onClick={() => setMenuOpen(false)}
-                        className={`flex items-center justify-between px-3 py-3 rounded-xl font-bold text-sm transition-colors ${
-                          isActive(item.href)
-                            ? "bg-emerald-50 dark:bg-emerald-900/20 text-[#064e3b] dark:text-emerald-400"
-                            : "text-zinc-700 dark:text-white/80 hover:bg-zinc-50 dark:hover:bg-white/5"
-                        }`}
-                      >
-                        {item.label}
-                        {isActive(item.href) && (
-                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                        )}
-                      </Link>
+                {NAV_ITEMS.map((item, i) => {
+                  const active = isActive(item.href);
+                  const hasDropdown = !!item.dropdown;
+                  const isOpen = openItem === item.label;
 
-                      {/* Mobile sub-items */}
-                      {item.dropdown && (
-                        <div className="ml-4 mt-1 space-y-0.5 border-l-2 border-zinc-100 dark:border-emerald-900/30 pl-3">
-                          {item.dropdown.flatMap((g) =>
-                            g.items.map((sub) => (
-                              <button
-                                key={sub.href}
-                                onClick={() => { go(sub.href); setMenuOpen(false) }}
-                                className={`w-full flex items-center gap-2.5 px-2 py-2 rounded-lg text-[13px] font-medium transition-colors text-left ${
-                                  location.pathname === sub.href.split("#")[0]
-                                    ? "text-[#064e3b] dark:text-emerald-400"
-                                    : "text-zinc-500 dark:text-emerald-700 hover:text-zinc-800 dark:hover:text-emerald-300"
-                                }`}
+                  return (
+
+                      <motion.div
+                        key={item.label}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: 0.05 + i * 0.05 }}
+                      >
+                        {hasDropdown ? (
+                          // Parent with submenu: button toggles, doesn't navigate
+                          <button
+                            type="button"
+                            onClick={() => toggleItem(item.label)}
+                            aria-expanded={isOpen}
+                            className={`w-full flex items-center justify-between px-3 py-3 rounded-xl font-bold text-sm transition-colors ${
+                              active
+                                ? "bg-emerald-50 dark:bg-emerald-900/20 text-[#064e3b] dark:text-emerald-400"
+                                : "text-zinc-700 dark:text-white/80 hover:bg-zinc-50 dark:hover:bg-white/5"
+                            }`}
+                          >
+                            <span className="flex items-center gap-2">
+                              {item.label}
+                              {active && (
+                                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                              )}
+                            </span>
+                            <ChevronDown
+                              size={16}
+                              className={`transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                            />
+                          </button>
+                        ) : (
+                          // Leaf item: normal link
+                          <Link
+                            to={item.href}
+                            onClick={() => setMenuOpen(false)}
+                            className={`flex items-center justify-between px-3 py-3 rounded-xl font-bold text-sm transition-colors ${
+                              active
+                                ? "bg-emerald-50 dark:bg-emerald-900/20 text-[#064e3b] dark:text-emerald-400"
+                                : "text-zinc-700 dark:text-white/80 hover:bg-zinc-50 dark:hover:bg-white/5"
+                            }`}
+                          >
+                            {item.label}
+                            {active && (
+                              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                            )}
+                          </Link>
+                        )}
+
+                        {/* Collapsible submenu */}
+                        {hasDropdown && (
+                          <AnimatePresence initial={false}>
+                            {isOpen && (
+                              <motion.div
+                                key="submenu"
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                                className="overflow-hidden"
                               >
-                                <span className="text-zinc-400 dark:text-emerald-800">{sub.icon}</span>
-                                {sub.label}
-                              </button>
-                            ))
-                          )}
-                        </div>
-                      )}
-                    </motion.div>
-                  </div>
-                ))}
+                                <div className="ml-4 mt-1 mb-1 space-y-3 border-l-2 border-zinc-100 dark:border-emerald-900/30 pl-3">
+                                  {item.dropdown!.map((group) => (
+                                    <div key={group.group}>
+                                      <p className="px-2 pb-1 text-[10px] font-black uppercase tracking-[0.18em] text-zinc-400 dark:text-emerald-800">
+                                        {group.group}
+                                      </p>
+                                      <div className="space-y-0.5">
+                                        {group.items.map((sub) => (
+                                          <button
+                                            key={sub.href}
+                                            onClick={() => {
+                                              go(sub.href);
+                                              setMenuOpen(false);
+                                            }}
+                                            className={`w-full flex items-center gap-2.5 px-2 py-2 rounded-lg text-[13px] font-medium transition-colors text-left ${
+                                              location.pathname === sub.href.split("#")[0]
+                                                ? "text-[#064e3b] dark:text-emerald-400"
+                                                : "text-zinc-500 dark:text-emerald-700 hover:text-zinc-800 dark:hover:text-emerald-300"
+                                            }`}
+                                          >
+                                            <span className="text-zinc-400 dark:text-emerald-800">{sub.icon}</span>
+                                            {sub.label}
+                                          </button>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        )}
+                      </motion.div>
+                  );
+                })}
               </div>
 
               {/* Bottom CTA */}

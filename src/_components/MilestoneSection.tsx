@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   MILESTONES_DATA,
@@ -53,6 +53,13 @@ export default function MilestonesAccordion() {
     setSelection((prev) => ({ ...prev, quarter }));
   };
 
+  useEffect(() => {
+    const container = ref.current;
+    if (!container) return;
+    const activeCard = container.querySelector<HTMLElement>('[data-active="true"]');
+    activeCard?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }, [selection.quarter, selection.year]);
+
   return (
     <section
       ref={ref}
@@ -96,17 +103,13 @@ export default function MilestonesAccordion() {
         {/* ── Milestone cards ── */}
         <div
           className={[
-            "grid gap-3",
-            availableQuarters.length === 4
-              ? "grid-cols-2 md:grid-cols-4"
-              : availableQuarters.length === 3
-                ? "grid-cols-2 md:grid-cols-3"
-                : availableQuarters.length === 2
-                  ? "grid-cols-2"
-                  : "grid-cols-1",
-
-            // ' grid grid-cols-2 gap-3 mb-10 max-w-md',
+            // Mobile: horizontal snap-scroll strip
+            "flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 -mx-6 px-6",
+            "[&::-webkit-scrollbar]:hidden",
+            // Desktop: back to the original grid, scroll behavior turned off
+            "md:mx-0 md:px-0 md:overflow-visible md:snap-none md:grid md:grid-cols-2 md:gap-4",
           ].join(" ")}
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {availableQuarters.map((quarter, i) => (
             <MilestoneCard

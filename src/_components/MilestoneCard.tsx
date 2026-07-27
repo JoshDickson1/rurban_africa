@@ -26,6 +26,7 @@ export default function MilestoneCard({
       type="button"
       onClick={onClick}
       aria-pressed={isActive}
+      data-active={isActive}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
@@ -35,7 +36,8 @@ export default function MilestoneCard({
         ease: [0.22, 1, 0.36, 1],
       }}
       className={[
-        "relative w-full text-left rounded-2xl border px-5 py-5 overflow-hidden",
+        "relative shrink-0 w-[78vw] max-w-[300px] snap-center text-left rounded-2xl border px-5 py-5 overflow-hidden",
+        "md:w-auto md:max-w-none md:shrink md:snap-none",
         "transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400",
         isActive
           ? "border-amber-400 bg-amber-400/5"
@@ -87,7 +89,7 @@ export default function MilestoneCard({
           to={`/impact/${quarter.slug}`}
           className="group inline-flex items-center gap-3
                   bg-amber-400 hover:bg-amber-300 text-black
-                  px-7 py-3.5 rounded-full font-black text-sm
+                  px-7 py-3.5 rounded-full font-black text-xs md:text-sm
                   transition-colors shadow-xl shadow-black/20"
         >
           Read the {quarter.quarterLabel} report
