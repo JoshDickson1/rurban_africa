@@ -18,6 +18,7 @@ export interface QuarterMilestone {
   dateRange: string; // e.g. "Jan – Mar 2026"
   tagline: string; // "Empowering Rural Futures"
   component: ComponentType;
+  pdf: string;
   stats: Stat[];
 }
 
@@ -36,6 +37,7 @@ export const MILESTONES_DATA: MilestonesDataMap = {
       dateRange: "Jan – Mar 2026",
       tagline: "Empowering Rural Futures",
       component: Q12026,
+      pdf: "/Rurban_Africa_pdf_Q1!.pdf",
       stats: [
         {
           value: "1,950+",
@@ -71,6 +73,7 @@ export const MILESTONES_DATA: MilestonesDataMap = {
       dateRange: "Apr – Jun 2026",
       tagline: "Empowering Rural Futures",
       component: Q22026,
+      pdf: "/Q2_2026_IMPACT_UPDATE.pdf",
       stats: [],
     },
   },

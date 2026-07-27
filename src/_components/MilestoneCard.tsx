@@ -96,7 +96,7 @@ export default function MilestoneCard({
           </span>
         </Link>
         <a
-          href="/Rurban_Africa_pdf_Q1!.pdf"
+          href={quarter.pdf}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2
