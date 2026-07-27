@@ -33,7 +33,7 @@ import TargetAudiencePage from "./pages/TargetAudiencePage";
 import Programs from "./pages/Programs";
 import Pledge from "./pages/Pledge";
 import Impacts from "./pages/Impacts";
-// import SingleMilestone from "@/pages/SingleMilestone.tsx";
+import QuarterImpactPage from "@/pages/QuarterImpact.tsx";
 
 const queryClient = new QueryClient();
 
@@ -85,7 +85,7 @@ const App = () => {
             <Route path="/programs" element={<Programs />} />
             <Route path="/target-audience" element={<TargetAudiencePage />} />
             <Route path="/impacts" element={<Impacts />} />
-            <Route path="/impact/:slug" element={<Impacts />} />
+            <Route path="/impact/:slug" element={<QuarterImpactPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 

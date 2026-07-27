@@ -3,8 +3,7 @@ import { motion, useInView } from "framer-motion";
 import {
   MILESTONES_DATA,
   AVAILABLE_YEARS,
-  DEFAULT_YEAR,
-  DEFAULT_QUARTER,
+  LATEST_IMPACT,
   type QuarterMilestone,
 } from "@/data/MileStoneData.ts";
 import MilestoneCard from "@/_components/MilestoneCard.tsx";
@@ -24,22 +23,21 @@ const QUARTER_ORDER = ["q1", "q2", "q3", "q4"] as const;
  * To add a future year, just add entries to MILESTONES_DATA — no UI changes needed.
  */
 export default function MilestonesAccordion() {
-  const ref    = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [selection, setSelection] = useState<{
     year: number;
     quarter: QuarterMilestone["id"];
   }>({
-    year: DEFAULT_YEAR,
-    quarter: DEFAULT_QUARTER,
+    year: LATEST_IMPACT.year,
+    quarter: LATEST_IMPACT.quarter,
   });
 
   const yearData = MILESTONES_DATA[selection.year] ?? {};
 
-  const availableQuarters = QUARTER_ORDER
-    .map((id) => yearData[id])
-    .filter((q): q is QuarterMilestone => q !== undefined);
-
+  const availableQuarters = QUARTER_ORDER.map((id) => yearData[id]).filter(
+    (q): q is QuarterMilestone => q !== undefined,
+  );
 
   //Design change .... might still use
   const activeQuarterData =
@@ -65,7 +63,6 @@ export default function MilestonesAccordion() {
       }}
     >
       <div className="max-w-5xl mx-auto">
-
         {/* ── Year tabs ── */}
         <div className="flex items-center gap-2 mb-10 flex-wrap">
           {AVAILABLE_YEARS.map((year, i) => (
@@ -108,7 +105,7 @@ export default function MilestonesAccordion() {
                   ? "grid-cols-2"
                   : "grid-cols-1",
 
-           // ' grid grid-cols-2 gap-3 mb-10 max-w-md',
+            // ' grid grid-cols-2 gap-3 mb-10 max-w-md',
           ].join(" ")}
         >
           {availableQuarters.map((quarter, i) => (
@@ -124,9 +121,7 @@ export default function MilestonesAccordion() {
 
         {/* ── Quarter summary — pushes down below the cards ── */}
         {/*<QuarterMilestoneSection quarter={activeQuarterData} />*/}
-
       </div>
     </section>
   );
 }
-

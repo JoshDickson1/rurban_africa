@@ -68,7 +68,7 @@ const Index = () => {
       </div>
 
       <section className="relative overflow-hidden bg-white py-24 dark:bg-gradient-to-b dark:from-[#064e3b] dark:to-[#064e3b]">
-      
+
 
       <div className="container relative mx-auto px-6">
         <motion.div
@@ -93,9 +93,9 @@ const Index = () => {
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 transition-colors duration-500 group-hover:bg-emerald-600 group-hover:text-white dark:bg-emerald-800/30 dark:text-emerald-400">
                   <stat.icon size={28} strokeWidth={1.5} />
                 </div>
-                
+
                 {/* Floating particle animation */}
-                <motion.div 
+                <motion.div
                   animate={{ y: [0, -4, 0] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -right-2 -top-2 h-3 w-3 rounded-full bg-amber-400 opacity-0 group-hover:opacity-100 transition-opacity"
@@ -103,7 +103,7 @@ const Index = () => {
               </div>
 
               <div className="text-center">
-                <motion.h3 
+                <motion.h3
                   className="text-4xl lg:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white"
                 >
                   {stat.value}
@@ -150,7 +150,7 @@ const Index = () => {
       <div className="">
         <DreamHubs />
       </div>
-      
+
       <div className="">
         <DownPart />
       </div>
@@ -162,11 +162,11 @@ const Index = () => {
       <div className="">
         <FAQSect />
       </div>
-      
+
       <div className="">
-        <Q1MilestoneSection />
+        <MilestoneSection />
       </div>
-      
+
       <div className="">
         <DonateHero />
       </div>

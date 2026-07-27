@@ -1,4 +1,7 @@
 import { BookOpen, LucideIcon, MapPin, School, Users } from "lucide-react";
+import Q12026 from "@/_components/Q12026.tsx";
+import Q22026 from "@/_components/Q22026.tsx";
+import { ComponentType } from "react";
 
 export interface Stat {
   value: string;
@@ -14,6 +17,7 @@ export interface QuarterMilestone {
   shortLabel: string; // e.g. "Q1"
   dateRange: string; // e.g. "Jan – Mar 2026"
   tagline: string; // "Empowering Rural Futures"
+  component: ComponentType;
   stats: Stat[];
 }
 
@@ -31,6 +35,7 @@ export const MILESTONES_DATA: MilestonesDataMap = {
       shortLabel: "Q1",
       dateRange: "Jan – Mar 2026",
       tagline: "Empowering Rural Futures",
+      component: Q12026,
       stats: [
         {
           value: "1,950+",
@@ -65,32 +70,8 @@ export const MILESTONES_DATA: MilestonesDataMap = {
       shortLabel: "Q2",
       dateRange: "Apr – Jun 2026",
       tagline: "Empowering Rural Futures",
-      stats: [
-        // {
-        //   value: "1,950+",
-        //   label: "Bright Minds Reached",
-        //   sub: "Children directly inspired",
-        //   icon: Users,
-        // },
-        // {
-        //   value: "3,000+",
-        //   label: "Pledge Notebooks",
-        //   sub: "Distributed across communities",
-        //   icon: BookOpen,
-        // },
-        // {
-        //   value: "6",
-        //   label: "Communities Engaged",
-        //   sub: "Delta & Enugu States",
-        //   icon: MapPin,
-        // },
-        // {
-        //   value: "6",
-        //   label: "Schools Visited",
-        //   sub: "Primary & secondary levels",
-        //   icon: School,
-        // },
-      ],
+      component: Q22026,
+      stats: [],
     },
   },
 };
@@ -101,5 +82,24 @@ export const AVAILABLE_YEARS = Object.keys(MILESTONES_DATA)
   .sort((a, b) => a - b);
 
 /** Default year + quarter shown on first render. */
-export const DEFAULT_YEAR = 2026;
-export const DEFAULT_QUARTER: QuarterMilestone["id"] = "q2";
+export const LATEST_IMPACT = {
+  year: 2026,
+  quarter: "q2",
+} as const;
+
+
+export function getLatestImpact() {
+  return MILESTONES_DATA[LATEST_IMPACT.year][LATEST_IMPACT.quarter];
+}
+
+export function getImpactBySlug(slug: string) {
+  for (const year of Object.values(MILESTONES_DATA)) {
+    const match = Object.values(year).find(
+      (quarter) => quarter.slug === slug
+    );
+
+    if (match) return match;
+  }
+
+  return null;
+}
