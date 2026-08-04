@@ -80,7 +80,19 @@ const NAV_ITEMS = [
       },
     ],
   },
-  { label: "The Great Mission", href: "/great_mission" },
+
+  { label: "The Great Mission",
+    href: "/great-mission",
+    dropdown: [
+      {
+        group: "Programmes",
+        items: [
+          { label: "Mission / Vision", href: "/great-mission#mission", icon: <BookOpen size={14} />,  desc: "Who We Are" },
+          { label: "Core Pillar",     href: "/great-mission#corepillar",   icon: <MapPinned size={14} />, desc: "What We Stand For" },
+        ],
+      },
+    ],
+  },
   {
     label: "What We Do",
     href: "/what-we-do",

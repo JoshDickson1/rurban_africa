@@ -16,6 +16,8 @@ interface PageHeroProps {
   title: string;
   /** Optional italic accent word/phrase , replaces auto-detected last word */
   accentWord?: string;
+  /** Optional italic subtitle, replaces auto-detected last word */
+  subtitle?: string;
   /** Short description under the title */
   description?: string;
   /** Breadcrumb items , last one is current page (no link) */
@@ -31,6 +33,7 @@ const grain = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http:
 export default function PageHero({
   tag,
   title,
+  subtitle,
   accentWord,
   description,
   crumbs = [],
@@ -50,7 +53,6 @@ export default function PageHero({
 
   return (
     <section className="relative pt-20 z-40 overflow-hidden bg-[#064e3b]">
-
       {/* Optional background image */}
       {bgImage && (
         <>
@@ -76,7 +78,6 @@ export default function PageHero({
       <div className="absolute left-10 top-0 hidden h-full w-px bg-gradient-to-b from-transparent via-white/6 to-transparent md:block" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-14 py-20 lg:py-28">
-
         {/* Tag pill */}
         {tag && (
           <motion.div {...fade(0)}>
@@ -93,9 +94,26 @@ export default function PageHero({
           className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.05] tracking-tight mb-5"
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
         >
-          {restTitle}{" "}
-          <span className="italic text-amber-400">{accent}</span>
+          {restTitle} <span className="italic text-amber-400">{accent}</span>
         </motion.h1>
+
+        {/* Title */}
+        {subtitle &&
+          <motion.h2
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.05 }}
+            className={`mb-10 text-2xl md:text-3xl lg:text-4xl font-black leading-[1.05] tracking-tight text-white italic`}
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          >
+            {subtitle}{" "}
+            {/*<br className="hidden sm:block" />*/}
+          {/*  <span className={"italic text-green-700"}>*/}
+          {/*  Guided by Humanity.*/}
+          {/*</span>*/}
+          </motion.h2>
+        }
 
         {/* Description */}
         {description && (
@@ -108,11 +126,7 @@ export default function PageHero({
         )}
 
         {/* Extra slot */}
-        {children && (
-          <motion.div {...fade(0.22)}>
-            {children}
-          </motion.div>
-        )}
+        {children && <motion.div {...fade(0.22)}>{children}</motion.div>}
 
         {/* Breadcrumb */}
         {crumbs.length > 0 && (
@@ -121,18 +135,26 @@ export default function PageHero({
             aria-label="Breadcrumb"
             className="flex items-center flex-wrap gap-1 text-[12px] text-emerald-100/40 mt-8"
           >
-            <Link to="/" className="hover:text-white transition-colors font-medium">
+            <Link
+              to="/"
+              className="hover:text-white transition-colors font-medium"
+            >
               Home
             </Link>
             {crumbs.map((crumb, i) => (
               <span key={i} className="flex items-center gap-1">
                 <ChevronRight size={12} className="opacity-40" />
                 {crumb.to ? (
-                  <Link to={crumb.to} className="hover:text-white transition-colors font-medium">
+                  <Link
+                    to={crumb.to}
+                    className="hover:text-white transition-colors font-medium"
+                  >
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span className="text-emerald-100/70 font-semibold">{crumb.label}</span>
+                  <span className="text-emerald-100/70 font-semibold">
+                    {crumb.label}
+                  </span>
                 )}
               </span>
             ))}

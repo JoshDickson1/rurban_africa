@@ -53,12 +53,12 @@ export default function MilestonesAccordion() {
     setSelection((prev) => ({ ...prev, quarter }));
   };
 
-  useEffect(() => {
-    const container = ref.current;
-    if (!container) return;
-    const activeCard = container.querySelector<HTMLElement>('[data-active="true"]');
-    activeCard?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-  }, [selection.quarter, selection.year]);
+  // useEffect(() => {
+  //   const container = ref.current;
+  //   if (!container) return;
+  //   const activeCard = container.querySelector<HTMLElement>('[data-active="true"]');
+  //   activeCard?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  // }, [selection.quarter, selection.year]);
 
   return (
     <section

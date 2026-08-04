@@ -20,7 +20,7 @@ interface HeroProps {
 const Hero = ({
   title = "Giving Africa's Youth a Chance",
   tagline = "Rurban Africa",
-  description = "Empowering children and young people across rural and peri-urban communities through education, opportunity, and sustainable growth.",
+  description = "Empowering children and young people across rural and peri-urban communities through education, opportunity, sustainable growth, and the message of Christ Jesus.",
   videoSrc = "/hero-video.mp4",
 }: HeroProps) => {
   const [videoOpen, setVideoOpen] = useState(false);
@@ -44,18 +44,18 @@ const Hero = ({
 
   useEffect(() => {
     const video = videoRef.current;
-  if (!video) return;
+    if (!video) return;
 
-  video.muted = true; // ensure muted before any play attempt
-  video.play().catch(() => {
-    // Fallback: wait for user interaction
-    const unlock = () => {
-      video.muted = true;
-      video.play().catch(() => {});
-    };
-    document.addEventListener("click", unlock, { once: true });
-    document.addEventListener("touchstart", unlock, { once: true });
-  });
+    video.muted = true; // ensure muted before any play attempt
+    video.play().catch(() => {
+      // Fallback: wait for user interaction
+      const unlock = () => {
+        video.muted = true;
+        video.play().catch(() => {});
+      };
+      document.addEventListener("click", unlock, { once: true });
+      document.addEventListener("touchstart", unlock, { once: true });
+    });
 
     const playVideo = async () => {
       try {
@@ -175,7 +175,7 @@ const Hero = ({
               transition={{ duration: 0.9, delay: 0.45, ease: "easeOut" }}
               className="flex flex-col items-center gap-6 md:flex-row md:items-end md:justify-between"
             >
-              <p className="max-w-sm text-center text-[15px] leading-relaxed text-zinc-300/80 md:text-left">
+              <p className="max-w-md text-center text-[15px] leading-relaxed text-zinc-300/80 md:text-left">
                 {description}
               </p>
 
@@ -214,7 +214,9 @@ const Hero = ({
           transition={{ delay: 1.5, duration: 1 }}
           className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-[10px] uppercase tracking-widest text-white/30">Scroll</span>
+          <span className="text-[10px] uppercase tracking-widest text-white/30">
+            Scroll
+          </span>
           <div className="h-8 w-px overflow-hidden">
             <motion.div
               className="h-full w-full bg-gradient-to-b from-transparent via-amber-400 to-transparent"

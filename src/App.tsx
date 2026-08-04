@@ -34,6 +34,7 @@ import Programs from "./pages/Programs";
 import Pledge from "./pages/Pledge";
 import Impacts from "./pages/Impacts";
 import QuarterImpactPage from "@/pages/QuarterImpact.tsx";
+import GreatMission from "@/pages/GreatMission.tsx";
 
 const queryClient = new QueryClient();
 
@@ -86,6 +87,7 @@ const App = () => {
             <Route path="/target-audience" element={<TargetAudiencePage />} />
             <Route path="/impacts" element={<Impacts />} />
             <Route path="/impact/:slug" element={<QuarterImpactPage />} />
+            <Route path="/great-mission" element={<GreatMission />} />
             <Route path="*" element={<NotFound />} />
           </Route>
 
