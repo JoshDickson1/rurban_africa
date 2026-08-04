@@ -14,7 +14,7 @@ import {
 type DonationType = "single" | "monthly";
 type PaymentTab   = "online" | "transfer";
 type OnlineMethod = "flutterwave";
-type Currency     = "ngn" | "usd" | "gbp";
+type Currency     = "ngn" | 'cad' | "usd" | "gbp";
 type DonorMode    = "named" | "anonymous";
 
 interface DonorForm {
@@ -29,6 +29,7 @@ interface DonorForm {
 ══════════════════════════════════════════════════════ */
 const CURRENCIES: Record<Currency, { symbol: string; flag: string; label: string; presets: number[] }> = {
   ngn: { symbol: "₦", flag: "🇳🇬", label: "NGN",  presets: [5000, 10000, 15000, 20000, 25000, 50000] },
+  cad: { symbol: "$", flag: "🇨🇦", label: "CAD",  presets: [5, 10, 25, 50, 100, 250] },
   usd: { symbol: "$", flag: "🇺🇸", label: "USD",  presets: [5, 10, 25, 50, 100, 250] },
   gbp: { symbol: "£", flag: "🇬🇧", label: "GBP",  presets: [5, 10, 20, 50, 100, 200] },
 };
@@ -41,6 +42,14 @@ const IMPACT_MAP: Record<Currency, Record<number, string>> = {
     5000:  "Sponsors a girl's education for one month",
     10000: "Equips a community health worker with essentials",
     25000: "Funds a micro-enterprise for a rural entrepreneur",
+  },
+  cad: {
+    5:   "Buys exercise books for five rural children",
+    10:  "Provides a week of meals for a child in need",
+    25:  "Funds a health outreach visit to a remote village",
+    50:  "Sponsors a student's school fees for one month",
+    100: "Installs a water filter for a rural household",
+    250: "Trains a community leader in sustainable agriculture",
   },
   usd: {
     5:   "Buys exercise books for five rural children",
@@ -66,6 +75,11 @@ const BANK_DETAILS: Record<Currency, { bankName: string; accountName: string; ac
     accountName:   "RURBAN COMMUNITIES SUPPORT FOUNDATION",
     accountNumber: "1311991142",
   },
+  cad: {
+    bankName:      "Coming Soon",
+    accountName:   "Account not yet active",
+    accountNumber: "Coming Soon",
+  },
   usd: {
     bankName:      "Coming Soon",
     accountName:   "Account not yet active",
@@ -78,8 +92,13 @@ const BANK_DETAILS: Record<Currency, { bankName: string; accountName: string; ac
   },
 };
 
-const PAYMENT_LINKS: Record<OnlineMethod, string> = {
-  flutterwave: "https://flutterwave.com/donate/vh80d1qlcs7b",
+const PAYMENT_LINKS: Record<OnlineMethod, Record<Currency, string>> = {
+  flutterwave: {
+    ngn: "https://flutterwave.com/donate/vh80d1qlcs7b",
+    usd: "https://flutterwave.com/pay/mv89fpreobpz",
+    cad: "https://flutterwave.com/pay/epspyt3nmloo", //this need to be update with the appropriate link
+    gbp: "https://flutterwave.com/pay/72qvckxzdloe",
+  },
 };
 
 const STATS = [
@@ -401,7 +420,7 @@ export default function DonatePage() {
 
   // Reset amount when currency changes
   const handleCurrencyChange = (c: Currency) => {
-    const currencies: Currency[] = ["ngn", "usd", "gbp"];
+    const currencies: Currency[] = ["ngn", 'cad', "usd", "gbp"];
     const oldIdx = currencies.indexOf(currency);
     const newIdx = currencies.indexOf(c);
     setCurrencyDir(newIdx > oldIdx ? 1 : -1);
@@ -417,8 +436,12 @@ export default function DonatePage() {
 
   const handleDonate = () => {
     if (paymentTab === "online") {
-      const link = PAYMENT_LINKS[onlineMethod];
-      window.open(`${link}?amount=${activeAmount}&currency=${currency.toUpperCase()}`, "_blank");
+      const link =
+        PAYMENT_LINKS[onlineMethod][currency as Currency];
+
+      console.log(link, 'link');
+
+      window.open(`${link}?amount=${activeAmount}`, "_blank");
     }
     setShowDialog(true);
   };
