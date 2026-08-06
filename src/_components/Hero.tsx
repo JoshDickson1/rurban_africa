@@ -20,7 +20,7 @@ interface HeroProps {
 const Hero = ({
   title = "Giving Africa's Youth a Chance",
   tagline = "Rurban Africa",
-  description = "Empowering children and young people across rural and peri-urban communities through education, opportunity, sustainable growth, and the message of Christ Jesus.",
+  description = "Empowering children and young people across rural and peri-urban communities through education, opportunity, sustainable growth, and the message of Jesus Christ.",
   videoSrc = "/hero-video.mp4",
 }: HeroProps) => {
   const [videoOpen, setVideoOpen] = useState(false);
