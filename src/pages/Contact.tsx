@@ -59,7 +59,7 @@ const contactCards = [
     icon: <MapPin size={20} />,
     label: "Locations",
     lines: [
-      "Lagos: 21 Salvation Road, Opebi, Ikeja",
+      "Lagos: Km. 28, Abijo/GRA, Lekki-Epe Expressway, Lagos State",
       "Delta: 46 Ogwashi-Uku Road, Umunede",
     ],
     href: "https://maps.google.com",

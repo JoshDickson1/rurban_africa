@@ -162,7 +162,7 @@ const Footer = () => {
               <h4 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-widest">Location</h4>
               <p className="text-sm text-slate-500 dark:text-slate-400 flex items-start gap-2">
                 <MapPin size={18} className="shrink-0 text-amber-400" />
-                Lagos: 21 Salvation Road, Opebi, Ikeja
+                Lagos: Km. 28, Abijo/GRA, Lekki-Epe Expressway, Lagos State
               </p>
               <p className="text-sm text-slate-500 dark:text-slate-400 flex items-start gap-2">
                 <MapPin size={18} className="shrink-0 text-amber-400" />

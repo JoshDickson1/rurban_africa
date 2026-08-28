@@ -300,7 +300,7 @@ export function Navbar() {
                     </div>
                     <div className="flex items-center gap-2">
                       <MapPin size={14} className="bg-amber-400 text-black rounded-full p-[3px]" />
-                      <span className="text-white/70">Lagos , 21 Salvation Road, Opebi, Ikeja</span>
+                      <span className="text-white/70">Lagos, Km. 28, Abijo/GRA, Lekki-Epe Expressway, Lagos State</span>
                     </div>
                   </div>
                 ))}
